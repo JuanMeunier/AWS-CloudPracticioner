@@ -1,0 +1,43 @@
+IAM (Identity and Access Management) para Cloud Practitioner
+¿Qué es IAM?
+IAM es un servicio global de AWS que te permite gestionar de forma segura el acceso a los servicios y recursos de AWS.
+Conceptos clave que debes saber:
+
+1. Root Account (Cuenta raíz)
+Se crea por defecto al abrir una cuenta de AWS
+Tiene acceso completo a todos los servicios
+Nunca debe usarse ni compartirse para tareas diarias
+Debe protegerse con MFA (autenticación multifactor)
+
+2. Users (Usuarios)
+Representan a personas dentro de tu organización
+Un usuario = una persona física
+Pueden agruparse
+No es necesario crear usuarios si no son necesarios
+
+3. Groups (Grupos)
+Colecciones de usuarios
+Solo pueden contener usuarios, no otros grupos
+Un usuario puede pertenecer a múltiples grupos o a ninguno
+Facilitan la gestión de permisos
+
+4. Policies (Políticas)
+Documentos JSON que definen permisos
+Especifican qué acciones están permitidas o denegadas
+Se asignan a usuarios o grupos
+Principio de menor privilegio: dar solo los permisos mínimos necesarios
+
+5. Roles
+Para servicios de AWS, no para usuarios humanos
+Permiten que servicios de AWS actúen en tu nombre
+Ejemplo: permitir que EC2 acceda a S3
+
+Características importantes:
+
+Sin costo: IAM es gratuito
+MFA (Multi-Factor Authentication): Capa extra de seguridad recomendada
+Permisos: Por defecto, los nuevos usuarios no tienen permisos
+Políticas compartidas: Las políticas pueden reutilizarse entre usuarios/grupos
+
+Principio fundamental:
+Principio de menor privilegio: Otorga solo los permisos que un usuario necesita para realizar su trabajo, nada más.

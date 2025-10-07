@@ -1,0 +1,54 @@
+Security Groups (Grupos de Seguridad) para Cloud Practitioner
+¿Qué son los Security Groups?
+Son firewalls que controlan el tráfico de red que entra y sale de las instancias EC2. Son fundamentales para la seguridad de red en AWS.
+Características principales
+
+Solo contienen reglas de permiso (allow rules)
+Pueden referenciar direcciones IP o otros security groups
+Regulan:
+
+Inbound traffic (tráfico entrante): Desde internet hacia la instancia
+Outbound traffic (tráfico saliente): Desde la instancia hacia internet
+
+
+
+Elementos de una regla de Security Group :
+Type: Tipo de tráfico
+Protocol: TCP, UDP, etc.
+Port: Puerto de comunicación
+Source/Destination: Rango de IPs (ej: 0.0.0.0/0 = todas las IPs)
+
+Comportamiento predeterminado :
+✅ Outbound traffic: Todo el tráfico saliente está permitido por defecto
+❌ Inbound traffic: Todo el tráfico entrante está bloqueado por defecto
+
+Conceptos importantes
+
+1. Relación con instancias
+
+Un security group puede estar en múltiples instancias
+Una instancia puede tener múltiples security groups
+
+2. Alcance regional
+
+Están limitados a una región/VPC específica
+Si cambias de región, debes crear nuevos security groups
+
+3. Funcionamiento externo
+
+Viven fuera de la instancia EC2
+Si el tráfico está bloqueado, la instancia ni siquiera lo ve
+
+4. Referencia entre Security Groups
+
+Un security group puede autorizar a otro security group
+Permite comunicación entre instancias sin preocuparse por IPs
+Útil para arquitecturas con load balancers
+
+
+Resumen clave
+Security Groups = Firewall para EC2
+Solo reglas de ALLOW (permitir)
+Por defecto: entrada bloqueada, salida permitida
+El tráfico bloqueado causa timeout
+Pueden referenciar otros security groups para facilitar la comunicación

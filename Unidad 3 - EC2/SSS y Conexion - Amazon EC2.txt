@@ -1,0 +1,47 @@
+SSH y Conexión a Instancias EC2 para Cloud Practitioner
+¿Qué es SSH?
+SSH (Secure Shell) es el método para conectarse de forma segura a servidores Linux para realizar mantenimiento o acciones administrativas.
+3 Métodos de conexión según tu sistema operativo
+
+1. SSH (Command Line Interface)
+Plataformas: Mac, Linux, Windows 10+
+Qué es: Utilidad de línea de comandos
+Mejor para: Usuarios avanzados, automatización, scripts
+
+2. PuTTY
+Plataformas: Windows (todas las versiones, especialmente < Windows 10)
+Qué es: Interfaz gráfica (GUI) para conexiones SSH
+Funcionamiento: Ventanas con campos para llenar → Click "Connect"
+Nota: Hace exactamente lo mismo que SSH, solo que con interfaz gráfica
+Mejor para: Usuarios de Windows que prefieren GUI, gestión de múltiples conexiones
+
+3. EC2 Instance Connect ⭐ (Recomendado)
+Plataformas: Mac, Linux, Windows (todas las versiones)
+Qué es: Conexión directa desde el navegador web (AWS Console)
+Funcionamiento: AWS Console → Seleccionar instancia → Click "Connect" → Listo
+Ventajas:
+No necesitas instalar nada
+No necesitas manejar archivos de claves (.pem)
+Acceso rápido y simple
+Ideal para troubleshooting
+Limitación: Solo funciona con Amazon Linux 2
+Mejor para: Usuarios ocasionales, acceso rápido, principiantes
+
+
+Si tienes problemas con SSH:
+✅ Revisa las reglas del Security Group (puerto 22 debe estar abierto)
+✅ Verifica el comando o configuración
+✅ Busca errores tipográficos
+✅ Prueba EC2 Instance Connect - a veces soluciona todos los problemas
+✅ Consulta la guía de troubleshooting
+
+Nota importante:
+Solo necesitas que UN método funcione - no todos
+Si ningún método funciona, está bien - este curso es introductorio y no usarás SSH mucho
+SSH es lo que causa más problemas a los estudiantes, así que no te preocupes si tienes dificultades
+
+Para el examen:
+Conoce que SSH usa el puerto 22
+Entiende que SSH es para conectarse a instancias Linux
+EC2 Instance Connect es la opción más simple basada en navegador
+PuTTY es una alternativa para usuarios de Windows

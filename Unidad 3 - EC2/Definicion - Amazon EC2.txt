@@ -1,0 +1,51 @@
+Amazon EC2 (Elastic Compute Cloud) para Cloud Practitioner
+¿Qué es EC2?
+EC2 es uno de los servicios más populares de AWS. Representa Infrastructure as a Service (IaaS) y te permite rentar máquinas virtuales en la nube.
+Componentes principales de EC2:
+
+EC2 Instances: Máquinas virtuales que rentas
+EBS Volumes: Almacenamiento en discos virtuales
+ELB (Elastic Load Balancer): Distribuye carga entre máquinas
+ASG (Auto Scaling Group): Escala servicios automáticamente
+
+¿Qué puedes configurar en una instancia EC2?
+
+1. Sistemas Operativos
+Linux (el más popular)
+Windows
+Mac OS
+
+2. Capacidad de cómputo
+CPU: Cantidad de poder de procesamiento y núcleos
+RAM: Memoria de acceso aleatorio
+
+3. Almacenamiento
+Network-attached: EBS o EFS (conectado por red)
+Hardware: EC2 Instance Store (disco físico conectado)
+
+4. Configuración de red
+Velocidad de la tarjeta de red
+Tipo de IP pública
+Security Groups: Reglas de firewall para controlar el tráfico
+
+5. EC2 User Data (Bootstrap Script)
+Script que se ejecuta solo una vez al iniciar la instancia por primera vez
+Automatiza tareas de arranque (bootstrapping)
+
+EC2 User Data - Bootstrapping
+¿Qué es bootstrapping?
+Ejecutar comandos automáticamente cuando la máquina arranca por primera vez.
+
+Usos comunes:
+Instalar actualizaciones
+Instalar software
+Descargar archivos de internet
+Cualquier configuración inicial
+
+Importante:
+Se ejecuta solo una vez en el primer inicio
+Se ejecuta con privilegios de root (sudo)
+Cuanto más largo sea el script, más tiempo tardará el arranque
+
+Concepto clave:
+EC2 es fundamental para entender la nube porque representa la capacidad de rentar recursos de cómputo bajo demanda - puedes crear una máquina virtual en segundos con la configuración exacta que necesitas.

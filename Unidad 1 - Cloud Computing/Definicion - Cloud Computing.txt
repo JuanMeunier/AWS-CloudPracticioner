@@ -1,0 +1,42 @@
+Resumen: Introducción a la Computación en la Nube
+¿Qué es la computación en la nube?
+La computación en la nube es la entrega bajo demanda de recursos de TI (poder de cómputo, almacenamiento, aplicaciones, bases de datos)
+a través de una plataforma de servicios en la nube con precios de pago por uso. Solo pagas por lo que usas, cuando lo usas.
+Características principales
+
+Provisión instantánea: Acceso inmediato a recursos del tamaño y tipo que necesites
+Interfaz simple: Fácil acceso a servidores, almacenamiento y bases de datos
+Sin hardware propio: AWS posee y mantiene la infraestructura física
+
+Ejemplos cotidianos
+Ya usas la nube sin saberlo:
+
+Gmail: Servicio de correo en la nube
+Dropbox: Almacenamiento en la nube (originalmente construido en AWS)
+Netflix: Completamente construido en AWS
+
+Tipos de nubes
+
+Nube privada: Usada por una sola organización (ej: Rackspace)
+Nube pública: Proveedores como AWS, Microsoft Azure, Google Cloud
+Nube híbrida: Combinación de infraestructura propia y nube pública
+
+5 Características de la computación en la nube
+
+Autoservicio bajo demanda: Provisiona recursos sin intervención humana
+Amplio acceso a la red: Disponible desde múltiples dispositivos
+Multi-tenencia: Múltiples clientes comparten infraestructura de forma segura
+Elasticidad rápida: Escala automáticamente según la demanda
+Servicio medido: Pagas exactamente por lo que usas
+
+6 Ventajas principales
+
+CAPEX a OPEX: Cambias gastos de capital por gastos operativos (rentas vs compras)
+Economías de escala: Precios reducidos por el uso masivo
+Sin adivinar capacidad: Escalas según uso real
+Mayor velocidad y agilidad: Crea recursos instantáneamente
+Sin mantenimiento de centros de datos: AWS lo gestiona todo
+Alcance global: Despliega aplicaciones mundialmente en minutos
+
+Problemas resueltos
+La nube ofrece: flexibilidad, costo-efectividad, escalabilidad, elasticidad, alta disponibilidad, tolerancia a fallos y agilidad para desarrollar y lanzar aplicaciones rápidamente

@@ -1,0 +1,33 @@
+Resumen: Tipos de Computación en la Nube
+Tres modelos de servicio: 
+
+1. IaaS (Infrastructure as a Service)
+Proporciona los bloques básicos de TI en la nube
+Incluye: redes, computadoras y almacenamiento de datos en formato básico
+Alta flexibilidad, fácil migración desde infraestructura tradicional
+Ejemplo en AWS: Amazon EC2
+
+2. PaaS (Platform as a Service)
+Elimina la necesidad de gestionar la infraestructura subyacente
+Te enfocas solo en el despliegue y gestión de aplicaciones
+Ejemplo en AWS: Elastic Beanstalk
+
+3. SaaS (Software as a Service)
+Producto completo ejecutado y gestionado por el proveedor
+Ejemplos: Gmail, Dropbox, Zoom, AWS Rekognition
+
+¿Qué gestionas en cada modelo?
+
+On-premises: Gestionas todo (aplicaciones, datos, sistema operativo, servidores, redes, etc.)
+IaaS: Gestionas aplicaciones, datos, runtime, middleware y SO. AWS gestiona virtualización, servidores, almacenamiento y redes
+PaaS: Solo gestionas aplicaciones y datos. AWS gestiona todo lo demás
+SaaS: AWS gestiona todo
+
+Modelo de precios de AWS (Pay-as-you-go)
+Tres fundamentos de precio:
+
+Cómputo: Pagas por el tiempo exacto de cómputo usado
+Almacenamiento: Pagas por la cantidad exacta de datos almacenados
+Redes: Solo pagas cuando los datos salen de la nube (la entrada es gratuita)
+
+Resultado: Pagas solo lo que necesitas, con grandes ahorros de costos.

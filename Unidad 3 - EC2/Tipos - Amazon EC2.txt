@@ -1,0 +1,51 @@
+Tipos de Instancias EC2 para Cloud Practitioner
+Convención de nombres de instancias
+Ejemplo: m5.2xlarge
+
+m = Clase de instancia (familia)
+5 = Generación del hardware
+2xlarge = Tamaño dentro de la clase de instancia
+
+Cuanto mayor sea el tamaño → más memoria y CPU
+Tipos principales de instancias EC2
+
+1. General Purpose (Propósito General)
+Uso: Diversidad de cargas de trabajo
+Casos: Servidores web, repositorios de código
+Característica: Balance equilibrado entre cómputo, memoria y red
+Ejemplo: t2.micro (incluido en Free Tier), series M
+
+
+2. Compute Optimized (Optimizadas para Cómputo)
+Uso: Tareas intensivas de procesamiento
+Casos prácticos:
+Procesamiento por lotes (batch processing)
+Transcodificación de medios
+Servidores web de alto rendimiento
+Computación de alto rendimiento (HPC)
+Machine Learning
+Servidores de juegos dedicados
+Nombres: Series C (C5, C6, etc.)
+
+3. Memory Optimized (Optimizadas para Memoria)
+Uso: Procesar grandes conjuntos de datos en memoria (RAM)
+Casos prácticos:
+Bases de datos relacionales/NoSQL en memoria
+Almacenamiento de caché distribuido (ElastiCache)
+Bases de datos para Business Intelligence (BI)
+Procesamiento en tiempo real de datos no estructurados
+Nombres: Series R (RAM), X1, High Memory, Z1
+
+
+4. Storage Optimized (Optimizadas para Almacenamiento)
+Uso: Acceso intensivo a conjuntos de datos en almacenamiento local
+Casos prácticos:
+Sistemas OLTP (procesamiento de transacciones en línea)
+Bases de datos relacionales y NoSQL
+Caché para bases de datos en memoria (Redis)
+Aplicaciones de Data Warehousing
+Sistemas de archivos distribuidos
+
+
+
+

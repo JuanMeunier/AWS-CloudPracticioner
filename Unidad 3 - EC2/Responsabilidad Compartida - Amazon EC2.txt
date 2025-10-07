@@ -1,0 +1,63 @@
+Modelo de Responsabilidad Compartida en EC2 para Cloud Practitioner
+Responsabilidades de AWS (Seguridad DE la nube)
+Infraestructura física
+
+✅ Centros de datos y su infraestructura
+✅ Seguridad física de los data centers
+✅ Aislamiento en hosts físicos
+✅ Reemplazo de hardware defectuoso
+✅ Cumplimiento de regulaciones y compliance
+
+Responsabilidades del Usuario (Seguridad EN la nube)
+1. Security Groups
+
+❌ Definir y configurar reglas de security groups
+❌ Controlar quién puede acceder a tus instancias EC2
+
+2. Sistema Operativo
+
+❌ Gestión completa del OS (Windows/Linux)
+❌ Aplicar parches y actualizaciones
+❌ Mantenimiento del sistema operativo
+
+3. Software y Aplicaciones
+
+❌ Todo el software instalado en la instancia
+❌ Utilidades y herramientas instaladas
+❌ Actualizaciones de aplicaciones
+
+4. IAM y Permisos
+
+❌ Asignar roles IAM correctamente
+❌ Gestionar permisos apropiados
+
+5. Seguridad de Datos
+
+❌ Proteger los datos almacenados en la instancia
+❌ Encriptación de datos
+❌ Backups y recuperación
+
+Diagrama de Responsabilidades
+┌─────────────────────────────────────┐
+│         TU RESPONSABILIDAD          │
+├─────────────────────────────────────┤
+│ • Security Groups                   │
+│ • Sistema Operativo (patches)       │
+│ • Software instalado                │
+│ • Roles IAM                         │
+│ • Datos y encriptación              │
+└─────────────────────────────────────┘
+           ↕
+┌─────────────────────────────────────┐
+│    RESPONSABILIDAD DE AWS           │
+├─────────────────────────────────────┤
+│ • Infraestructura física            │
+│ • Centros de datos                  │
+│ • Hardware                          │
+│ • Aislamiento de hosts              │
+│ • Compliance                        │
+└─────────────────────────────────────┘
+Principio clave:
+AWS te proporciona la máquina virtual, pero TÚ eres responsable de todo lo que sucede DENTRO de ella.
+
+Resumen: AWS gestiona la infraestructura física; tú gestionas todo dentro de tu instancia EC2.
