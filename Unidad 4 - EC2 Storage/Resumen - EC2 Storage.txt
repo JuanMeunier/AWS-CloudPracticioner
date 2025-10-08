@@ -1,0 +1,32 @@
+Resumen: Almacenamiento EC2
+EBS Volumes
+
+Network drives conectados a 1 instancia EC2 a la vez
+Vinculados a una AZ específica
+Usa snapshots para backups y mover datos entre AZs
+
+AMI (Amazon Machine Image)
+Imágenes de EC2 con personalizaciones listas para usar
+EC2 Image Builder automatiza creación, testing y distribución de AMIs
+
+EC2 Instance Store
+Disco de hardware físico de alto rendimiento
+Se pierde si detienes o terminas la instancia
+Temporal/ephemeral
+
+EFS (Elastic File System)
+Network File System compartido
+Se monta en cientos de instancias simultáneamente
+Multi-AZ (nivel región, no limitado a una AZ)
+EFS-IA: Storage class más barato para archivos de acceso infrecuente
+
+FSx
+FSx for Windows: Network file system para servidores Windows (protocolo SMB)
+FSx for Lustre: Para High Performance Computing (HPC) en Linux
+
+Comparación rápida:
+EBS → 1 instancia, 1 AZ, persistente
+Instance Store → Alto rendimiento, temporal, se pierde
+EFS → Muchas instancias, multi-AZ, compartido, solo Linux
+FSx Windows → Compartido Windows (SMB)
+FSx Lustre → HPC/alto rendimiento

@@ -1,0 +1,78 @@
+EC2 Instance Store para Cloud Practitioner¿Qué es EC2 Instance Store?Es un disco físico (hardware) conectado directamente al servidor donde corre tu instancia EC2. Es como tener un disco duro "local" en tu servidor.Características principales1. Almacenamiento Ephemeral (Temporal) ⏳
+
+⚠️ Los datos se PIERDEN cuando:
+❌ Detienes (stop) la instancia
+❌ Terminas la instancia
+❌ El hardware físico falla
+❌ Se migra el host físico
+
+
+✅ Los datos SE MANTIENEN cuando:
+✅ Reinicias (reboot) la instancia
+
+
+2. Alto Rendimiento ⚡
+Muy baja latencia (físicamente en el mismo servidor)
+Alto throughput para operaciones I/O intensivas
+Mucho más rápido que EBS
+
+Instance Store: Puede alcanzar 3.3 millones de IOPS
+EBS (gp2): Hasta 32,000 IOPS
+
+
+3. Sin Costo Adicional 💰
+Viene incluido con ciertos tipos de instancia
+No pagas por el almacenamiento, solo por la instancia
+
+Casos de uso ideales ✅
+
+Datos temporales de alto rendimiento:
+Cache de aplicaciones 💾
+Buffers y scratch space
+Archivos temporales de procesamiento
+Contenido temporal
+
+Alto rendimiento con réplicas:
+Bases de datos con réplicas (donde puedes permitir pérdida)
+Procesamiento de Big Data (Hadoop, Spark)
+Gaming servers (datos se regeneran)
+Análisis de datos en tiempo real
+
+Casos de uso NO recomendados ❌
+❌ Almacenamiento a largo plazo (usa EBS)
+❌ Datos críticos sin backup
+❌ Bases de datos sin réplicas
+❌ Cualquier dato que no puedas perder
+
+Responsabilidad del usuario
+
+Si usas EC2 Instance Store, es TU RESPONSABILIDAD:
+🔄 Hacer backups manualmente
+📋 Replicar datos según tus necesidades
+💾 Guardar datos importantes en otro lugar (ej: EBS, S3)
+
+Regla de oro 🏆
+"Usa Instance Store solo para datos que puedas permitirte perder"
+Para el examen
+
+Pregunta típica:
+"¿Qué tipo de almacenamiento ofrece el mayor rendimiento I/O para una instancia EC2?"
+Respuesta: EC2 Instance Store
+
+Palabras clave que indican Instance Store:
+⚡ "Rendimiento extremadamente alto"
+💾 "Datos temporales"
+🔥 "Máxima velocidad I/O"
+📦 "Cache/Buffer"
+⏳ "Almacenamiento ephemeral"
+
+Palabras clave que indican EBS:
+💾 "Datos persistentes"
+🔒 "Almacenamiento duradero"
+📸 "Necesita backups automáticos"
+🔄 "Datos que deben sobrevivir stop/terminate"
+
+Resumen:
+EC2 Instance Store es almacenamiento de altísimo rendimiento conectado físicamente al servidor, pero es temporal - pierdes los datos si detienes o terminas la instancia.
+ Úsalo para cache, buffers y datos temporales que puedas regenerar.
+ Para datos permanentes e importantes, usa EBS. Es gratuito (incluido con ciertos tipos de instancia) y ofrece un rendimiento de I/O mucho mayor que EBS.

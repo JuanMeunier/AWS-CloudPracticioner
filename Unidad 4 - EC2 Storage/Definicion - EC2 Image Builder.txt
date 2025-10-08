@@ -1,0 +1,63 @@
+¿Qué es EC2 Image Builder?
+Un servicio que automatiza la creación, mantenimiento, validación y prueba de AMIs para instancias EC2 (y también imágenes de contenedores).
+Propósito principal
+✅ Automatizar todo el proceso de creación de AMIs personalizadas
+
+Ya no necesitas crear AMIs manualmente
+Todo está automatizado y programable
+
+Flujo del proceso (paso a paso)
+1️⃣ Builder EC2 Instance (Construcción)
+EC2 Image Builder crea automáticamente una instancia EC2 temporal
+Build components: Instala y configura software
+Instalar Java
+Actualizar CLI
+Actualizar sistema operativo
+Instalar firewalls
+Instalar tu aplicación
+Cualquier personalización que definas
+
+2️⃣ Crear AMI (Automático)
+Una vez completada la personalización
+Se crea automáticamente una AMI de la instancia configurada
+
+3️⃣ Test EC2 Instance (Validación)
+EC2 Image Builder crea automáticamente una instancia de prueba
+Ejecuta tests predefinidos que tú defines:
+
+¿La AMI funciona correctamente?
+¿Es segura?
+¿La aplicación corre bien?
+✅ Puedes omitir tests si no los necesitas
+
+4️⃣ Distribución
+Una vez validada la AMI
+Puede distribuirse automáticamente a múltiples regiones
+Tu aplicación se vuelve verdaderamente global
+
+Costos 💰
+✅ El servicio EC2 Image Builder es GRATUITO
+❌ Pagas por los recursos subyacentes:
+
+Instancias EC2 creadas temporalmente (Builder y Test)
+Almacenamiento de AMIs
+Transferencia de datos entre regiones
+
+Ventajas principales
+✅ Automatización completa - No más creación manual de AMIs
+✅ Validación integrada - Pruebas automáticas de AMIs
+✅ Distribución multi-región - Deploy global automático
+✅ Programable - Ejecuta en horarios definidos
+✅ Actualización continua - Mantén AMIs actualizadas automáticamente
+✅ Estandarización - AMIs consistentes y reproducibles
+
+Casos de uso
+🔄 Actualización regular de AMIs con parches de seguridad
+📦 Estandarización de imágenes corporativas
+🧪 Testing automatizado antes de producción
+🌍 Deploy multi-región de aplicaciones
+🔒 Compliance - Asegurar que AMIs cumplen estándares
+
+Resumen:
+EC2 Image Builder automatiza todo el ciclo de vida de creación de AMIs: construye instancias personalizadas, crea AMIs, las valida con tests automáticos y las distribuye a múltiples regiones. 
+Es un servicio gratuito (solo pagas los recursos que usa) que puede programarse o ejecutarse bajo demanda, perfecto para mantener AMIs actualizadas y estandarizadas.

@@ -1,0 +1,61 @@
+¿Qué es una AMI?
+AMI (Amazon Machine Image) es una personalización de una instancia EC2 que contiene todo lo necesario para lanzar instancias preconfiguradas.
+¿Qué incluye una AMI?
+
+✅ Configuración de software personalizada
+✅ Sistema operativo (OS) configurado
+✅ Herramientas de monitoreo preinstaladas
+✅ Aplicaciones y dependencias
+
+Ventaja principal
+⚡ Boot y configuración MÁS RÁPIDOS porque todo el software está pre-empaquetado
+No necesitas instalar software después del lanzamiento
+La instancia está lista para usar inmediatamente
+
+Alcance regional
+🔒 Las AMIs se construyen para una región específica
+✅ Pueden ser copiadas a otras regiones para aprovechar la infraestructura global de AWS
+
+3 Tipos de AMIs
+
+1. Public AMI (AMI Pública) 🌐
+Proveedor: AWS
+Ejemplo: Amazon Linux 2 AMI (muy popular)
+Costo: Generalmente gratuitas
+Uso: AMIs estándar proporcionadas por AWS
+
+2. Your Own AMI (Tu Propia AMI) 🛠️
+Proveedor: Tú mismo
+Mantenimiento: Debes crearlas y mantenerlas
+Ventaja: Completamente personalizada a tus necesidades
+Automatización: Existen herramientas para automatizar la creación
+
+3. AWS Marketplace AMI 🏪
+Proveedor: Terceros/Vendedores
+Características:
+Creadas y potencialmente vendidas por otros usuarios
+Software preconfigurado y optimizado
+Ahorra tiempo de configuración
+Uso: Comprar soluciones listas para usar
+Oportunidad: Tú también puedes crear y vender AMIs en el Marketplace
+
+
+Buenas prácticas
+✅ Detén la instancia antes de crear la AMI (integridad de datos)
+✅ Usa AMIs para estandarizar configuraciones
+✅ Crea AMIs para disaster recovery
+✅ Usa AMIs para escalar rápidamente con configuraciones idénticas
+
+Casos de uso comunes
+
+🚀 Deploy rápido de aplicaciones preconfiguradas
+📋 Estandarización de ambientes (dev, test, prod)
+🔄 Replicación de instancias entre regiones
+💾 Backup de configuraciones completas del sistema
+📦 Distribución de software empaquetado
+
+
+Resumen:
+Una AMI es una plantilla preconfigurada que contiene el OS, software y configuraciones necesarias para lanzar instancias EC2 rápidamente. Puedes usar AMIs públicas de AWS, 
+crear las tuyas propias, o comprar AMIs especializadas del Marketplace.
+Las AMIs hacen que el despliegue de instancias sea mucho más rápido porque todo está pre-empaquetado

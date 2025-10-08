@@ -1,0 +1,117 @@
+¿Qué es EFS?EFS (Elastic File System) es un sistema de archivos de red (NFS) gestionado que puede montarse en cientos de instancias EC2 simultáneamente.Diferencia clave con EBSEBS Volume:
+
+Solo 1 instancia a la vez
+Block storage
+Vinculado a 1 AZ específica
+NO es compartido
+
+EFS:
+Cientos de instancias simultáneamente
+Network File System (NFS)
+Funciona en múltiples AZs
+SÍ es compartido (shared storage)
+Características principales de EFS1. Multi-AZ
+
+Funciona a través de múltiples Availability Zones
+Instancias en diferentes AZs pueden montar el mismo EFS
+Todos ven los mismos archivos en tiempo real
+
+2. Solo Linux
+Solo funciona con instancias Linux EC2
+NO compatible con Windows
+
+3. Alta disponibilidad y escalabilidad
+Altamente disponible
+Escalable automáticamente
+Sin necesidad de planificar capacidad de antemano
+
+4. Modelo de precios
+Pay per use - Solo pagas por lo que usas
+Aproximadamente 3 veces más caro que EBS gp2
+Si almacenas 20 GB, solo pagas por esos 20 GB
+NO necesitas provisionar capacidad
+
+
+EFS Storage Classes (Clases de almacenamiento)
+EFS Standard
+Acceso frecuente a archivos
+Mayor costo
+Mejor rendimiento
+
+EFS-IA (Infrequent Access)
+Para archivos que NO accedes frecuentemente
+Hasta 92% más barato que EFS Standard
+Movimiento automático basado en políticas de ciclo de vida
+
+Lifecycle Policy (Política de ciclo de vida)
+
+Cómo funciona:
+Tienes archivos en EFS Standard
+Un archivo no se accede por 60 días (ejemplo)
+EFS automáticamente lo mueve a EFS-IA
+Ahorras hasta 92% en ese archivo
+Si lo vuelves a acceder, regresa automáticamente a EFS Standard
+
+Ventajas:
+Totalmente transparente para las aplicaciones
+Tus aplicaciones no necesitan saber dónde está el archivo
+Accedes a todos los archivos de la misma manera
+EFS optimiza costos automáticamente detrás de escena
+
+Casos de uso de EFS
+
+Cuando usar EFS:
+Content management (gestión de contenido)
+Servidores web compartidos
+Almacenamiento de datos compartido entre múltiples instancias
+Aplicaciones que requieren sistema de archivos compartido
+Workloads que necesitan acceso concurrente desde múltiples AZs
+
+Cuando NO usar EFS (usar EBS en su lugar):
+Solo necesitas conectar a 1 instancia
+Necesitas Windows
+Quieres el menor costo posible
+Necesitas almacenamiento de bloque de alta performance
+
+EBS vs EFS - Resumen de diferencias
+
+EBS Volume:
+Network drive conectado a 1 instancia
+Vinculado a 1 AZ
+Para mover entre AZs: snapshot → restore (copia)
+Pagas por capacidad provisionada
+Menos costoso
+
+EFS File System:
+Network file system compartido
+Múltiples instancias simultáneamente
+Funciona en múltiples AZs
+Todos ven los mismos archivos en tiempo real
+Pay per use (pagas por uso real)
+Más costoso (~3x EBS)
+Solo Linux
+
+Puntos clave para el examen
+
+Palabras clave que indican EFS:
+"Shared file system"
+"Múltiples instancias accediendo simultáneamente"
+"Multi-AZ file storage"
+"Network File System"
+"Cientos de instancias"
+"Linux file system"
+
+Palabras clave que indican EBS:
+"Una sola instancia"
+"Block storage"
+"Vinculado a AZ específica"
+"Windows o Linux"
+
+Storage Classes:
+EFS Standard: Acceso frecuente
+EFS-IA: Acceso infrecuente, 92% más barato, movimiento automático
+
+Resumen final
+EFS es un sistema de archivos de red compartido que permite a múltiples instancias EC2 (solo Linux) en diferentes AZs acceder a los mismos archivos simultáneamente.
+ Es más caro que EBS (~3x) pero ofrece flexibilidad de compartir datos.
+ Incluye EFS-IA para ahorrar hasta 92% en archivos de acceso infrecuente con movimiento automático basado en políticas de ciclo de vida.

@@ -1,0 +1,66 @@
+¿Qué es un EBS Snapshot?
+Un snapshot es una copia de seguridad (backup) de tu EBS Volume en un punto específico del tiempo.
+Características principales
+1. Backup y Restauración
+
+✅ Puedes hacer backup del estado de tu EBS Volume en cualquier momento
+✅ Puedes restaurar un EBS Volume desde un snapshot
+✅ Los datos persisten incluso si el volumen original es eliminado
+
+2. ¿Necesitas detach el volumen?
+
+❌ NO es necesario desconectar el volumen para hacer snapshot
+✅ Es recomendado desconectar para asegurar que todo esté limpio
+
+3. Transferencia entre AZs y Regiones
+
+✅ Puedes copiar snapshots entre Availability Zones
+✅ Puedes copiar snapshots entre Regiones
+✅ Esto te permite transferir datos a través de la infraestructura global de AWS
+
+Proceso de transferencia:
+
+Snapshot el EBS Volume en us-east-1a
+El snapshot existe a nivel de región
+Restore (restaura) el snapshot como nuevo EBS Volume en us-east-1b
+Attach (conecta) el nuevo volumen a una instancia EC2 en us-east-1b
+
+Características adicionales de EBS Snapshots
+
+1. EBS Snapshot Archive 📦
+Función: Mover snapshots a un tier de almacenamiento más barato
+Ahorro: 75% más económico
+Desventaja: Restauración tarda 24 a 72 horas
+Uso ideal: Snapshots que no necesitas restaurar urgentemente
+
+Snapshot normal → Archive tier
+💰 Precio normal    💰 75% más barato
+⚡ Restauración rápida    ⏳ 24-72 horas para restaurar
+
+2. Recycle Bin (Papelera de Reciclaje) 🗑️
+Función: Protege contra eliminación accidental de snapshots
+
+Comportamiento:
+Sin Recycle Bin: Snapshot eliminado → desaparece permanentemente
+Con Recycle Bin: Snapshot eliminado → va a la papelera
+
+
+Configuración: Define período de retención (1 día a 1 año)
+Ventaja: Puedes recuperar snapshots eliminados accidentalmente
+
+Eliminar snapshot → Recycle Bin → Retención (1 día - 1 año) → Eliminación permanente
+                        ↓
+                  Puedes recuperar
+
+
+Casos de uso comunes
+
+✅ Backup regular de datos importantes
+✅ Migrar datos entre AZs o regiones
+✅ Disaster recovery - restaurar desde snapshot
+✅ Crear copias de ambientes (dev, test, prod)
+✅ Archivar datos antiguos de forma económica
+
+Resumen:
+Los EBS Snapshots son backups de tus EBS Volumes que te permiten restaurar datos, transferirlos entre zonas/regiones, y protegerte contra pérdida de datos. 
+Puedes archivarlos para ahorrar costos o usar Recycle Bin para prevenir eliminaciones accidentales.

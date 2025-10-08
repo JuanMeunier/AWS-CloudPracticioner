@@ -1,0 +1,64 @@
+¿Qué es FSx?
+Servicio administrado de AWS para sistemas de archivos de terceros de alto rendimiento.
+Dos tipos principales para el examen:
+1. FSx for Windows File Server
+
+Características:
+Sistema de archivos nativo de Windows
+Usa protocolo SMB y Windows NTFS
+Se monta en instancias Windows
+Multi-AZ (2 zonas de disponibilidad)
+Integración con Microsoft Active Directory
+
+Cuándo usarlo:
+Aplicaciones Windows
+Necesitas compartir archivos entre instancias Windows
+Migración desde Windows File Server on-premises
+
+Acceso desde:
+Instancias EC2 Windows en AWS
+Corporate data center on-premises
+
+2. FSx for Lustre
+
+Características:
+Para High Performance Computing (HPC)
+Nombre viene de: Lunux + Cluster = Lustre
+
+Extremadamente rápido:
+Cientos de GB/segundo
+Millones de IOPS
+Latencia sub-milisegundo
+
+
+
+Cuándo usarlo:
+Machine Learning
+Analytics
+Video processing
+Financial modeling
+Cualquier workload de HPC
+
+Integración:
+Se conecta a instancias compute en AWS
+Backend puede usar Amazon S3
+
+Para el examen - Palabras clave:
+
+FSx for Windows:
+"Windows"
+"SMB protocol"
+"Active Directory"
+"Windows File Server"
+
+FSx for Lustre:
+"High Performance Computing"
+"HPC"
+"Machine Learning"
+"Analytics"
+"Alto rendimiento"
+"Linux cluster"
+
+Resumen ultra simple:
+FSx for Windows = Para aplicaciones Windows
+FSx for Lustre = Para High Performance Computing (HPC)

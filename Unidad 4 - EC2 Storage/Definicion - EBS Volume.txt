@@ -1,0 +1,47 @@
+¿Qué es EBS?EBS (Elastic Block Store) es un disco de red (network drive) que puedes conectar a tus instancias EC2 mientras están en ejecución.Características principales1. Persistencia de datos
+
+✅ Los datos persisten incluso después de terminar la instancia
+✅ Puedes recrear una instancia y montar el mismo EBS Volume para recuperar tus datos
+2. Limitaciones de conexión
+
+⚠️ A nivel Cloud Practitioner: 1 EBS Volume = 1 instancia EC2 a la vez
+✅ Una instancia puede tener múltiples EBS Volumes conectados
+3. Restricción por Availability Zone (AZ)
+
+🔒 Un EBS Volume está vinculado a una AZ específica
+❌ Un volumen en us-east-1a NO puede conectarse a una instancia en us-east-1b
+✅ Puedes mover volúmenes entre AZs usando snapshots (copias)
+Analogía: "USB stick de red"Piensa en EBS como un pendrive USB que:
+
+Puedes desconectar de una computadora y conectar a otra
+NO es físico, se conecta por red
+Puede tener algo de latencia por usar la red
+Configuración de EBS VolumesDebes provisionar capacidad por adelantado:
+
+Tamaño: Cuántos gigabytes (GB)
+IOPS: IO operations per second (rendimiento)
+Facturación: Pagas por la capacidad provisionada
+Escalabilidad: Puedes aumentar capacidad/rendimiento después
+
+Caso de uso para el examen:
+Pregunta típica: ¿Cómo preservar el root volume cuando terminas una instancia?
+Respuesta: Deshabilita el atributo "Delete on Termination" para el root volume.
+Características adicionales
+
+✅ Puedes crear EBS Volumes sin conectarlos a ninguna instancia (on-demand)
+✅ Son rápidos de desconectar y reconectar a otras instancias (útil para failover)
+✅ Puedes aumentar tamaño y rendimiento con el tiempo
+
+Puntos clave para el examen:
+
+EBS = Network drive (no físico)
+Persiste datos después de terminar instancia
+Vinculado a una AZ específica
+1 volumen = 1 instancia (a nivel CCP)
+1 instancia = múltiples volúmenes ✅
+Snapshots permiten mover entre AZs
+Delete on Termination: Habilitado por defecto solo en root volume
+Debes provisionar capacidad por adelantado
+
+Resumen:
+EBS Volumes son discos de red persistentes que puedes conectar a instancias EC2 para almacenar datos que sobrevivan a la terminación de la instancia, pero están limitados a una Availability Zone específica.

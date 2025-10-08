@@ -1,0 +1,175 @@
+Modelo de Responsabilidad Compartida para Almacenamiento EC2
+Responsabilidades de AWS (Seguridad DE la nube)
+1. Infraestructura
+
+Gestión de la infraestructura física de almacenamiento
+Mantener data centers seguros
+
+2. Replicación de datos
+
+Replicar datos a través de múltiples hardware (especificación técnica de EBS/EFS)
+Garantizar que si un hardware falla, el cliente no se ve afectado
+Redundancia automática
+
+3. Reemplazo de hardware
+
+Reemplazar cualquier hardware defectuoso
+Si un EBS drive falla, AWS lo reemplaza
+Mantener el hardware funcionando
+
+4. Seguridad de acceso interno
+
+Garantizar que empleados de AWS NO puedan acceder a tus datos
+Controles internos de seguridad
+
+Responsabilidades del Cliente (Seguridad EN la nube)
+1. Backups y Snapshots
+
+Establecer procedimientos de backup
+Crear snapshots de EBS regularmente
+Definir políticas de retención
+Planificar estrategias de recuperación ante desastres
+
+2. Encriptación de datos
+
+Configurar encriptación de datos en reposo
+Configurar encriptación de datos en tránsito
+Gestionar claves de encriptación
+Capa adicional de seguridad contra acceso no autorizado
+
+3. Gestión de datos
+
+Cualquier dato que escribas en el disco es TU responsabilidad
+Contenido almacenado
+Administración de archivos
+Políticas de retención de datos
+
+4. Riesgos de EC2 Instance Store
+
+Entender los riesgos asociados con Instance Store
+Aceptar que puedes perder datos si:
+
+El hardware falla
+Detienes la instancia
+Terminas la instancia
+
+
+Hacer backups de datos críticos a otro lugar (EBS, S3, etc.)
+Es TU responsabilidad proteger datos en Instance Store
+
+Diagrama de Responsabilidades para Almacenamiento
+AWS se encarga de:
+
+Hardware físico y reemplazo
+Replicación automática entre hardware
+Seguridad física de data centers
+Prevenir acceso de empleados a tus datos
+
+TÚ te encargas de:
+
+Backups y snapshots
+Encriptación de datos
+Todo lo que guardas en los discos
+Entender riesgos (especialmente Instance Store)
+Planificación de recuperación ante desastres
+
+Ejemplos prácticos por tipo de almacenamiento
+EBS Volumes
+
+AWS:
+Mantiene el hardware funcionando
+Replica datos internamente
+Reemplaza discos defectuosos
+
+TÚ:
+Cear snapshots regularmente
+Habilitar encriptación
+Decidir qué datos almacenar
+Restaurar desde snapshots si es necesario
+
+EFS
+
+AWS:
+Maneja replicación multi-AZ automáticamente
+Mantiene disponibilidad
+Gestiona infraestructura de red
+
+TÚ:
+Configurar lifecycle policies
+Habilitar encriptación
+Gestionar permisos de acceso
+Hacer backups si es necesario
+
+EC2 Instance Store
+AWS:
+Provee el hardware físico
+Reemplaza servidor si falla (pero pierdes datos)
+
+TÚ:
+CRÍTICO: Entender que los datos son temporales
+Hacer backups a EBS, EFS o S3
+Aceptar riesgo de pérdida de datos
+Implementar replicación si es necesario
+
+Mejores prácticas de seguridad (tu responsabilidad)
+
+1. Backups
+Automatizar snapshots de EBS
+Definir frecuencia de backups
+Probar restauración de backups
+Guardar copias en múltiples regiones para DR
+
+2. Encriptación
+Habilitar encriptación en EBS volumes
+Usar AWS KMS para gestionar claves
+Encriptar datos antes de escribirlos
+Habilitar encriptación en EFS
+
+3. Instance Store
+Solo usar para datos temporales
+Implementar replicación a almacenamiento persistente
+Documentar qué datos son recuperables
+Tener plan de regeneración de datos
+
+4. Monitoreo
+Configurar alarmas de CloudWatch
+Monitorear salud de volúmenes
+Alertas de espacio disponible
+Auditoría de accesos
+
+Escenarios del examen
+Pregunta típica 1:
+"¿Quién es responsable de crear backups de datos en EBS?"
+Respuesta: El cliente
+Pregunta típica 2:
+"¿Quién es responsable de reemplazar hardware defectuoso en EBS?"
+Respuesta: AWS
+Pregunta típica 3:
+"Si pierdes datos en un Instance Store después de detener la instancia, ¿de quién es la responsabilidad?"
+Respuesta: Del cliente (debiste hacer backup)
+Pregunta típica 4:
+"¿Quién es responsable de encriptar datos en EBS?"
+Respuesta: El cliente (debe habilitar encriptación)
+Pregunta típica 5:
+"¿Quién maneja la replicación interna de datos en EBS?"
+Respuesta: AWS (automático)
+Puntos clave para recordar
+AWS siempre se encarga de:
+
+El "qué" (infraestructura física)
+Replicación y redundancia automática
+Reemplazo de hardware
+Seguridad física
+
+Tú siempre te encargas de:
+
+El "cómo" usas el almacenamiento
+Backups y recuperación
+Encriptación
+Tus propios datos
+Entender limitaciones (Instance Store)
+
+Resumen
+En almacenamiento EC2, AWS gestiona la infraestructura física, replicación automática, reemplazo de hardware y prevención de acceso no autorizado de empleados. 
+El cliente es responsable de backups/snapshots, encriptación de datos, gestión de contenido almacenado, y especialmente de entender los riesgos de Instance Store (datos temporales que se pierden al detener/terminar).
+ La regla general: AWS protege la infraestructura, tú proteges tus datos y cómo los usas.
