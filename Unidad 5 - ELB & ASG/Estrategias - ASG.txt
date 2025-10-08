@@ -1,0 +1,73 @@
+Estrategias de Scaling para Auto Scaling Groups
+1. Manual Scaling
+Qué es: Cambias manualmente el tamaño del ASG
+Ejemplo: Cambiar capacidad de 1 a 2 instancias manualmente
+2. Dynamic Scaling (Escalado Dinámico)
+Responde automáticamente a cambios en la demanda.
+A) Simple/Step Scaling
+Basado en alarmas de CloudWatch
+Ejemplos:
+Scale Out:
+Si CPU promedio > 70% por 5 minutos → Agregar 2 instancias
+
+Scale In:
+Si CPU promedio < 30% por 10 minutos → Quitar 1 instancia
+
+Funcionamiento: Defines trigger (alarma) y acción (cuántas instancias agregar/quitar)
+B) Target Tracking Scaling
+Más simple - Defines un objetivo
+
+Ejemplo:
+"Quiero mantener CPU promedio en 40%"
+ASG escala automáticamente para mantener ese target
+
+Ventaja: No defines cuándo o cuánto escalar, solo el objetivo
+C) Scheduled Scaling
+Basado en patrones conocidos
+Ejemplo:
+"Cada viernes a las 5 PM aumenta a 10 instancias"
+Útil para eventos predecibles (apuestas deportivas antes del partido)
+
+Cuándo usar: Sabes cuándo ocurrirán cambios de carga
+3. Predictive Scaling (Para el examen ⭐)
+Usa Machine Learning para predecir tráfico futuro
+
+Funcionamiento:
+Analiza patrones de tráfico pasados
+Predice tráfico futuro
+Provisiona instancias automáticamente ANTES de que se necesiten
+
+Ejemplo:
+Detecta que cada día hay pico de 3 horas
+Automáticamente agrega instancias antes del pico
+
+Ventaja: Sin intervención manual, powered by ML
+Cuándo usar: Patrones de tiempo predecibles
+Resumen para el examen:
+Manual Scaling:
+Cambios manuales de capacidad
+
+Simple/Step Scaling:
+Basado en alarmas CloudWatch
+"Si métrica X → agregar/quitar Y instancias"
+
+Target Tracking:
+Defines objetivo (ej: 40% CPU)
+ASG mantiene ese objetivo automáticamente
+
+Scheduled Scaling:
+Para patrones conocidos
+"Cada [día/hora] hacer [acción]"
+
+Predictive Scaling:
+Machine Learning
+Predice tráfico futuro
+Provisiona antes de necesitar
+Para patrones basados en tiempo
+
+Palabras clave:
+"CloudWatch alarm" → Simple/Step Scaling
+"Mantener métrica en X%" → Target Tracking
+"Eventos programados/predecibles" → Scheduled Scaling
+"Machine Learning/predecir" → Predictive Scaling
+"Patrones de tiempo/históricos" → Predictive Scaling

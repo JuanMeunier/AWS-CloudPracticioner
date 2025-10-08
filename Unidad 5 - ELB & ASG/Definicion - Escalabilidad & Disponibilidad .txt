@@ -1,0 +1,93 @@
+Escalabilidad y Alta Disponibilidad para Cloud Practitioner
+Dos tipos de Escalabilidad:
+1. Escalabilidad Vertical (Scale Up/Down)
+Qué es: Aumentar el tamaño/potencia de la instancia
+
+Ejemplo con call center:
+Junior operator → Senior operator (más capacidad por persona)
+
+Ejemplo en AWS:
+t2.micro → t2.large
+Más RAM, más vCPU en la misma instancia
+
+Cuándo usarlo:
+Sistemas no distribuidos
+Bases de datos
+
+Limitación: Hay un límite de hardware
+
+Términos:
+Scale Up = Aumentar tamaño
+Scale Down = Disminuir tamaño
+
+2. Escalabilidad Horizontal (Scale Out/In) = Elasticidad
+
+Qué es: Aumentar el número de instancias
+
+Ejemplo con call center:
+1 operador → 2 operadores → 6 operadores
+
+Ejemplo en AWS:
+1 instancia EC2 → 3 instancias EC2 → 10 instancias EC2
+
+Cuándo usarlo:
+Aplicaciones web modernas
+Sistemas distribuidos
+
+Servicios AWS:
+Auto Scaling Groups
+Load Balancers
+
+Términos:
+
+Scale Out = Aumentar número de instancias
+Scale In = Disminuir número de instancias
+
+Alta Disponibilidad (High Availability)
+Qué es: Ejecutar tu aplicación en al menos 2 Availability Zones
+
+Ejemplo call center:
+Call center en New York + Call center en San Francisco
+Si uno falla (apagón), el otro sigue funcionando
+Objetivo: Sobrevivir a la pérdida de un data center
+
+En AWS:
+Multi-AZ deployment
+Auto Scaling Group multi-AZ
+Load Balancer multi-AZ
+
+Resumen EC2:
+
+Vertical Scaling:
+Aumentar tamaño de instancia
+Ejemplo: t2.nano (0.5 GB RAM) → u-12tb1.metal (12.3 TB RAM)
+
+Horizontal Scaling:
+Aumentar número de instancias
+Usa Auto Scaling Groups y Load Balancers
+
+High Availability:
+Múltiples AZs
+Auto Scaling Group + Load Balancer en multi-AZ
+
+Definiciones para el examen:
+Scalability (Escalabilidad)
+Capacidad del sistema para acomodar mayor carga haciendo el hardware más fuerte (scale up) o agregando nodos (scale out)
+Elasticity (Elasticidad)
+El sistema escala automáticamente basado en la carga recibida. Pagas por uso, matching demand con número de servidores. Optimiza costos.
+Agility (Agilidad)
+NO relacionado con escalabilidad. Significa que nuevos recursos IT están a un click de distancia. Reducir tiempo de semanas a minutos.
+
+Para el examen - Palabras clave:
+Vertical Scaling: "aumentar tamaño", "más potente", "scale up/down", "base de datos"
+Horizontal Scaling: "más instancias", "scale out/in", "distribuido", "elasticidad"
+High Availability: "multi-AZ", "sobrevivir fallo", "disaster recovery"
+Elasticity: "auto scaling", "basado en demanda", "optimizar costos"
+Agility: "recursos rápidos", "click away", "minutos no semanas"
+Resumen ultra simple:
+
+Vertical = Instancia más grande
+Horizontal = Más instancias
+High Availability = Multi-AZ
+Elasticity = Auto scaling automático
+Agility = Recursos rápidos (distractor, no es escalabilidad)

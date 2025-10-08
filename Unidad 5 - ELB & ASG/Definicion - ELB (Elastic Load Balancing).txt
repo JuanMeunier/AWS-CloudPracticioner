@@ -1,0 +1,85 @@
+Elastic Load Balancer (ELB) para Cloud Practitioner
+¿Qué es un Load Balancer?
+Servidor que distribuye tráfico de internet entre múltiples servidores (instancias EC2) backend.
+Funcionamiento:
+
+Usuarios se conectan al Load Balancer
+Load Balancer distribuye tráfico entre múltiples EC2 instances
+Cada usuario puede ser atendido por una instancia diferente
+
+¿Por qué usar Load Balancer?
+Distribuir carga entre múltiples instancias
+Punto de acceso único (DNS hostname)
+Manejar fallos automáticamente (health checks)
+Proporcionar SSL/HTTPS fácilmente
+Alta disponibilidad multi-AZ
+
+ELB = Managed Load Balancer
+
+AWS se encarga de:
+Provisioning
+Upgrades
+Mantenimiento
+Alta disponibilidad
+
+Tú solo configuras: Comportamiento básico del load balancer
+3 Tipos de Load Balancers (para el examen):
+1. Application Load Balancer (ALB)
+Layer 7 - HTTP/HTTPS
+
+Cuándo usarlo:
+Tráfico HTTP/HTTPS o gRPC
+HTTP routing features necesario
+Necesitas static DNS (URL estática)
+
+Protocolo: HTTP, HTTPS, gRPC
+2. Network Load Balancer (NLB)
+Layer 4 - TCP/UDP
+
+Cuándo usarlo:
+Ultra high performance (millones de requests/segundo)
+Tráfico TCP o UDP
+Necesitas static IP (Elastic IP)
+
+Protocolo: TCP, UDP
+3. Gateway Load Balancer (GWLB)
+Layer 3 - IP packets
+
+Cuándo usarlo:
+Routing a firewalls que gestionas en EC2
+Intrusion detection
+Deep packet inspection
+Third-party security virtual appliances
+
+Protocolo: GENEVE (IP packets)
+Comparación rápida:
+
+ALB (Application):
+Layer 7
+HTTP/HTTPS/gRPC
+Static DNS
+Routing features
+
+NLB (Network):
+Layer 4
+TCP/UDP
+Ultra high performance (millones req/seg)
+Static IP (Elastic IP)
+
+GWLB (Gateway):
+Layer 3
+IP packets
+Firewalls/security appliances
+Intrusion detection
+
+Para el examen - Palabras clave:
+ALB: "HTTP", "HTTPS", "Layer 7", "routing", "static DNS"
+NLB: "ultra high performance", "millions requests", "TCP/UDP", "Layer 4", "static IP"
+GWLB: "firewall", "intrusion detection", "deep packet inspection", "Layer 3", "security appliances"
+Nota sobre Classic Load Balancer (CLB):
+Se retira en 2023, NO aparece en el examen. Fue reemplazado por ALB y NLB.
+
+Resumen:
+HTTP/HTTPS → ALB
+Alto rendimiento extremo → NLB
+Firewall/Security → GWLB

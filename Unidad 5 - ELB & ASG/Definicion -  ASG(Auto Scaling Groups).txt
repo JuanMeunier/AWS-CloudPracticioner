@@ -1,0 +1,77 @@
+Auto Scaling Group (ASG) para Cloud Practitioner
+¿Qué es un Auto Scaling Group?
+Servicio que automáticamente crea o elimina instancias EC2 según la demanda.
+¿Por qué usarlo?
+Problema: La carga cambia con el tiempo
+
+Más usuarios de día → Más carga
+Menos usuarios de noche → Menos carga
+
+Solución: ASG ajusta automáticamente el número de instancias
+
+Funciones principales:
+Scale Out: Agregar instancias cuando aumenta la carga
+Scale In: Eliminar instancias cuando disminuye la carga
+Capacidad mínima/máxima: Garantiza un rango de instancias corriendo
+Health checks: Reemplaza instancias no saludables automáticamente
+Integración con Load Balancer: Registra/des-registra instancias automáticamente
+
+Beneficios:
+Ahorro de costos - Solo usas lo que necesitas
+Elasticidad - Se adapta a la demanda
+Alta disponibilidad - Reemplaza instancias defectuosas
+Capacidad óptima - Siempre el número correcto de instancias
+
+Configuración de ASG:
+Minimum size (Tamaño mínimo):
+Número mínimo de instancias siempre corriendo
+Desired capacity (Capacidad deseada):
+Número actual/objetivo de instancias
+Maximum size (Tamaño máximo):
+Número máximo de instancias permitidas
+
+Ejemplo:
+Mínimo: 1 instancia
+Deseado: 3 instancias
+Máximo: 6 instancias
+
+ASG + Load Balancer trabajando juntos:
+Usuarios → Load Balancer → ASG (1-6 instancias EC2)
+
+Funcionamiento:
+Tráfico llega al Load Balancer
+Load Balancer distribuye entre instancias del ASG
+ASG escala out/in según demanda
+Load Balancer automáticamente detecta nuevas instancias
+Tráfico se distribuye entre todas las instancias disponibles
+
+Ejemplo práctico:
+
+Baja carga (noche):
+ASG: 1 instancia
+Load Balancer envía todo a esa instancia
+
+Carga media (mañana):
+ASG: 3 instancias
+Load Balancer distribuye entre las 3
+
+Alta carga (tarde):
+ASG: 6 instancias (máximo)
+Load Balancer distribuye entre las 6
+
+Health check detecta fallo:
+ASG termina instancia defectuosa
+ASG crea nueva instancia saludable
+Load Balancer automáticamente usa la nueva
+
+Palabras clave para el examen:
+"Ajustar automáticamente" → ASG
+"Scale out/in" → ASG
+"Elasticidad" → ASG
+"Ahorro de costos basado en demanda" → ASG
+"Reemplazar instancias defectuosas" → ASG
+"Mínimo/máximo de instancias" → ASG
+
+Resumen:
+Auto Scaling Group ajusta automáticamente el número de instancias EC2 según la demanda (scale out/in), garantiza capacidad mínima/máxima, reemplaza instancias defectuosas,
+ y trabaja integrado con Load Balancers para distribuir tráfico. Resultado: elasticidad y ahorro de costos al usar solo lo necesario.
