@@ -1,0 +1,104 @@
+S3 Storage Classes para Cloud Practitioner
+Conceptos clave:
+Durability: Qué tan seguido se pierde un objeto
+
+11 nines (99.999999999%) - IGUAL para todas las clases
+Si guardas 10 millones de objetos, pierdes 1 cada 10,000 años
+
+Availability: Qué tan disponible está el servicio
+
+Varía según la storage class
+Más availability = más caro
+
+Storage Classes:
+1. S3 Standard - General Purpose
+Availability: 99.99% (~53 min/año no disponible)
+Uso: Datos accesados frecuentemente
+Características:
+
+Baja latencia, alto throughput
+Soporta 2 fallos de AZ concurrentes
+
+Casos de uso: Big data analytics, mobile/gaming apps, content distribution
+2. S3 Standard-IA (Infrequent Access)
+Availability: 99.9%
+Uso: Datos accesados menos frecuentemente pero que necesitan acceso rápido
+Características:
+
+Más barato que Standard
+Costo por retrieval (recuperación)
+
+Casos de uso: Disaster recovery, backups
+3. S3 One Zone-IA
+Availability: 99.5%
+Uso: Datos menos frecuentes en una sola AZ
+Características:
+
+Alta durability SOLO dentro de una AZ
+Datos se pierden si AZ se destruye
+Más barato
+
+Casos de uso: Backups secundarios, datos que puedes recrear
+Glacier Storage Classes (Archival):
+4. S3 Glacier Instant Retrieval
+Retrieval: Milisegundos
+Mínimo storage: 90 días
+Uso: Datos accesados una vez por trimestre
+Características: Backup con acceso instantáneo
+5. S3 Glacier Flexible Retrieval
+Retrieval opciones:
+
+Expedited: 1-5 minutos
+Standard: 3-5 horas
+Bulk (gratis): 5-12 horas
+
+Mínimo storage: 90 días
+Uso: Archival donde puedes esperar horas
+6. S3 Glacier Deep Archive
+Retrieval opciones:
+
+Standard: 12 horas
+Bulk: 48 horas
+
+Mínimo storage: 180 días
+Características: Más barato, long-term storage
+Uso: Datos raramente accesados
+7. S3 Intelligent-Tiering
+Qué hace: Mueve objetos automáticamente entre tiers según uso
+Costos:
+
+Small monthly monitoring fee
+NO hay retrieval charges
+
+Tiers automáticos:
+
+Frequent Access (default)
+Infrequent Access (30 días sin acceso)
+Archive Instant Access (90 días sin acceso)
+
+Tiers opcionales (configurables):
+
+Archive Access (90-700+ días)
+Deep Archive Access (180-700+ días)
+
+Ventaja: Sit back and relax - S3 lo hace por ti
+Comparación rápida para el examen:
+Standard → Acceso frecuente, más caro
+Standard-IA → Acceso infrecuente, rápido cuando necesitas
+One Zone-IA → Una sola AZ, datos recreables
+Glacier Instant → Archival, retrieval en milisegundos
+Glacier Flexible → Archival, retrieval en minutos/horas
+Glacier Deep Archive → Archival, retrieval en horas/días, MÁS BARATO
+Intelligent-Tiering → Automático, mueve objetos según uso
+Palabras clave para el examen:
+"Acceso frecuente" → Standard
+"Backup, disaster recovery" → Standard-IA
+"Datos recreables, una AZ" → One Zone-IA
+"Archival, acceso rápido" → Glacier Instant
+"Archival, puedo esperar horas" → Glacier Flexible
+"Long-term, más barato" → Glacier Deep Archive
+"Automático, no sé patrón" → Intelligent-Tiering
+
+Resumen:
+S3 tiene múltiples storage classes según frecuencia de acceso. Standard para uso frecuente, IA para infrecuente,
+Glacier para archival (Instant/Flexible/Deep según velocidad retrieval), e Intelligent-Tiering para movimiento automático. Durability 11 nines en todas. A menor availability/velocidad retrieval = menor costo.

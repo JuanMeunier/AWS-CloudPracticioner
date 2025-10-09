@@ -1,0 +1,49 @@
+S3 Versioning para Cloud Practitioner
+¿Qué es Versioning?
+Permite versionar archivos en S3 - cada vez que subes el mismo archivo se crea una nueva versión
+Configuración:
+Se habilita a nivel de bucket (toda la bucket o nada)
+¿Cómo funciona?
+Primera subida:
+
+Subes "file.txt" → Version 1
+
+Resubir mismo archivo:
+
+Subes "file.txt" otra vez → Version 2
+Subes "file.txt" de nuevo → Version 3
+
+Cada key mantiene múltiples versiones
+Ventajas (Best Practice):
+1. Protección contra borrados accidentales
+
+Si "borras" un archivo, S3 solo agrega un delete marker
+El archivo NO se elimina realmente
+Puedes restaurar versiones anteriores
+
+2. Fácil rollback
+
+Volver a una versión de 2 días atrás
+Recuperar archivo anterior fácilmente
+
+Notas importantes:
+Archivos sin versión:
+
+Archivos subidos ANTES de habilitar versioning tienen version = null
+
+Suspender versioning:
+
+NO borra versiones anteriores
+Operación segura
+Solo deja de crear nuevas versiones
+
+Para el examen:
+Versioning → A nivel de bucket, no a nivel de objeto
+Delete marker → Al borrar solo se marca, no se elimina
+Rollback → Puedes volver a versiones anteriores
+Version null → Archivos pre-versioning
+Suspender → No borra versiones existentes
+Best practice → Siempre habilitar versioning
+Resumen:
+S3 Versioning se habilita a nivel de bucket y crea versiones cada vez que resubes un archivo. 
+Protege contra borrados accidentales (delete marker) y permite rollback fácil. Archivos pre-versioning tienen version null, y suspender versioning no borra versiones existentes.

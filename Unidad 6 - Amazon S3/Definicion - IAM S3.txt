@@ -1,0 +1,59 @@
+IAM Access Analyzer for S3 para Cloud Practitioner
+¿Qué es?
+Feature de monitoreo para verificar que solo las personas correctas tienen acceso a tus buckets S3
+¿Qué analiza?
+
+Bucket Policies
+S3 ACLs
+S3 Access Point Policies
+
+¿Qué te muestra?
+
+Buckets públicamente accesibles
+Buckets compartidos con otras cuentas AWS
+Recursos compartidos con entidades externas
+
+¿Para qué sirve?
+Revisar accesos:
+
+"Esto es normal/esperado" ✅
+"Esto es un problema de seguridad" ⚠️
+
+Tomar acción si encuentras acceso no intencional
+Powered by:
+IAM Access Analyzer - Encuentra recursos compartidos con otras entidades
+Para el examen:
+Función: Monitoreo de acceso a S3 buckets
+Detecta: Buckets públicos, compartidos con otras cuentas
+Propósito: Seguridad, prevenir acceso no intencional
+Resumen:
+IAM Access Analyzer for S3 monitorea y reporta qué buckets son públicos o están compartidos con otras cuentas AWS, analizando policies y ACLs para que puedas identificar accesos no intencionales y tomar acción.IAM Access Analyzer for S3 para Cloud Practitioner
+¿Qué es?
+Feature de monitoreo para verificar que solo las personas correctas tienen acceso a tus buckets S3
+¿Qué analiza?
+
+Bucket Policies
+S3 ACLs
+S3 Access Point Policies
+
+¿Qué te muestra?
+
+Buckets públicamente accesibles
+Buckets compartidos con otras cuentas AWS
+Recursos compartidos con entidades externas
+
+¿Para qué sirve?
+Revisar accesos:
+
+"Esto es normal/esperado" ✅
+"Esto es un problema de seguridad" ⚠️
+
+Tomar acción si encuentras acceso no intencional
+Powered by:
+IAM Access Analyzer - Encuentra recursos compartidos con otras entidades
+Para el examen:
+Función: Monitoreo de acceso a S3 buckets
+Detecta: Buckets públicos, compartidos con otras cuentas
+Propósito: Seguridad, prevenir acceso no intencional
+Resumen:
+IAM Access Analyzer for S3 monitorea y reporta qué buckets son públicos o están compartidos con otras cuentas AWS, analizando policies y ACLs para que puedas identificar accesos no intencionales y tomar acción.

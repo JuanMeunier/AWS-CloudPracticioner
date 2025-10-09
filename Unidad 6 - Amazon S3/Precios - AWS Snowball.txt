@@ -1,0 +1,34 @@
+Snowball Edge Pricing para Cloud Practitioner
+Costos generales:
+Pagas por:
+
+Uso del dispositivo
+Data transfer OUT de AWS (de AWS a ti)
+
+NO pagas por:
+
+Data transfer INTO AWS (de ti a S3) = $0/GB ✅
+
+Pricing del dispositivo:
+1. On-Demand
+One-time service fee por job
+Incluye días gratis:
+
+80 TB Snowball: 10 días de uso incluidos
+210 TB Snowball: 15 días de uso incluidos
+
+Shipping: GRATIS (no cuenta para el límite de días)
+Días adicionales: Se cobran después de los días incluidos
+2. Committed Upfront
+Pagas por adelantado: Mensual, 1 año, o 3 años
+Uso: Para edge computing a largo plazo
+Descuento: Hasta 62% off
+Para el examen:
+Regla de oro: Pagas por TODO EXCEPTO data transfer INTO S3 ($0/GB)
+Data OUT de AWS → Pagas
+Data INTO S3 → GRATIS
+Shipping → GRATIS
+On-demand → Pay per job, días incluidos
+Committed → Descuento, long-term edge computing
+Resumen:
+Snowball cobra por uso del dispositivo y data transfer out. Data transfer INTO S3 es gratis. On-demand incluye 10-15 días gratis. Committed upfront da hasta 62% descuento para uso largo plazo. Shipping siempre gratis.

@@ -1,0 +1,22 @@
+Shared Responsibility Model - S3
+AWS es responsable de:
+
+Infraestructura (garantizar durability, availability)
+Sustain concurrent loss de dos facilities
+Configuración y vulnerability analysis interna
+Compliance validation de su infraestructura
+
+TÚ eres responsable de:
+
+S3 Versioning - Configurarlo correctamente
+S3 Bucket Policies - Proteger tus datos
+Replication - Configurarlo si lo necesitas
+Logging & Monitoring - Habilitarlo (opcional, debes activarlo)
+Storage Classes - Elegir la más cost-effective
+Data encryption - Encriptar tus datos
+
+Para el examen:
+AWS: Infraestructura, durability, availability
+Cliente: Versioning, policies, replication, logging, storage class, encryption
+Resumen:
+AWS gestiona infraestructura y durability. Tú configuras versioning, bucket policies, replication, logging, eliges storage class óptima y habilitas encryption.

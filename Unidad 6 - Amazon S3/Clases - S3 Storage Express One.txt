@@ -1,0 +1,46 @@
+S3 Express One Zone para Cloud Practitioner
+¿Qué es?
+Storage class de alto rendimiento en una sola AZ
+Diferencias clave:
+Bucket especial: "Directory bucket" (NO bucket estándar)
+Ubicación: Una sola AZ (tú eliges cuál)
+NO multi-AZ como otros storage classes
+Performance:
+Requests: Cientos de miles por segundo
+Latency: Single-digit milliseconds (muy baja)
+vs S3 Standard: 10x más rápido, 50% más barato
+Trade-offs:
+Durability: Buena
+Availability: Más baja (solo 1 AZ, si falla AZ = problema)
+Ventaja principal:
+Co-location: Storage y compute en la misma AZ
+
+Reduce latency
+Reduce networking costs
+
+Casos de uso:
+
+Latency-sensitive applications
+Data-intensive applications
+AI/ML training
+Financial modeling
+Media processing
+High Performance Computing (HPC)
+
+Integración con servicios AWS:
+
+SageMaker Model Training
+Athena
+EMR
+Glue
+Otros servicios de datos
+
+Para el examen:
+Palabras clave: "alto rendimiento", "baja latencia", "single AZ", "ML training", "HPC"
+Directory bucket → Tipo especial de bucket
+Trade-off: Rendimiento vs disponibilidad (solo 1 AZ)
+Co-location → Storage + compute en misma AZ
+
+Resumen:
+S3 Express One Zone es storage class ultra rápido (10x Standard) en una sola AZ usando "directory buckets". 50% más barato,
+cientos de miles requests/seg, single-digit ms latency. Para apps latency-sensitive, AI/ML, HPC. Trade-off: menor availability por estar en 1 AZ.

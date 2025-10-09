@@ -1,0 +1,50 @@
+AWS Storage Gateway para Cloud Practitioner
+¿Qué es Hybrid Cloud?
+Parte de infraestructura on-premises + parte en la nube
+¿Por qué hybrid?
+
+Migración larga desde on-premises
+Requisitos de seguridad
+Compliance requirements
+Estrategia empresarial
+
+Problema con S3:
+S3 es tecnología propietaria de AWS
+NO es como EFS/NFS que puedes usar directamente on-premises
+Solución: AWS Storage Gateway
+AWS Storage Gateway
+Qué hace: Conecta (bridge) datos on-premises con AWS Cloud
+Permite: Usar AWS Cloud seamlessly desde on-premises
+Casos de uso:
+
+Disaster recovery
+Backup & restore
+Tiered storage
+Extender capacidad de almacenamiento
+
+Tipos (NO memorizar para examen):
+
+File Gateway
+Volume Gateway
+Tape Gateway
+
+Behind the scenes usa:
+
+Amazon EBS
+Amazon S3
+Glacier
+
+Storage en AWS - Resumen:
+Block: EBS, EC2 Instance Store
+File: EFS (network file system)
+Object: S3, Glacier
+Hybrid: Storage Gateway (bridge on-premises ↔ cloud)
+Para el examen:
+Storage Gateway = Bridge on-premises storage a AWS Cloud
+Uso: Hybrid cloud scenarios
+NO necesitas saber detalles de cada tipo de gateway
+Concepto clave: Conectar on-premises con cloud seamlessly
+
+Resumen:
+Storage Gateway conecta almacenamiento on-premises con AWS Cloud para crear hybrid cloud.
+Permite usar S3/EBS/Glacier desde on-premises para disaster recovery, backups y tiered storage. Para el examen solo necesitas saber que es el "bridge" entre on-premises y cloud.

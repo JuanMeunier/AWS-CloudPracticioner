@@ -1,0 +1,38 @@
+S3 Static Website Hosting para Cloud Practitioner
+¿Qué es?
+S3 puede hospedar sitios web estáticos y hacerlos accesibles por internet
+URL del website:
+Formato depende de la región AWS:
+Opción 1: bucket-name.s3-website-region.amazonaws.com
+Opción 2: bucket-name.s3-website.region.amazonaws.com
+Diferencia: Dash (-) vs Dot (.) - No necesitas memorizarlo
+¿Cómo funciona?
+
+Tienes un bucket S3 con archivos (HTML, imágenes, etc.)
+Habilitas "static website hosting" en el bucket
+Obtienes una URL pública
+Usuarios acceden a tu website via esa URL
+
+Requisito crítico: Public Reads
+El bucket DEBE ser público
+Si obtienes error 403 Forbidden:
+
+Tu bucket NO es público
+Debes crear S3 Bucket Policy que permita acceso público
+Desactivar "Block Public Access" settings
+
+Pasos básicos:
+
+Crear bucket S3
+Subir archivos HTML/CSS/JS/imágenes
+Habilitar "Static Website Hosting"
+Hacer bucket público con Bucket Policy
+Acceder via URL generada
+
+Para el examen:
+S3 Static Website Hosting → Para sitios web estáticos
+403 Forbidden → Bucket no es público, necesitas Bucket Policy
+Requisito: Public reads habilitado
+Contenido: Solo archivos estáticos (HTML, CSS, JS, imágenes)
+Resumen:
+S3 puede hospedar websites estáticos con URL pública. El bucket debe tener public reads habilitado via Bucket Policy. Si ves 403 Forbidden, el bucket no es público.

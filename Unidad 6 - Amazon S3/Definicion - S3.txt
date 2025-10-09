@@ -1,0 +1,71 @@
+Amazon S3 (Simple Storage Service) para Cloud Practitioner
+¿Qué es S3?
+Almacenamiento infinitamente escalable - Uno de los bloques principales de AWS
+
+Casos de uso:
+Backup y almacenamiento
+Disaster recovery (mover datos entre regiones)
+Archival (archivar datos a bajo costo)
+Hybrid cloud storage
+Hosting de aplicaciones
+Hosting de media (videos, imágenes)
+Data lakes y big data analytics
+Software updates
+Static website hosting
+
+Ejemplos reales:
+Nasdaq: 7 años de datos en S3 Glacier
+Sysco: Analytics y business insights
+
+Conceptos fundamentales:
+Buckets (Contenedores)
+Qué son: Directorios de nivel superior donde almacenas archivos
+Naming (importante para examen):
+
+Nombre globalmente único (en todas las regiones y cuentas AWS)
+Sin mayúsculas, sin guiones bajos
+3-63 caracteres
+No puede ser IP
+Debe empezar con letra minúscula o número
+
+Región:
+Aunque el nombre es global, los buckets se crean en una región específica
+S3 parece global pero los buckets son regionales
+
+Objects (Archivos)
+Qué son: Los archivos almacenados en S3
+Key (Clave): Path completo del archivo
+Ejemplos de keys:
+my-file.txt
+my-folder1/another-folder/my-file.txt
+
+Composición del key:
+Prefix: my-folder1/another-folder/
+Object name: my-file.txt
+
+Importante: S3 NO tiene concepto real de directorios, todo es un key (nombre largo con slashes)
+Características de Objects:
+Value: El contenido del archivo
+Tamaño máximo: 5 TB (5000 GB)
+Multi-part upload: Obligatorio para archivos > 5 GB
+Metadata: Key-value pairs con información del archivo
+Tags: Hasta 10 tags Unicode key-value (útil para seguridad y lifecycle)
+Version ID: Si versionado está habilitado
+Resumen para el examen:
+
+S3:
+Almacenamiento infinitamente escalable
+Bloques principales de AWS
+
+Buckets:
+Nombres globalmente únicos
+Creados en región específica
+3-63 caracteres, sin mayúsculas
+
+Objects:
+Archivos en S3
+Key = path completo
+Máximo 5 TB
+Multi-part upload si > 5 GB
+
+No hay directorios reales: Todo son keys con slashes

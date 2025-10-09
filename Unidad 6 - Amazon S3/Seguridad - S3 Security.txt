@@ -1,0 +1,80 @@
+S3 Security para Cloud Practitioner
+Tipos de Seguridad en S3:
+
+1. User-Based (Basado en Usuario)
+IAM Policies - Qué API calls puede hacer un usuario IAM específico
+2. Resource-Based (Basado en Recurso)
+S3 Bucket Policies (Lo más común):
+
+Reglas a nivel de bucket
+Se asignan desde la consola S3
+Permiten usuarios de otras cuentas (cross-account)
+Hacen buckets públicos
+
+Object ACL (Access Control List):
+Seguridad más granular
+Puede deshabilitarse
+
+Bucket ACL:
+Menos común
+Puede deshabilitarse
+
+3. Encryption
+Encriptar objetos usando encryption keys
+Cuándo se permite acceso:
+
+Un IAM principal puede acceder a un objeto S3 si:
+Los permisos IAM lo permiten, O
+La resource policy lo permite, Y
+NO hay explicit deny
+
+S3 Bucket Policy (JSON)
+Estructura:
+Resources: Qué buckets/objetos aplica la policy
+Effect: Allow o Deny
+Actions: Qué API calls (GetObject, PutObject, etc.)
+Principal: A quién aplica (usuario, cuenta, o * para todos)
+Ejemplo de policy pública:
+Permite a cualquiera (*) hacer GetObject
+en todos los objetos del bucket
+= Bucket público para lectura
+
+Casos de uso de Bucket Policies:
+Acceso público al bucket
+Forzar encriptación al subir
+Grant access a otra cuenta (cross-account)
+
+Escenarios de acceso:
+Escenario 1: Usuario público
+Usuario web → S3 Bucket Policy (permite acceso público) → S3 Bucket
+Escenario 2: IAM User interno
+IAM User → IAM Policy → S3 Bucket
+Escenario 3: EC2 Instance
+EC2 Instance → IAM Role (NO IAM user) → S3 Bucket
+Escenario 4: Cross-Account
+IAM User (otra cuenta) → S3 Bucket Policy (permite cross-account) → S3 Bucket
+Block Public Access Settings
+Qué es: Configuración extra de seguridad para prevenir data leaks
+
+Funcionamiento:
+Incluso si creas una Bucket Policy pública
+Si Block Public Access está ON
+El bucket NUNCA será público
+
+Cuándo usar:
+Si sabes que tu bucket NUNCA debe ser público
+Protección contra errores en Bucket Policies
+Puede configurarse a nivel de cuenta
+
+Importante: Capa adicional de seguridad inventada por AWS
+Para el examen:
+IAM Policy → Usuario específico puede hacer X
+Bucket Policy → Control de acceso al bucket (público, cross-account)
+Encryption → Proteger contenido de objetos
+Block Public Access → Prevenir buckets públicos accidentales
+Cross-account → Usar Bucket Policy
+EC2 → S3 → Usar IAM Role (NO IAM User)
+
+Resumen:
+S3 Security usa IAM Policies para usuarios específicos, Bucket Policies (lo más común) para controlar acceso al bucket incluyendo público y cross-account, y Block Public Access como capa extra contra data leaks.
+ Para EC2 usar IAM Roles. Bucket Policies son JSON con Resources, Effect, Actions y Principal.

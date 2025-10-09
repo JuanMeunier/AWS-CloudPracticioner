@@ -1,0 +1,37 @@
+S3 Encryption para Cloud Practitioner
+Dos tipos de encriptación:
+1. Server-Side Encryption (SSE)
+Qué es: Amazon S3 encripta el objeto después de recibirlo
+Proceso:
+
+Usuario sube archivo sin encriptar
+Archivo llega a S3
+S3 encripta el archivo automáticamente
+
+Default: Habilitado por defecto en todos los buckets/objetos
+Quién encripta: El servidor (Amazon S3)
+2. Client-Side Encryption
+Qué es: Usuario encripta el archivo ANTES de subirlo
+Proceso:
+
+Usuario encripta archivo localmente
+Usuario sube archivo ya encriptado
+S3 almacena archivo encriptado
+
+Quién encripta: El cliente (el usuario)
+Para el examen:
+Server-Side Encryption:
+
+Encriptación por defecto
+S3 hace la encriptación
+Automático
+
+Client-Side Encryption:
+
+Usuario encripta antes de subir
+Más control del cliente
+Manual
+
+Default: Server-Side Encryption siempre está ON
+Resumen:
+S3 tiene Server-Side Encryption (S3 encripta después de recibir) habilitado por defecto, y Client-Side Encryption (usuario encripta antes de subir) como opción. SSE es automático, CSE da más control al usuario.Reintentar

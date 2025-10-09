@@ -1,0 +1,86 @@
+AWS Snowball para Cloud Practitioner
+¿Qué es Snowball?
+Dispositivo físico portátil y seguro para:
+
+Migrar datos hacia/desde AWS
+Procesar datos en ubicaciones edge
+
+Dos tipos de dispositivos:
+1. Snowball Edge Storage Optimized
+Storage: 210 TB
+Uso: Migraciones de datos grandes
+2. Snowball Edge Compute Optimized
+Storage: 28 TB
+Uso: Edge computing (procesamiento)
+Caso de uso 1: Data Migrations
+¿Cuándo usar Snowball?
+Problema: Transferir datos por red es muy lento
+Ejemplo: 100 TB con conexión 1 Gbps = 12 días
+Usar Snowball si:
+
+Toma más de 1 semana transferir por red
+Conexión lenta/limitada
+Bandwidth compartido
+Alto costo de red
+Conexión inestable
+
+¿Cómo funciona?
+
+AWS envía dispositivo Snowball físico a tu ubicación
+Cargas tus datos en el dispositivo
+Envías dispositivo de vuelta a AWS
+AWS carga datos a S3 (u otro servicio)
+
+vs Upload directo a S3:
+
+Upload directo = Simple pero usa todo el bandwidth
+Snowball = No usa tu conexión de internet
+
+Caso de uso 2: Edge Computing
+¿Cuándo usar?
+Ubicaciones edge sin/poco internet:
+
+Camiones en ruta
+Barcos en el mar
+Estaciones mineras
+Lugares remotos
+
+¿Qué hace?
+Procesa datos donde se crean usando:
+
+EC2 instances en el dispositivo
+Lambda functions en el dispositivo
+
+Casos de uso edge:
+
+Pre-procesar datos
+Machine Learning at the edge
+Transcode media at the edge
+
+Proceso:
+
+Datos creados en ubicación edge
+Procesados localmente en Snowball
+Dispositivo enviado a AWS con datos procesados
+
+Para el examen:
+Palabras clave Snowball:
+
+"Petabytes de datos"
+"Transferir toma más de 1 semana"
+"Conexión lenta/limitada"
+"Migración de datos masivos"
+
+Palabras clave Edge Computing:
+
+"Ubicación remota sin internet"
+"Procesar datos en ubicación edge"
+"Truck/ship/mining station"
+"Pre-procesamiento local"
+
+Storage Optimized → Data migrations (210 TB)
+Compute Optimized → Edge computing (28 TB)
+
+Resumen:
+Snowball es dispositivo físico para migrar grandes cantidades de datos (cuando transferir por red toma >1 semana) o para edge computing en ubicaciones remotas sin internet.
+Storage Optimized (210TB) para migrations, Compute Optimized (28TB) para procesar datos en edge con EC2/Lambda.

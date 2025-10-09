@@ -1,0 +1,34 @@
+S3 Replication para Cloud Practitioner
+Dos tipos de Replication:
+CRR (Cross-Region Replication)
+Replicación entre regiones diferentes
+SRR (Same-Region Replication)
+Replicación dentro de la misma región
+¿Cómo funciona?
+Bucket origen (Región A) → Replicación asíncrona → Bucket destino (Región B)
+Requisitos:
+Versioning DEBE estar habilitado en ambos buckets (origen y destino)
+IAM permissions para S3 service (permisos read/write en ambos buckets)
+Cross-account es posible (buckets en diferentes cuentas AWS)
+Asíncrono - Copia en background, no inmediata
+Casos de uso:
+CRR (Cross-Region):
+
+Compliance - Requisitos regulatorios
+Lower latency - Datos más cerca de usuarios
+Cross-account replication - Replicar entre cuentas
+
+SRR (Same-Region):
+
+Log aggregation - Juntar logs de múltiples buckets
+Live replication - Entre ambiente producción y test
+
+Para el examen:
+Requisito obligatorio → Versioning habilitado en ambos buckets
+CRR → Regiones diferentes, compliance, lower latency
+SRR → Misma región, logs, prod/test
+Asíncrono → No es instantáneo
+IAM permissions → S3 service necesita permisos
+Cross-account → Posible con ambos tipos
+Resumen:
+S3 Replication (CRR para cross-region, SRR para same-region) replica objetos asíncronamente entre buckets. Requiere versioning habilitado en ambos buckets y IAM permissions. CRR para compliance/latency, SRR para logs/test environments.
