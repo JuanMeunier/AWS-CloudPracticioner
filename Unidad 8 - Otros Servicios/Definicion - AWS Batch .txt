@@ -1,0 +1,81 @@
+AWS Batch para Cloud Practitioner
+¿Qué es AWS Batch?
+Servicio fully managed para batch processing a cualquier escala
+Puede correr cientos de miles de batch jobs eficientemente
+¿Qué es un Batch Job?
+Job con inicio y fin definidos
+Ejemplo: Empieza 1 AM, termina 3 AM
+vs Streaming/Continuous jobs: Nunca terminan, siempre corriendo
+Funcionamiento:
+Batch lanza automáticamente:
+
+EC2 instances
+Spot Instances
+
+Para acomodar la carga de batch jobs
+Provisiona: Cantidad correcta de compute + memory
+Tú solo: Envías/programas batch jobs a la cola (queue)
+Batch hace: El resto
+¿Cómo se define un Batch Job?
+Docker image + Task definition
+Corre en: ECS service
+Conclusión: Cualquier cosa que corra en ECS puede correr en Batch
+Ventajas:
+
+Auto-scaling del número correcto de instancias
+Cost optimization (usa Spot Instances)
+Menos preocupación por infraestructura
+Focus en batch jobs, no en servers
+
+Ejemplo de arquitectura:
+Usuarios suben imágenes → S3
+        ↓ trigger
+   AWS Batch Queue
+        ↓
+ECS Cluster (EC2/Spot Instances managed by Batch)
+   - Corre Docker images
+   - Procesa imágenes (ej: aplica filtros)
+        ↓
+   S3 (imágenes procesadas)
+Batch vs Lambda:
+Lambda:
+
+Time limit: 15 minutos
+Languages: Limitados (Node.js, Python, etc.)
+Disk space: Limited temporary
+Serverless: Sí
+
+Batch:
+
+Time limit: Sin límite (usa EC2)
+Runtime: Cualquiera (Docker image)
+Disk space: EBS volume o Instance Store (mucho más)
+Serverless: NO (managed service con EC2)
+
+Batch = Managed, NO serverless
+AWS gestiona EC2 instances y auto-scaling
+Para el examen:
+Palabras clave:
+"Batch processing" → AWS Batch
+"Hundreds of thousands of jobs" → Batch
+"Job with start and end" → Batch job
+"Docker images at scale" → Batch
+"Long-running jobs" → Batch (NO Lambda)
+"No time limit" → Batch
+Lambda vs Batch:
+
+Lambda: Corto (<15 min), serverless
+Batch: Largo (sin límite), managed EC2
+
+Casos de uso:
+
+Procesamiento de imágenes en lote
+Análisis de datos batch
+ETL jobs largos
+Video processing
+Simulaciones científicas
+Cualquier job largo que no cabe en Lambda
+
+Resumen:
+AWS Batch es servicio fully managed (NO serverless) para batch processing a gran escala. Corre batch jobs (con inicio/fin) en ECS usando Docker images. 
+Provisiona automáticamente EC2/Spot instances según carga. Sin time limit (vs Lambda 15 min). Más disk space que Lambda. Optimiza costos con Spot Instances. En examen: batch processing sin límite tiempo = Batch.

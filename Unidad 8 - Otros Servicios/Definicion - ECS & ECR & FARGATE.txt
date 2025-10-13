@@ -1,0 +1,79 @@
+ECS, Fargate y ECR para Cloud Practitioner
+3 Servicios principales:
+1. ECS (Elastic Container Service)
+Qué hace: Lanza contenedores Docker en AWS
+Infraestructura:
+
+Debes provisionar EC2 instances tú mismo
+Creas instancias por adelantado
+AWS gestiona start/stop de contenedores
+Integración con Application Load Balancer
+
+Funcionamiento:
+Múltiples EC2 Instances (tú las creas)
+├─ Container 1
+├─ Container 2
+└─ Container 3
+
+ECS Service decide dónde colocar cada contenedor
+Palabra clave examen: "Run Docker containers on AWS" → ECS
+2. Fargate
+Qué hace: Lanza contenedores Docker en AWS sin infraestructura
+Infraestructura:
+
+NO provisionar EC2 instances
+Serverless - No gestionas servidores
+AWS ejecuta contenedores automáticamente
+
+Especificas: CPU y RAM por contenedor
+AWS hace el resto
+Funcionamiento:
+Fargate Service
+├─ Container 1 (dónde? no importa, AWS decide)
+├─ Container 2
+└─ Container 3
+
+Sin EC2 instances que gestionar
+Más simple que ECS
+3. ECR (Elastic Container Registry)
+Qué es: Registro privado de Docker en AWS
+Función: Almacenar imágenes Docker
+Usado por: ECS y Fargate para obtener imágenes
+Funcionamiento:
+ECR (almacena imágenes)
+      ↓
+Fargate/ECS (lee imágenes, crea y ejecuta contenedores)
+Comparación ECS vs Fargate:
+ECS:
+
+Debes crear EC2 instances
+Gestionas infraestructura
+Más control
+Menos simple
+
+Fargate:
+
+NO creas EC2 instances
+Serverless
+AWS gestiona todo
+Más simple
+Solo especificas CPU/RAM
+
+Ambos: Ejecutan contenedores Docker
+Flujo completo:
+1. Guardas imágenes Docker en ECR
+2. ECS o Fargate leen imágenes de ECR
+3. Crean contenedores desde las imágenes
+4. Ejecutan contenedores
+Para el examen:
+"Run Docker containers" → ECS o Fargate
+"Don't manage infrastructure" → Fargate
+"Serverless containers" → Fargate
+"Manage EC2 instances for containers" → ECS
+"Store Docker images" → ECR
+"Private Docker registry" → ECR
+Resumen:
+ECS = Ejecuta contenedores Docker en EC2 instances que TÚ gestionas
+Fargate = Ejecuta contenedores Docker serverless sin gestionar infraestructura
+ECR = Almacena imágenes Docker privadas para ECS/Fargate
+Fargate es más simple (serverless), ECS da más control. Ambos usan ECR para obtener imágenes.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

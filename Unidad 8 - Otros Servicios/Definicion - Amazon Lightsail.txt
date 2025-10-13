@@ -1,0 +1,85 @@
+Amazon Lightsail para Cloud Practitioner
+¿Qué es Lightsail?
+Servicio stand-alone "todo en uno" para personas con poca experiencia en cloud
+Incluye en un lugar:
+
+Virtual servers
+Storage
+Databases
+Networking
+
+Características principales:
+Low & predictable pricing - Precio bajo y predecible
+Simpler alternative - Alternativa más simple a EC2, RDS, ELB, EBS, Route53, etc.
+Todo preconfigurado - No necesitas configurar mucho
+¿Para quién es Lightsail?
+Target: Personas con poca o ninguna experiencia en cloud
+NO para: Personas aprendiendo AWS propiamente (como tú)
+NO necesitas saber:
+
+Cómo funciona networking en detalle
+Cómo funciona storage en detalle
+Cómo funciona servers en detalle
+
+Funcionalidades:
+
+Monitoring
+Notifications para recursos Lightsail
+
+Casos de uso:
+1. Simple web applications:
+Templates disponibles:
+
+LAMP Stack
+Nginx
+MEAN
+Node.js
+
+2. Simple websites:
+CMS populares:
+
+WordPress
+Magento
+Plesk
+Joomla
+
+3. Dev/Test environments
+Ambientes de desarrollo y pruebas
+Limitaciones:
+High availability: Existe el concepto
+NO auto-scaling - No escala automáticamente
+Limited AWS integrations - Integraciones limitadas con otros servicios AWS
+Para el examen:
+Cuándo elegir Lightsail:
+✅ Poca/ninguna experiencia cloud
+✅ Empezar rápido
+✅ Low predictable pricing
+✅ No quiere configurar mucho
+✅ Simple website/web app
+✅ WordPress/CMS simple
+Cuándo NO elegir Lightsail:
+❌ Necesitas auto-scaling
+❌ Necesitas integración profunda con AWS
+❌ Arquitectura compleja
+❌ High availability avanzada
+Regla general examen: Lightsail casi siempre es respuesta incorrecta EXCEPTO cuando pregunta sobre principiantes sin experiencia cloud
+Lightsail vs servicios tradicionales:
+Lightsail:
+
+Todo en uno
+Simple
+Poca configuración
+Limitado
+Para principiantes
+
+EC2, RDS, ELB, etc.:
+
+Servicios separados
+Más complejo
+Mucha configuración
+Flexible
+Para usuarios AWS
+
+Resumen:
+Lightsail es servicio stand-alone todo-en-uno (servers, storage, databases, networking) con pricing bajo y predecible para personas sin experiencia cloud. Templates para WordPress, LAMP, Node.js, etc. NO tiene auto-scaling, integraciones AWS limitadas. 
+En examen: SOLO elegir si usuario sin experiencia necesita algo simple rápido, caso contrario casi siempre respuesta incorrecta.

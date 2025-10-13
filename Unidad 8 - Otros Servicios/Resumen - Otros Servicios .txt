@@ -1,0 +1,119 @@
+Resumen: Servicios de Compute en AWS
+Docker en AWS:
+ECS (Elastic Container Service)
+
+Corre contenedores Docker en EC2 instances
+Debes provisionar instancias por adelantado
+Tú gestionas infraestructura
+
+Fargate
+
+Corre contenedores Docker sin provisionar infraestructura
+Serverless - No gestionas EC2 instances
+Transparente para ti
+
+ECR (Elastic Container Registry)
+
+Repositorio privado de imágenes Docker en AWS
+Almacena imágenes para ECS/Fargate
+
+AWS Batch:
+Qué hace: Corre batch jobs en AWS
+Infraestructura: Managed EC2 instances
+Nota: Batch corre sobre ECS service
+Casos de uso: Jobs con inicio y fin, procesamiento en lote
+Lightsail:
+Qué es: Servicio simple para aplicaciones predecibles y bases de datos
+Pricing: Low & predictable
+Target: Usuarios sin experiencia cloud
+En examen: Probablemente distractor (casi siempre respuesta incorrecta)
+Lambda (Serverless):
+Características:
+Function as a Service (FaaS) - Funciones serverless
+Seamless scaling - Escala automáticamente (1 a miles de invocaciones/segundo)
+Reactive - Se ejecuta cuando algo pasa (event-driven)
+Pricing (2 componentes):
+
+Runtime × Memory - Tiempo ejecución × RAM provisionada
+Number of invocations - Número de veces invocada
+
+Lenguajes soportados:
+
+Muchos lenguajes (Node.js, Python, Java, etc.)
+Container images (con Lambda Runtime API específica)
+
+Importante: Lambda NO soporta imágenes Docker arbitrarias
+
+Para Docker arbitrario → ECS/Fargate
+Para Lambda → Necesita Lambda Runtime API
+
+Límites:
+Tiempo máximo ejecución: 15 minutos
+Casos de uso:
+
+Procesar imágenes subidas a S3
+Serverless CRON jobs
+
+API Gateway:
+Qué hace: Expone funciones Lambda como HTTP APIs
+Serverless: Sí
+Funcionalidades:
+
+Security
+Throttling
+API keys
+Monitoring
+
+Uso: Lambda + API Gateway = Serverless API
+Comparación rápida:
+ECS:
+
+Docker en EC2
+Gestionas infraestructura
+
+Fargate:
+
+Docker serverless
+No gestionas infraestructura
+
+Batch:
+
+Batch jobs largos
+Managed EC2
+
+Lambda:
+
+Funciones cortas (<15 min)
+Serverless, event-driven
+
+API Gateway:
+
+Expone Lambda como API
+Serverless
+
+Lightsail:
+
+Simple, todo-en-uno
+Para principiantes
+Distractor en examen
+
+Reglas para el examen:
+Docker containers:
+
+Con infraestructura → ECS
+Serverless → Fargate
+Almacenar imágenes → ECR
+
+Batch processing largo: → Batch
+Funciones cortas event-driven: → Lambda
+Serverless API: → API Gateway + Lambda
+Principiante sin experiencia: → Lightsail (raro)
+Docker arbitrario: → ECS/Fargate (NO Lambda)
+Lambda: Solo con Runtime API específica
+Resumen:
+Docker en AWS: ECS (con EC2), Fargate (serverless), ECR (registro). 
+Batch para jobs largos en managed EC2. 
+Lambda para funciones serverless <15 min, event-driven, pricing por invocations + runtime. 
+API Gateway expone Lambda como HTTP API. 
+Lightsail para principiantes (distractor examen). 
+Lambda NO soporta Docker arbitrario, usa ECS/Fargate para eso.Reintentar

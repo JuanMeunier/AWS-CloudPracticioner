@@ -1,0 +1,77 @@
+Serverless - Introducción para Cloud Practitioner
+¿Qué es Serverless?
+Paradigma donde los desarrolladores NO gestionan servidores
+Solo despliegan:
+
+Código
+Funciones
+
+AWS gestiona todo lo demás
+Origen:
+Lambda - Pioneer del serverless (Function as a Service - FaaS)
+
+Despliegas funciones
+Cada función corre independientemente
+No gestionas servidores
+
+Serverless hoy en día:
+Incluye cualquier servicio managed donde NO gestionas servidores:
+
+Databases
+Messaging
+Storage
+Etc.
+
+Aclaración importante:
+"Serverless" NO significa "sin servidores"
+SÍ hay servidores detrás de escena
+Pero: Como usuario NO los gestionas, provisionas ni ves
+Servicios Serverless que ya vimos:
+Amazon S3
+
+Storage layer
+Sin gestionar servidores
+Escala infinitamente
+Solo subes archivos
+
+DynamoDB
+
+Creas tabla
+Sin provisionar servidores
+Auto-scaling automático
+
+Fargate
+
+Corre contenedores Docker
+Sin gestionar EC2 instances
+Solo envías contenedores
+
+vs ECS: Con ECS creas EC2 instances (NO serverless)
+Lambda (próximo tema)
+
+Corre funciones en la nube
+Pioneer del serverless
+Function as a Service
+
+Para el examen:
+Serverless = NO gestionas/ves servidores
+Características serverless:
+
+Managed service
+Auto-scaling
+Pay per use
+No provisioning
+
+Servicios serverless en AWS:
+
+S3
+DynamoDB
+Fargate
+Lambda
+Athena
+Aurora Serverless
+Y más...
+
+Resumen:
+Serverless es paradigma donde desarrolladores solo despliegan código/funciones sin gestionar servidores. 
+Lambda pionero como FaaS. Serverless NO significa sin servidores, significa que AWS los gestiona. Servicios serverless vistos: S3, DynamoDB, Fargate. Próximo: Lambda.

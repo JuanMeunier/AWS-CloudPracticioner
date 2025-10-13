@@ -1,0 +1,114 @@
+AWS Lambda para Cloud Practitioner
+EC2 vs Lambda:
+EC2:
+
+Servidor virtual en la nube
+Limitado por RAM y CPU
+Corre continuamente (incluso sin usar)
+Scaling con Auto Scaling Group (puede ser lento/complicado)
+
+Lambda:
+
+Funciones virtuales (no servidores)
+Limitadas por tiempo (ejecuciones cortas)
+Corre on-demand (solo cuando se necesita)
+Scaling automático
+No pagas cuando no se usa
+
+Beneficios de Lambda:
+Pricing simple:
+
+Pay per request (por invocación)
+Pay per compute time (por tiempo de cómputo)
+
+Free tier generoso:
+
+1 millón invocaciones Lambda/mes
+400,000 GB-seconds de compute time/mes
+
+Otras ventajas:
+
+Integrado con todo AWS
+Event-driven (reactivo - se ejecuta cuando algo pasa)
+Múltiples lenguajes de programación
+Monitoring con CloudWatch
+Hasta 10 GB RAM por función (más RAM = mejor CPU/network)
+
+Lenguajes soportados:
+Principales:
+
+Node.js (JavaScript)
+Python
+Java
+C# (.NET Core)
+PowerShell
+Ruby
+
+Custom Runtime API:
+
+Rust
+Golang
+Otros
+
+Container images:
+
+Puede correr containers con Lambda Runtime API
+Pero: Para Docker containers, preferir ECS/Fargate en el examen
+
+Casos de uso comunes:
+1. Serverless Thumbnail Creation
+Usuario sube imagen → S3 Bucket
+        ↓ trigger
+   Lambda function
+   - Crea thumbnail
+        ↓
+   S3 (guarda thumbnail)
+   DynamoDB (guarda metadata)
+Totalmente serverless: S3 + Lambda + DynamoDB
+Escala automáticamente sin provisionar servidores
+2. Serverless CRON Job
+CRON tradicional: Script programado en Linux
+Lambda CRON:
+CloudWatch Events/EventBridge
+(trigger cada hora/día/etc.)
+        ↓
+   Lambda function
+   (ejecuta tarea)
+Totalmente serverless: CloudWatch + Lambda
+Pricing detallado:
+Por llamadas (calls):
+
+1 millón primeras: GRATIS
+Después: $0.20 por millón de requests
+
+Por duración:
+Free tier: 400,000 GB-seconds
+
+= 400,000 segundos con 1 GB RAM
+= 3.2 millones segundos con 128 MB RAM
+
+Después: $1 por 600,000 GB-seconds
+Conclusión: Muy barato
+Para el examen:
+Palabras clave Lambda:
+"Serverless functions" → Lambda
+"Event-driven" → Lambda
+"Run code without servers" → Lambda
+"Pay per invocation" → Lambda
+"Reactive/triggered by events" → Lambda
+Pricing: Basado en calls + duration
+CRON job serverless → CloudWatch Events + Lambda
+Process files in S3 → Lambda
+Docker containers → Preferir ECS/Fargate (NO Lambda en examen)
+Características clave:
+
+Serverless - No gestionas servidores
+Event-driven - Se ejecuta cuando algo pasa
+Auto-scaling - Escala automáticamente
+Pay per use - Solo pagas cuando se ejecuta
+Short executions - Para tareas cortas
+Free tier generoso - 1M invocaciones gratis/mes
+
+Resumen:
+Lambda ejecuta funciones serverless en AWS sin gestionar servidores. Event-driven (reactivo), auto-scaling, pay per invocation + duration. Free tier: 1M invocaciones/mes. Casos de uso: procesar archivos S3, CRON jobs serverless. 
+Soporta múltiples lenguajes (Node.js, Python principales). Para Docker containers preferir ECS/Fargate en examen.

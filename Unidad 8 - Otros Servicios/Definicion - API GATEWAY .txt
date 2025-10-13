@@ -1,0 +1,57 @@
+Amazon API Gateway para Cloud Practitioner
+¿Qué es API Gateway?
+Servicio para crear APIs HTTP serverless que exponen funciones Lambda
+Problema que resuelve:
+Lambda functions NO están expuestas como API por defecto
+Necesitas: Forma de que clientes externos accedan a Lambda
+Solución: API Gateway
+Arquitectura típica:
+Client (web/mobile)
+      ↓ HTTP API
+API Gateway (REST API)
+      ↓ proxy request
+Lambda function
+      ↓ CRUD operations
+DynamoDB
+Todo serverless: API Gateway + Lambda + DynamoDB
+Características:
+Fully managed - Servicio totalmente gestionado
+Serverless - Sin gestionar servidores
+Fully scalable - Escala automáticamente
+Permite:
+
+Create APIs
+Publish APIs
+Maintain APIs
+Monitor APIs
+Secure APIs
+
+Tipos de APIs soportadas:
+RESTful APIs - APIs REST tradicionales
+WebSocket APIs - Para streaming de datos en tiempo real
+Funcionalidades:
+
+Security
+User authentication
+API throttling (limitar requests)
+API keys
+Monitoring
+
+Para el examen:
+Palabras clave:
+"Serverless API" → API Gateway + Lambda
+"REST API for Lambda" → API Gateway
+"Expose Lambda to clients" → API Gateway
+"HTTP API serverless" → API Gateway
+"WebSocket real-time" → API Gateway
+Patrón común en examen:
+Crear API serverless:
+
+API Gateway (expone API)
+Lambda (lógica de negocio)
+DynamoDB (almacenamiento)
+
+Todo serverless, todo escalable
+Resumen:
+API Gateway es servicio serverless fully managed para crear, publicar y gestionar APIs REST/WebSocket. Expone funciones Lambda como APIs HTTP para que clientes externos puedan acceder. 
+Incluye security, authentication, throttling, monitoring. En examen: serverless API = API Gateway + Lambda.

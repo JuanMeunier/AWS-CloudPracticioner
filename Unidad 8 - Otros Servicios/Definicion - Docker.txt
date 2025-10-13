@@ -1,0 +1,81 @@
+Docker - Introducción para Cloud Practitioner
+¿Qué es Docker?
+Plataforma de desarrollo de software para desplegar apps
+Tradicional: Instalar app en Linux
+Docker: Empaquetar app en un contenedor
+Contenedores Docker:
+Características:
+
+Corren en cualquier sistema operativo fácilmente
+App corre exactamente igual sin importar dónde
+No hay problemas de compatibilidad
+Comportamiento predecible
+Menos trabajo
+Fácil de mantener y desplegar
+
+Compatibilidad:
+
+Cualquier lenguaje de programación
+Cualquier sistema operativo
+Cualquier tecnología
+
+Escalamiento: Contenedores escalan up/down en segundos
+Docker en EC2 Instance:
+Una EC2 Instance puede tener múltiples contenedores:
+
+Docker con Java
+Docker con NodeJS
+Docker con MySQL
+Docker con otro Java
+Etc.
+
+Todos en la misma instancia EC2
+Docker Images:
+Qué son: Plantillas para ejecutar contenedores
+Dónde se almacenan: Docker Repositories
+Repositorios:
+Docker Hub - Repositorio público
+
+Imágenes base: Ubuntu, MySQL, NodeJS, Java, etc.
+
+Amazon ECR (Elastic Container Registry) - Repositorio privado
+
+Para almacenar tus imágenes Docker privadas
+
+Docker vs Virtual Machines:
+EC2 (Virtual Machines):
+Infrastructure (AWS)
+Host OS
+Hypervisor
+├─ EC2 Instance 1 (Guest OS completo + App)
+├─ EC2 Instance 2 (Guest OS completo + App)
+└─ EC2 Instance 3 (Guest OS completo + App)
+Docker:
+Infrastructure (AWS)
+Host OS (EC2 Instance)
+Docker Daemon
+├─ Container 1 (solo app)
+├─ Container 2 (solo app)
+└─ Container 3 (solo app)
+Ventajas Docker:
+
+Más ligero - No incluye OS completo
+Recursos compartidos con el host
+Muchos contenedores en un servidor
+Más versátil
+Fácil de escalar
+Rápido de ejecutar
+
+Para el examen:
+NO necesitas saber Docker en detalle
+Conceptos básicos:
+
+Contenedores empaquetan apps
+Corren igual en cualquier lugar
+Ligeros y escalables
+ECR = repositorio privado en AWS
+
+Próximo tema: ECS (cómo usar Docker en AWS)
+Resumen:
+Docker empaqueta apps en contenedores que corren igual en cualquier OS. Más ligeros que VMs, escalan rápido. Imágenes Docker se almacenan en Docker Hub (público) o Amazon ECR (privado). 
+Múltiples contenedores pueden correr en una EC2 instance compartiendo recursos del host.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.
