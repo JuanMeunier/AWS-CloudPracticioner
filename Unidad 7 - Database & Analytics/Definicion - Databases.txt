@@ -1,0 +1,91 @@
+Databases en AWS para Cloud Practitioner
+¿Por qué usar bases de datos?
+Almacenamiento en disco (EBS, Instance Store, S3) tiene límites
+Bases de datos ofrecen:
+
+Datos estructurados
+Indexes para búsquedas eficientes
+Queries y búsquedas optimizadas
+Relaciones entre datasets
+
+Dos tipos principales:
+1. Relational Databases (SQL)
+Qué son: Como hojas de Excel con links entre tablas
+Ejemplo:
+
+Tabla Students (student_id, department_id, name, email)
+Tabla Departments (department_id, name)
+Relación entre department_id de ambas tablas
+
+Lenguaje: SQL para queries
+Palabra clave: SQL = Relational Database
+2. NoSQL Databases (Non-Relational)
+Qué son: Bases de datos modernas con esquema flexible
+Ventajas:
+
+Flexibilidad - Schema evoluciona fácilmente
+Escalabilidad - Scale out (horizontal) agregando servidores
+High performance - Optimizado para modelo de datos específico
+Altamente funcional - Tipos optimizados
+
+vs Relational:
+
+Relational → Scale up (vertical)
+NoSQL → Scale out (horizontal)
+
+Tipos de NoSQL:
+
+Key-value
+Document
+Graph
+In-memory
+Search databases
+
+Formato común: JSON (JavaScript Object Notation)
+Ejemplo JSON:
+json{
+  "name": "John",
+  "age": 30,
+  "cars": ["Ford", "BMW", "Fiat"],
+  "address": {
+    "street": "Main St",
+    "city": "NYC"
+  }
+}
+Características JSON:
+
+Data anidada (nested)
+Campos cambian con el tiempo
+Soporta arrays
+NO es como Excel
+
+AWS Managed Databases
+Beneficios:
+Quick provisioning - Rápido de crear
+High availability - Diseñado para HA
+Vertical & horizontal scaling - Fácil escalar
+Automated backup & restore - Backups automáticos
+Operations & upgrades - AWS lo gestiona
+OS patching - AWS parchea el OS
+Monitoring & alerting - Integrado
+vs Self-managed en EC2:
+Self-managed (tú lo instalas en EC2):
+
+TÚ gestionas: resiliency, backup, patching, HA, fault tolerance, scaling
+
+AWS Managed:
+
+AWS gestiona todo lo anterior
+
+Conclusión: Managed databases = lifesaver
+
+Para el examen:
+SQL/Relational → Tablas relacionadas, estructura fija
+NoSQL → Flexible, JSON, scale out, moderno
+Managed databases → AWS gestiona patching, backups, HA, scaling
+Run on EC2 → Tú gestionas todo (NO recomendado)
+Elegir database → Según use case específico
+
+Resumen:
+Databases estructuran datos para queries eficientes. Relational (SQL) usa tablas relacionadas, NoSQL (flexible) usa JSON y escala horizontally.
+AWS ofrece managed databases que gestionan provisioning, HA, scaling, backups, patching y monitoring, evitándote gestionar todo manualmente si instalas en EC2.

@@ -1,0 +1,40 @@
+AWS DMS (Database Migration Service) para Cloud Practitioner
+¿Qué es DMS?
+Servicio para migrar bases de datos de una fuente a un destino
+Funcionamiento:
+Source Database
+       ↓
+EC2 Instance (DMS software)
+   - Extrae datos
+   - Convierte si es necesario
+       ↓
+Target Database
+Características:
+Quick & secure - Rápida y segura
+Resilient & self-healing - Resistente y auto-recuperable
+Source available - Base de datos origen permanece disponible durante migración (no hay downtime)
+Tipos de migraciones:
+1. Homogeneous (Homogénea)
+Misma tecnología de BD:
+
+Oracle → Oracle
+MySQL → MySQL
+PostgreSQL → PostgreSQL
+
+2. Heterogeneous (Heterogénea)
+Diferente tecnología de BD:
+
+Microsoft SQL Server → Aurora
+Oracle → PostgreSQL
+MySQL → DynamoDB
+
+DMS convierte automáticamente datos entre tecnologías diferentes
+Para el examen:
+Palabra clave:
+"Database migration" → DMS
+"Migrate database to AWS" → DMS
+"Convert database from X to Y" → DMS
+"No downtime migration" → DMS
+Resumen:
+DMS (Database Migration Service) migra bases de datos de origen a destino. Rápido, seguro, resilient. Origen permanece disponible durante migración. Soporta migraciones homogéneas (misma tecnología) y heterogéneas (diferentes tecnologías, DMS convierte datos). 
+En examen: migración de BD = DMS.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

@@ -1,0 +1,41 @@
+Amazon Neptune para Cloud Practitioner
+¿Qué es Neptune?
+Base de datos de grafos (graph database) fully managed
+¿Qué es una base de datos de grafos?
+Datos altamente conectados/interrelacionados
+Ejemplo - Red social:
+
+Usuarios tienen amigos
+Usuarios dan like a posts
+Posts tienen comentarios
+Comentarios tienen likes
+Usuarios comparten posts
+Todo está interconectado = Grafo
+
+Características:
+Replicación: 3 AZs
+Read replicas: Hasta 15
+Capacidad: Miles de millones de relaciones
+Latencia: Milisegundos para queries en grafos
+Highly available: Múltiples AZs
+Optimizado: Para queries complejos en grafos
+Casos de uso:
+Social networking - Redes sociales
+Knowledge graphs - Grafos de conocimiento (ej: Wikipedia)
+Fraud detection - Detección de fraude
+Recommendation engines - Motores de recomendación
+Para el examen:
+Palabras clave:
+"Graph database" → Neptune
+"Highly connected datasets" → Neptune
+"Social network" → Neptune
+"Relationships between data" → Neptune
+"Knowledge graph" → Neptune
+Comparación con otras DB:
+DynamoDB: Key-value, serverless
+DocumentDB: Document (JSON), MongoDB compatible
+Neptune: Graph (relaciones/conexiones)
+RDS/Aurora: Relational (SQL)
+Resumen:
+Neptune es base de datos de grafos fully managed para datos altamente conectados. 3-AZ replication, hasta 15 read replicas, miles de millones de relaciones, latencia milisegundos. 
+Casos de uso: redes sociales, knowledge graphs, fraud detection, recommendation engines. En examen: graph database = Neptune.

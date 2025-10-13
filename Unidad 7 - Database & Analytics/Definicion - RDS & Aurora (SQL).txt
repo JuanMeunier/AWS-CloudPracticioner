@@ -1,0 +1,114 @@
+RDS & Aurora para Cloud Practitioner
+RDS (Relational Database Service)
+Qué es: Managed database service para bases de datos SQL
+Tipos soportados:
+
+Postgres
+MySQL
+MariaDB
+Oracle
+Microsoft SQL Server
+IBM DB2
+Aurora (AWS proprietary)
+
+¿Por qué RDS vs DB en EC2?
+RDS Managed incluye:
+
+Provisioning automático
+OS patching por AWS
+Continuous backups + point in time restore
+Monitoring dashboards
+Read Replicas para mejorar read performance
+Multi-AZ para disaster recovery
+Maintenance windows para upgrades
+Vertical & horizontal scaling
+Storage backed by EBS
+
+Limitación: NO puedes SSH a RDS instances
+Solution Architecture típica:
+Load Balancer → EC2 Instances (Auto Scaling Group) → RDS Database
+Tres capas:
+
+Load balancer - Web requests
+EC2 instances - Application logic
+RDS - Database tier (reads/writes)
+
+Aurora
+Qué es: Database technology propietaria de AWS (NO open source)
+Engines soportados:
+
+PostgreSQL
+MySQL
+
+Ventajas vs RDS:
+Performance:
+
+5x más rápido que MySQL en RDS
+3x más rápido que PostgreSQL en RDS
+
+Storage:
+
+Crece automáticamente en increments de 10 GB
+Hasta 128 TB
+NO necesitas planear storage
+
+Costo:
+
+20% más caro que RDS
+Pero más eficiente y cost-effective
+
+Cloud optimized - Diseñado específicamente para la nube
+Aurora Serverless
+Qué es: Aurora sin gestionar servers
+Características:
+
+Instantiation automática de database
+Auto-scaling basado en uso real
+Soporta PostgreSQL y MySQL
+NO capacity planning
+NO server management
+Pay per second
+
+Cuándo usar:
+
+Workloads infrequent
+Workloads intermittent
+Workloads unpredictable
+
+Cómo funciona:
+Clients → Proxy Fleet (managed) → Aurora instances (auto scale) → Shared storage volume
+Para el examen:
+RDS:
+
+Managed relational database
+Múltiples engines (Postgres, MySQL, Oracle, etc.)
+NO SSH access
+Backups, HA, scaling automático
+
+Aurora:
+
+AWS proprietary
+PostgreSQL o MySQL
+5x MySQL, 3x PostgreSQL performance
+Storage auto-scaling (128 TB)
+20% más caro pero más eficiente
+Cloud native
+
+Aurora Serverless:
+
+NO server management
+Auto-scaling automático
+Pay per second
+Infrequent/unpredictable workloads
+
+Palabras clave:
+
+"Relational database" → RDS
+"SQL" → RDS
+"Cloud optimized performance" → Aurora
+"No management, unpredictable workload" → Aurora Serverless
+"Multi-AZ, read replicas" → RDS features
+
+Resumen:
+RDS es managed relational database service con múltiples engines, incluye backups, patching, HA y scaling. Aurora es proprietary de AWS, 5x más rápido que MySQL, storage auto-scaling hasta 128TB, 20% más caro pero más eficiente.
+Aurora Serverless auto-escala sin management para workloads impredecibles, pay per second.

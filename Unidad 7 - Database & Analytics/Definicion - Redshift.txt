@@ -1,0 +1,88 @@
+Amazon Redshift para Cloud Practitioner
+¿Qué es Redshift?
+Base de datos basada en PostgreSQL pero NO para transacciones
+OLAP (Online Analytical Processing) - Para análisis y data warehousing
+OLTP vs OLAP:
+OLTP (Online Transaction Processing):
+
+Transacciones diarias
+RDS, Aurora
+Lectura/escritura frecuente
+
+OLAP (Online Analytical Processing):
+
+Análisis de datos
+Data warehousing
+Redshift
+Carga de datos periódica (ej: cada hora)
+
+Características principales:
+Performance: 10x mejor que otros data warehouses
+Escala: Hasta petabytes de datos
+Almacenamiento: Columnar (por columnas, no filas)
+Motor: MPP (Massively Parallel Query Execution) - Cálculos muy rápidos
+Interfaz: SQL para queries
+Integración: BI tools (QuickSight, Tableau) para dashboards
+Pricing: Pay-as-you-go según instancias provisionadas
+Palabras clave para el examen:
+"Analytics" → Redshift
+"Data warehouse" → Redshift
+"OLAP" → Redshift
+"Columnar storage" → Redshift
+"BI tools/dashboards" → Redshift
+Redshift Serverless
+Qué es: Redshift sin gestionar infraestructura
+Ventajas:
+
+NO preocuparse por scaling o provisioning
+AWS lo hace automáticamente
+Pay solo por lo que usas
+
+Casos de uso:
+
+Reporting
+Dashboarding applications
+Analytics en tiempo real
+Sin gestionar capacidad/infraestructura
+
+Funcionamiento:
+
+Habilitas Redshift Serverless
+Conectas Query Editor u otra herramienta
+Escribes queries
+Redshift provisiona y escala capacidad automáticamente
+Pagas solo por compute y storage usado
+
+Costo: Solo compute + storage durante análisis
+Comparación:
+RDS/Aurora:
+
+OLTP
+Transacciones
+Row-based storage
+
+Redshift:
+
+OLAP
+Analytics/data warehouse
+Columnar storage
+Carga periódica de datos
+
+Redshift Serverless:
+
+Sin gestión de infraestructura
+Auto-scaling
+Pay per use
+
+Para el examen:
+Pregunta: "Necesito hacer analytics en grandes volúmenes de datos"
+Respuesta: Redshift
+Pregunta: "Data warehouse para business intelligence"
+Respuesta: Redshift
+Pregunta: "Analytics sin gestionar infraestructura"
+Respuesta: Redshift Serverless
+Pregunta: "Almacenamiento columnar para análisis"
+Respuesta: Redshift
+Resumen:
+Redshift es base de datos OLAP (basada en PostgreSQL) para analytics y data warehousing. Almacenamiento columnar, 10x más rápido, escala a petabytes, motor MPP. Carga datos periódicamente (no continua). 
+Integra con BI tools. Redshift Serverless elimina gestión de infraestructura, auto-escala y pagas solo por uso.

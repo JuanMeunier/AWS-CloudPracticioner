@@ -1,0 +1,44 @@
+Amazon DocumentDB para Cloud Practitioner
+¿Qué es DocumentDB?
+"Aurora" para MongoDB - Versión AWS de MongoDB
+Conceptos clave:
+MongoDB:
+
+Base de datos NoSQL
+Almacena, consulta e indexa datos JSON
+
+DocumentDB:
+
+Implementación AWS de MongoDB
+Compatible con MongoDB
+Fully managed
+
+Características:
+Fully managed - AWS gestiona todo
+Highly available - Alta disponibilidad
+Replicación: 3 Availability Zones
+Storage: Crece automáticamente en incrementos de 10 GB
+Escala: Millones de requests por segundo
+Similar a Aurora: Mismos conceptos de deployment
+Para el examen:
+Palabras clave:
+"MongoDB" → DocumentDB
+"NoSQL database" → DocumentDB o DynamoDB
+"Store/query JSON data" → DocumentDB
+"Compatible with MongoDB" → DocumentDB
+NoSQL en AWS:
+DynamoDB:
+
+Key-value
+Serverless
+AWS proprietary
+
+DocumentDB:
+
+Document-based (JSON)
+MongoDB compatible
+Managed service
+
+Resumen:
+DocumentDB es la versión AWS de MongoDB (NoSQL database). Fully managed, replicación 3-AZ, storage auto-scaling (10GB increments), escala a millones requests/seg. 
+Compatible con MongoDB para almacenar/consultar JSON data. En examen: MongoDB = DocumentDB.

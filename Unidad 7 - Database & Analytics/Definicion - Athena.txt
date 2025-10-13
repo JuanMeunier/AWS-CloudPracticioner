@@ -1,0 +1,69 @@
+Amazon Athena para Cloud Practitioner
+¿Qué es Athena?
+Servicio serverless para hacer queries y analytics sobre objetos en S3
+Características principales:
+Serverless - Sin infraestructura que gestionar
+SQL - Usa lenguaje SQL para queries
+NO carga datos - Archivos permanecen en S3
+Formatos soportados:
+
+CSV
+JSON
+ORC
+Avro
+Parquet
+
+Motor: Presto engine
+Funcionamiento:
+1. Cargar datos a S3
+2. Athena consulta/analiza datos en S3 con SQL
+3. Opcional: Reportes con QuickSight
+Pricing:
+$5 por TB de datos escaneados
+Ahorro de costos:
+
+Usar datos comprimidos
+Usar formato columnar (Parquet, ORC)
+Menos scan = menos costo
+
+Casos de uso:
+
+Business intelligence
+Analytics
+Reporting
+Analizar VPC Flow Logs
+Analizar ELB Logs
+Analizar CloudTrail logs
+Cualquier log de AWS
+
+Integración:
+QuickSight - Para crear dashboards y reportes sobre resultados de Athena
+Para el examen:
+Palabras clave:
+"Serverless analyze S3" → Athena
+"SQL queries on S3" → Athena
+"Analyze logs" → Athena
+"BI/Analytics on S3 data" → Athena
+"Query data without loading" → Athena
+vs otros servicios:
+Athena:
+
+Serverless
+Query S3 con SQL
+No carga datos
+
+Redshift:
+
+Data warehouse
+OLAP
+Carga datos periódicamente
+
+EMR:
+
+Hadoop cluster
+Big Data processing
+Clúster de EC2
+
+Resumen:
+Athena es servicio serverless para hacer analytics con SQL sobre datos en S3 sin cargarlos. $5/TB escaneado. Soporta CSV, JSON, Parquet, etc. Casos de uso: BI, analytics, reporting, análisis de logs AWS. Integra con QuickSight. 
+Palabra clave examen: serverless SQL queries en S3 = Athena.

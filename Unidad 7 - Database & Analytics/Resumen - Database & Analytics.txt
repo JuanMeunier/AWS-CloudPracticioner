@@ -1,0 +1,61 @@
+Resumen: Bases de Datos y Analytics en AWS
+Por tipo de base de datos:
+Relational (SQL):
+RDS & Aurora - OLTP (Online Transaction Processing)
+
+Lenguaje SQL
+RDS: Multi-AZ, Read Replicas, Multi-Region
+Aurora: Cloud-optimized, serverless option
+
+NoSQL:
+DynamoDB - Key-value, serverless
+
+DAX: Cache específico para DynamoDB
+
+DocumentDB - MongoDB compatible, JSON data
+Neptune - Graph database (relaciones/grafos)
+In-Memory:
+ElastiCache - Cache/in-memory database
+
+Redis o Memcached
+
+Analytics:
+Redshift - Data warehousing, OLAP
+
+Usa SQL
+Analytics y BI
+
+EMR - Hadoop clusters para Big Data
+Athena - Query serverless en S3 con SQL
+Timestream - Time series data
+Visualización:
+QuickSight - Dashboards interactivos, Business Intelligence
+Otros:
+Managed Blockchain - Hyperledger Fabric, Ethereum
+Glue - ETL (Extract, Transform, Load) + Data Catalog
+DMS - Database Migration Service
+Guía rápida para el examen:
+OLTP/Transacciones → RDS/Aurora
+In-memory/Cache → ElastiCache
+Key-value serverless → DynamoDB
+Cache DynamoDB → DAX
+Data warehouse/OLAP → Redshift
+Hadoop/Big Data → EMR
+Query S3 serverless → Athena
+Dashboards/BI → QuickSight
+MongoDB → DocumentDB
+Blockchain → Managed Blockchain
+Graph database → Neptune
+Time series → Timestream
+ETL → Glue
+Migrar BD → DMS
+Resumen por caso de uso:
+Transacciones diarias: RDS/Aurora
+Analytics/BI: Redshift, Athena, QuickSight
+Cache: ElastiCache (general), DAX (DynamoDB)
+NoSQL: DynamoDB, DocumentDB, Neptune
+Big Data: EMR, Athena
+Serverless: DynamoDB, Aurora Serverless, Athena
+Migración: DMS
+Datos temporales: Timestream
+Transformación datos: Glue

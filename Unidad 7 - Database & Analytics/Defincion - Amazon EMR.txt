@@ -1,0 +1,37 @@
+Amazon EMR (Elastic MapReduce) para Cloud Practitioner
+¿Qué es EMR?
+NO es una base de datos - Es un servicio para crear clústeres Hadoop
+Hadoop Cluster:
+Propósito: Analizar y procesar grandes cantidades de datos (Big Data)
+Tecnología: Open source
+Funcionamiento: Múltiples servidores trabajando juntos en clúster
+EMR: Crea clústeres de cientos de instancias EC2 colaborando
+Ecosistema Hadoop/Big Data:
+Proyectos que funcionan en EMR:
+
+Apache Spark
+HBase
+Presto
+Flink
+
+¿Qué hace EMR?
+Provisioning: Aprovisiona instancias EC2 automáticamente
+Configuración: Configura instancias para trabajar juntas
+Análisis: Permite análisis de datos desde perspectiva Big Data
+Auto-scaling: Escala automáticamente
+Spot Instances: Integrado para ahorro de costos
+Casos de uso:
+
+Data processing (procesamiento de datos)
+Machine learning
+Web indexing
+Big Data en general
+
+Para el examen:
+Palabra clave: "Hadoop cluster" → Amazon EMR
+"Big Data processing" → EMR
+"Apache Spark/HBase/Presto" → EMR
+"Analizar grandes volúmenes de datos" → EMR
+Resumen:
+EMR (Elastic MapReduce) crea clústeres Hadoop de cientos de instancias EC2 para procesar y analizar Big Data.
+Provisiona y configura automáticamente, tiene auto-scaling e integración con Spot instances. Para Apache Spark, HBase, Presto. Palabra clave en examen: Hadoop cluster = EMR.

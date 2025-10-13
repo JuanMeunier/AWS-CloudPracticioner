@@ -1,0 +1,46 @@
+DynamoDB Global Tables para Cloud Practitioner
+¿Qué es?
+Tablas de DynamoDB accesibles con baja latencia en múltiples regiones
+Funcionamiento:
+Replicación bidireccional entre regiones
+Ejemplo:
+us-east-1 (Tabla DynamoDB)
+     ↕ replicación
+eu-west-3 (Tabla DynamoDB)
+Usuarios en US → Lectura/Escritura en us-east-1 (baja latencia)
+Usuarios en París → Lectura/Escritura en eu-west-3 (baja latencia)
+Mismos datos en ambas regiones
+Características:
+Multi-región: 1 a 10+ regiones
+Replicación activa-activa:
+
+Puedes escribir en cualquier región
+Los cambios se replican automáticamente a otras regiones
+Lectura/escritura desde cualquier región
+
+Baja latencia: Usuarios acceden a la región más cercana
+Replicación bidireccional: Automática entre todas las regiones
+Activa-Activa vs Activa-Pasiva:
+Activa-Activa (Global Tables):
+
+Escritura en CUALQUIER región
+Se replica a todas
+
+Activa-Pasiva (ej: Multi-AZ):
+
+Escritura solo en primaria
+Standby solo si falla la primaria
+
+Para el examen:
+Palabras clave:
+
+"Baja latencia multi-región"
+"Usuarios globales"
+"Activa-activa"
+"Replicación bidireccional"
+"DynamoDB global"
+
+Global Tables = DynamoDB con replicación multi-región + activa-activa
+Resumen:
+DynamoDB Global Tables replica la tabla en múltiples regiones (1-10+) con replicación bidireccional. Los usuarios pueden leer/escribir en cualquier región con baja latencia. 
+Replicación activa-activa significa que las escrituras en cualquier región se replican automáticamente a todas las demás.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

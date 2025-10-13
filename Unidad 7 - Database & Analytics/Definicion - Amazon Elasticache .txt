@@ -1,0 +1,61 @@
+Amazon ElastiCache para Cloud Practitioner
+¿Qué es ElastiCache?
+Managed in-memory database para Redis o Memcached
+Características clave:
+In-memory database - Almacena datos en RAM
+High performance - Muy rápido
+Low latency - Latencia muy baja
+Palabra clave para el examen:
+"In-memory database" → ElastiCache
+¿Para qué sirve?
+Reduce load de databases con read-intensive workloads
+Caching - Guarda queries comunes en memoria
+Alivia presión del main database (RDS)
+Cómo funciona:
+Sin cache:
+App → RDS (todas las queries) → Slow, mucha presión
+Con cache:
+App → ElastiCache (queries comunes) → Very fast
+  ↓
+RDS (solo queries nuevas) → Less presión
+AWS Managed Service:
+AWS gestiona:
+
+OS maintenance y patching
+Optimizations
+Setup y configuration
+Monitoring
+Failure recovery
+Backups
+
+Solution Architecture:
+Load Balancer
+      ↓
+EC2 Instances (ASG)
+      ↓           ↓
+ElastiCache    RDS
+(fast)        (slow)
+in-memory     disk-based
+Flow:
+
+App busca en ElastiCache primero (fast)
+Si no está, busca en RDS (slow)
+Guarda resultado en ElastiCache
+Próximas queries = desde cache
+
+Beneficios:
+
+Reduce pressure en main database
+Faster queries - Datos en memoria
+Better performance - Aplicación más rápida
+Cost effective - Menos carga en RDS
+
+Para el examen:
+"In-memory database" → ElastiCache
+"Reduce database load" → ElastiCache
+"Cache common queries" → ElastiCache
+"Read-intensive workload" → ElastiCache
+Redis o Memcached → ElastiCache
+Resumen:
+ElastiCache es managed in-memory database (Redis/Memcached) para cachear queries comunes y reducir presión en main database.
+High performance, low latency. AWS gestiona maintenance, patching, backups. Palabra clave: in-memory database = ElastiCache.

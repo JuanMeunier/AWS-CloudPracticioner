@@ -1,0 +1,98 @@
+RDS Deployments para Cloud Practitioner
+3 Tipos de Deployments:
+1. RDS Read Replicas
+Propósito: Escalar READ workloads
+Funcionamiento:
+
+Creas copias (replicas) de tu RDS database
+Aplicaciones pueden READ desde replicas
+Distribuye reads entre múltiples databases
+
+Límite: Hasta 15 Read Replicas
+Writes: Solo en main database (no en replicas)
+Uso: Cuando necesitas más capacidad de lectura
+App 1 → Read from Main DB
+App 2 → Read from Replica 1  } Distribuye reads
+App 3 → Read from Replica 2
+
+All Apps → Write ONLY to Main DB
+2. Multi-AZ
+Propósito: High Availability y failover
+Funcionamiento:
+
+Main DB en una AZ
+Failover DB en otra AZ (standby)
+Replicación cross-AZ automática
+Si main DB falla → Automatic failover
+
+Failover DB:
+
+Pasivo - NO es accesible normalmente
+Solo activo cuando main DB falla
+
+Límite: Solo 1 failover AZ
+Reads/Writes: Todo en main DB hasta que ocurra failover
+Uso: Protección contra AZ outage
+Main DB (AZ-1) ←→ Failover DB (AZ-2)
+      ↑                  ↑
+   Active           Passive (standby)
+
+Si AZ-1 falla → Failover automático a AZ-2
+3. Multi-Region (Read Replicas)
+Propósito: Disaster recovery + mejor performance global
+Funcionamiento:
+
+Main DB en una región
+Read Replicas en otras regiones
+Apps leen localmente de su región
+Writes siempre van a main DB (cross-region)
+
+Ejemplo:
+EU-West-1 (Main DB)
+     ↓ replicate
+US-East-2 (Read Replica) - Apps read locally
+AP-Southeast-2 (Read Replica) - Apps read locally
+
+Writes → Siempre a EU-West-1 (cross-region)
+Ventajas:
+
+Disaster recovery - Backup si región falla
+Better performance - Read local = less latency
+
+Desventaja:
+
+Replication cost - Transferir data entre regiones cuesta
+
+Comparación rápida:
+Read Replicas (same region):
+
+Scale reads
+Hasta 15 replicas
+Writes solo main DB
+Same region
+
+Multi-AZ:
+
+High availability
+1 failover DB
+Passive standby
+Different AZ, same region
+Automatic failover
+
+Multi-Region:
+
+Disaster recovery
+Better global performance
+Read local, write cross-region
+Replication cost
+
+Para el examen:
+"Scale read workload" → Read Replicas
+"High availability, AZ outage" → Multi-AZ
+"Disaster recovery, global users" → Multi-Region
+Read Replicas → Active (puedes leer de ellas)
+Multi-AZ failover → Passive (solo activa si falla main)
+Multi-Region → Read local, write cross-region
+Resumen:
+Read Replicas (hasta 15) escalan reads en same region. 
+Multi-AZ (1 failover DB) da high availability con automatic failover si AZ falla. Multi-Region replica en otras regiones para disaster recovery y mejor performance global, pero tiene replication cost.

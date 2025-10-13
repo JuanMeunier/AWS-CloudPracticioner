@@ -1,0 +1,51 @@
+AWS Glue para Cloud Practitioner
+¿Qué es Glue?
+Servicio ETL (Extract, Transform, Load) serverless y managed
+Para el examen: ETL service = Glue
+¿Qué es ETL?
+Extract (Extraer): Obtener datos de fuentes
+Transform (Transformar): Cambiar formato/estructura de datos
+Load (Cargar): Cargar datos transformados a destino
+Propósito: Preparar datos que no están en el formato correcto para analytics
+Características:
+Serverless - Solo te preocupas por la transformación de datos
+Fully managed - AWS gestiona infraestructura
+Flexible - Cualquier tipo de transformación
+Funcionamiento:
+Fuentes de datos:
+- S3 Bucket
+- RDS Database
+      ↓
+   AWS Glue (ETL)
+   - Extract data
+   - Transform data (scripts)
+      ↓
+Destino:
+- Redshift (para analytics)
+- Otros destinos
+AWS Glue Data Catalog
+Qué es: Catálogo de todos tus datasets en AWS
+Contiene:
+
+Referencias a datasets
+Nombres de columnas
+Tipos de campos
+Metadata de datos
+
+Usado por:
+
+Athena
+Redshift
+EMR
+
+Propósito: Descubrir datasets y crear schemas apropiados
+Para el examen:
+Palabras clave:
+"ETL" → Glue
+"Extract, Transform, Load" → Glue
+"Prepare data for analytics" → Glue
+"Serverless data transformation" → Glue
+"Data Catalog" → Glue Data Catalog (menos probable en examen)
+Resumen:
+AWS Glue es servicio serverless ETL para extraer, transformar y cargar datos. Prepara datos de S3/RDS/etc para analytics en Redshift u otros destinos. Fully managed, solo escribes scripts de transformación. 
+Glue Data Catalog cataloga datasets para Athena/Redshift/EMR. En examen: ETL = Glue.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

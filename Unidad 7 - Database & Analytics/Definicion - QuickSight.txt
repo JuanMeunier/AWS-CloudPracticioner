@@ -1,0 +1,39 @@
+Amazon QuickSight para Cloud Practitioner
+¿Qué es QuickSight?
+Servicio serverless de Business Intelligence (BI) con machine learning para crear dashboards interactivos
+Función principal:
+Crear dashboards sobre bases de datos para visualizar datos
+Representar visualmente datos para usuarios de negocio
+Mostrar insights de negocio
+Características:
+Serverless - Sin provisionar servidores
+Fast - Rápido
+Auto-scalable - Escala automáticamente
+Embeddable - Se puede integrar en aplicaciones
+Pricing: Per-session (por sesión)
+Casos de uso:
+
+Business analytics
+Crear visualizaciones (gráficos, charts)
+Análisis ad-hoc
+Obtener insights de negocio
+
+Integraciones con:
+
+RDS
+Aurora
+Athena
+Redshift
+S3
+Y muchas más
+
+Para el examen:
+Palabras clave:
+"Dashboard" → QuickSight
+"Business Intelligence/BI" → QuickSight
+"Visualización de datos" → QuickSight
+"Interactive dashboards" → QuickSight
+"Business insights" → QuickSight
+Resumen simple:
+QuickSight = BI tool para crear dashboards en AWS
+Es serverless, crea visualizaciones (gráficos/charts) sobre datos de RDS, Aurora, Athena, Redshift, S3, etc. Para mostrar insights de negocio. Pricing per-session.

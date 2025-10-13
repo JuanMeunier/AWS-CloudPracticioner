@@ -1,0 +1,38 @@
+Amazon Timestream para Cloud Practitioner
+¿Qué es Timestream?
+Base de datos para time series (series temporales) - Fully managed, serverless
+¿Qué son time series data?
+Datos que evolucionan/cambian con el tiempo
+Ejemplo:
+Eje vertical: Valores (temperatura, precio, etc.)
+Eje horizontal: Tiempo (fechas, años)
+Datos registrados a lo largo del tiempo
+Características:
+Serverless - Sin gestión de infraestructura
+Fast - Muy rápido
+Scalable - Auto-scaling up/down según capacidad
+Capacidad: Trillones de eventos por día
+Performance vs Relational DB:
+
+1000x más rápido
+1/10 del costo
+
+Analytics: Funciones de time series analytics para encontrar patrones en tiempo real
+Casos de uso (time series):
+
+IoT applications (sensores)
+Métricas de aplicaciones
+Datos de operaciones
+Logs con timestamps
+Monitoreo en tiempo real
+Análisis de tendencias temporales
+
+Para el examen:
+Palabra clave:
+"Time series data" → Timestream
+"IoT data over time" → Timestream
+"Real-time analytics on time data" → Timestream
+"Data evolving over time" → Timestream
+Resumen:
+Timestream es base de datos serverless para time series data (datos que evolucionan en el tiempo). Auto-scaling, 1000x más rápido y 1/10 costo vs relational DB. Almacena trillones de eventos/día. 
+Analytics en tiempo real. En examen: time series = Timestream.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

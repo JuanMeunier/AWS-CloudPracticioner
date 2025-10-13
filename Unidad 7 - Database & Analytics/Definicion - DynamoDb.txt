@@ -1,0 +1,111 @@
+DynamoDB para Cloud Practitioner
+¿Qué es DynamoDB?
+Fully managed NoSQL database
+Características:
+
+Highly available (replicación en 3 AZs)
+Serverless - NO provisiones servers
+Distributed database
+Flagship product de AWS
+
+Key Features:
+Massive scale:
+
+Millones de requests/segundo
+Trillones de rows
+Cientos de TB de storage
+
+Performance:
+
+Single-digit millisecond latency
+Fast y consistent
+
+Serverless:
+
+No provisioning de instance types
+Auto-scaling
+Pay per use
+
+Security:
+
+Integrado con IAM
+
+Cost:
+
+Low cost
+Standard y IA (Infrequent Access) table classes
+
+Palabras clave para el examen:
+"Serverless database" → DynamoDB
+"Single-digit millisecond latency" → DynamoDB
+"NoSQL" → DynamoDB
+"Key-value database" → DynamoDB
+Estructura de datos (Key-Value):
+Primary Key: Partition key + Sort key (opcional)
+Attributes: Columnas personalizadas
+Items: Filas de datos
+Ejemplo:
+Primary Key: user_id (partition) + timestamp (sort)
+Attributes: name, email, age, etc.
+NoSQL - Schema flexible, no relacional
+DynamoDB Accelerator (DAX)
+Qué es: In-memory cache específico para DynamoDB
+Performance: 10x improvement
+
+DynamoDB: single-digit millisecond
+DAX: microseconds latency
+
+Funcionamiento:
+App → DAX (cache) → DynamoDB
+      ↑ microseconds
+Características:
+
+Fully managed
+Secure
+Highly scalable
+Highly available
+
+DAX vs ElastiCache:
+DAX:
+
+Solo para DynamoDB
+Totalmente integrado
+Microseconds latency
+
+ElastiCache:
+
+Para cualquier database
+Cache genérico
+Redis/Memcached
+
+Regla: Cache para DynamoDB = DAX (NO ElastiCache)
+Para el examen:
+DynamoDB palabras clave:
+
+"Serverless"
+"NoSQL"
+"Key-value"
+"Single-digit millisecond"
+"Millions of requests"
+"No instance provisioning"
+
+DAX palabras clave:
+
+"DynamoDB cache"
+"Microseconds latency"
+"10x improvement"
+"In-memory for DynamoDB"
+
+vs RDS:
+
+RDS = Relational, SQL, provision instances
+DynamoDB = NoSQL, serverless, key-value
+
+vs ElastiCache:
+
+ElastiCache = Cache genérico
+DAX = Cache solo DynamoDB
+
+Resumen:
+DynamoDB es fully managed serverless NoSQL database con replicación 3-AZ, single-digit millisecond latency, escala a millones requests/seg. Key-value structure. 
+DAX es in-memory cache específico para DynamoDB con microseconds latency (10x faster). Palabras clave: serverless + low latency = DynamoDB.

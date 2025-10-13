@@ -1,0 +1,23 @@
+Amazon Managed Blockchain para Cloud Practitioner
+¿Qué es Blockchain?
+Tecnología que permite transacciones entre múltiples partes sin autoridad central confiable
+Clave: Descentralización - No necesitas intermediario central
+Amazon Managed Blockchain:
+Servicio para:
+
+Unirse a redes Blockchain públicas
+Crear tu propia red Blockchain privada escalable en AWS
+
+Frameworks compatibles:
+Hyperledger Fabric
+Ethereum
+Para el examen:
+Palabras clave:
+"Blockchain" → Amazon Managed Blockchain
+"Hyperledger Fabric" → Amazon Managed Blockchain
+"Ethereum" → Amazon Managed Blockchain
+"Decentralized" → Amazon Managed Blockchain
+"Multiple parties transactions" → Amazon Managed Blockchain
+Resumen:
+Amazon Managed Blockchain permite unirse a redes Blockchain públicas o crear redes privadas en AWS. Compatible con Hyperledger Fabric y Ethereum. Descentralizado, sin autoridad central.
+ En examen: Blockchain/Hyperledger/Ethereum = Amazon Managed Blockchain. No necesitas ser experto en Blockchain.
