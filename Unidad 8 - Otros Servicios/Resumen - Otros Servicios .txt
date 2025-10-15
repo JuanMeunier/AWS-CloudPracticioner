@@ -77,29 +77,25 @@ Docker serverless
 No gestionas infraestructura
 
 Batch:
-
 Batch jobs largos
 Managed EC2
 
 Lambda:
-
 Funciones cortas (<15 min)
 Serverless, event-driven
 
 API Gateway:
-
 Expone Lambda como API
 Serverless
 
 Lightsail:
-
 Simple, todo-en-uno
 Para principiantes
 Distractor en examen
 
 Reglas para el examen:
-Docker containers:
 
+Docker containers:
 Con infraestructura → ECS
 Serverless → Fargate
 Almacenar imágenes → ECR

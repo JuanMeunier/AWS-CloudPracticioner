@@ -1,0 +1,33 @@
+AWS CDK (Cloud Development Kit) para Cloud Practitioner
+¿Qué es CDK?
+Define infraestructura cloud usando lenguajes de programación en lugar de YAML/JSON
+Lenguajes soportados:
+
+JavaScript / TypeScript
+Python
+Java
+.NET
+Go
+
+¿Cómo funciona?
+1. Escribes código CDK en tu lenguaje preferido
+        ↓
+2. CDK CLI compila el código
+        ↓
+3. Genera CloudFormation template (JSON/YAML)
+        ↓
+4. Deploy a CloudFormation
+        ↓
+5. Infraestructura creada en AWS
+
+Ventajas de usar CDK:
+Familiar programming language - Usas lenguajes que ya conoces
+Type safety - Detecta errores en tiempo de compilación
+IDE support - Auto-complete, refactoring
+Reuse code - Componentes reutilizables
+Loops & conditions - For loops, if statements, etc.
+Deploy infrastructure + application code juntos en mismo lenguaje
+Casos de uso ideales:
+Lambda functions - Mismo lenguaje para infra y código
+Docker containers - ECS/EKS con CDK
+Developers - Que prefieren programar vs escribir YAML

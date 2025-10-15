@@ -1,0 +1,90 @@
+AWS CloudFormation para Cloud Practitioner
+¿Qué es CloudFormation?
+Manera declarativa de definir tu infraestructura AWS como código
+Soporta casi todos los recursos de AWS
+Ejemplo de uso:
+Declaras en CloudFormation:
+
+Quiero 1 Security Group
+Quiero 2 instancias EC2 usando ese Security Group
+Quiero 1 S3 Bucket
+Quiero 1 Load Balancer frente a las EC2
+
+CloudFormation crea todo:
+
+En el orden correcto
+Con la configuración exacta que especificaste
+
+Beneficios principales:
+1. Infrastructure as Code (IaC)
+Nunca creas recursos manualmente
+Todos los cambios pasan por code review
+Control total sobre infraestructura
+2. Cost advantages
+Tagging automático: Todos los recursos en un stack tienen tags similares
+Estimación de costos: Estimar costo usando templates
+Savings strategy:
+
+Ejemplo: Borrar stack a las 5 PM
+Recrear a las 8 AM
+Ahorras costos entre 5 PM - 8 AM
+
+Fácil crear/destruir recursos
+3. Productivity
+Destroy & recreate infraestructura fácilmente
+Diagram generation: Genera diagramas automáticamente
+Declarative programming: No necesitas pensar en orden de creación
+
+CloudFormation decide orden correcto
+Ej: ¿DynamoDB primero o EC2? CloudFormation lo sabe
+
+4. Don't reinvent the wheel
+Leverage existing templates de la web
+Leverage documentation
+Casi todos los recursos AWS soportados
+Custom resources para recursos no soportados
+Visualización:
+Infrastructure Composer - Servicio para visualizar templates CloudFormation
+Muestra:
+
+Todos los recursos del template
+Relaciones entre componentes
+Architecture diagram
+
+Ejemplo componentes:
+
+ALB Listener
+Database Security Group
+SQL Database
+Security Groups
+Launch Configuration
+Application Load Balancer
+
+Para el examen:
+Palabras clave CloudFormation:
+"Infrastructure as Code" → CloudFormation
+"Declarative infrastructure" → CloudFormation
+"Repeat architecture in multiple regions/accounts" → CloudFormation
+"Template-based deployment" → CloudFormation
+"Automate infrastructure creation" → CloudFormation
+"Deploy same stack multiple times" → CloudFormation
+Casos de uso:
+✅ Repetir arquitectura en diferentes:
+
+Environments (dev, test, prod)
+Regions
+AWS accounts
+
+✅ Infrastructure as Code
+✅ Version control de infraestructura
+✅ Automatizar creación/destrucción de recursos
+✅ Estimación y control de costos
+CloudFormation es la base de IaC en AWS
+Declarativo - Dices QUÉ quieres, no CÓMO hacerlo
+Automático - CloudFormation determina orden y dependencias
+Reproducible - Mismo template = misma infraestructura
+Versionado - Templates en code = version control
+
+Resumen:
+CloudFormation permite definir infraestructura AWS como código (IaC) de forma declarativa. Creas templates que especifican recursos y CloudFormation los crea en orden correcto automáticamente. Beneficios: control total, cost optimization, productivity, reutilización de templates. 
+Soporta casi todos recursos AWS. Infrastructure Composer visualiza templates. En examen: IaC o repetir arquitectura en múltiples ambientes/regiones = CloudFormation.

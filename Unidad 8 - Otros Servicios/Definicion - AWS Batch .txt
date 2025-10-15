@@ -28,6 +28,7 @@ Menos preocupación por infraestructura
 Focus en batch jobs, no en servers
 
 Ejemplo de arquitectura:
+
 Usuarios suben imágenes → S3
         ↓ trigger
    AWS Batch Queue
@@ -37,6 +38,7 @@ ECS Cluster (EC2/Spot Instances managed by Batch)
    - Procesa imágenes (ej: aplica filtros)
         ↓
    S3 (imágenes procesadas)
+
 Batch vs Lambda:
 Lambda:
 

@@ -1,0 +1,81 @@
+AWS CodeDeploy para Cloud Practitioner
+¿Qué es CodeDeploy?
+Servicio para desplegar aplicaciones automáticamente
+Upgrade: Application V1 → Application V2
+Diferencia con otros servicios:
+Beanstalk/CloudFormation: Requieren framework específico
+CodeDeploy: Completamente independiente, más permisivo
+Dónde funciona CodeDeploy:
+1. EC2 Instances
+Múltiples instancias EC2 upgraded de V1 a V2
+2. On-Premises Servers
+Servidores on-premises upgraded de V1 a V2
+Tipo de servicio:
+Hybrid Service - Funciona para:
+
+AWS (EC2)
+On-Premises
+
+Requisitos:
+Debes provisionar servidores por adelantado (tú los creas)
+Debes instalar CodeDeploy Agent en cada servidor
+
+Agent ayuda a hacer los upgrades
+Necesario en EC2 y on-premises
+
+Ventaja principal:
+Mismo método de deployment para:
+
+On-Premises servers
+EC2 instances
+
+Facilita transición de on-premises a AWS
+Proceso:
+1. Tienes servidores (EC2 o on-premises)
+2. Instalas CodeDeploy Agent en servidores
+3. Defines application V1 → V2
+4. CodeDeploy deploya automáticamente
+5. Todos los servidores upgraded
+Single interface para gestionar todo
+Para el examen:
+Palabras clave CodeDeploy:
+"Hybrid deployment" → CodeDeploy
+"Deploy to EC2 and on-premises" → CodeDeploy
+"Application upgrade V1 to V2" → CodeDeploy
+"Automatic deployment" → CodeDeploy
+"On-premises to AWS transition" → CodeDeploy
+CodeDeploy vs otros servicios:
+Beanstalk:
+
+PaaS
+Solo código
+AWS only
+Gestiona infraestructura
+
+CloudFormation:
+
+Infrastructure as Code
+Templates
+AWS only
+
+CodeDeploy:
+
+Application deployment
+Hybrid (AWS + on-premises)
+Debes provisionar servers
+Solo deploy, no gestiona infraestructura
+
+Características:
+Automatic deployment - Automático
+Version control - V1 → V2
+Hybrid - AWS + on-premises
+Agent-based - Requiere agent instalado
+Independent - No depende de Beanstalk/CloudFormation
+Casos de uso:
+✅ Migrar de on-premises a AWS gradualmente
+✅ Deploy consistente en ambientes híbridos
+✅ Upgrade de aplicaciones en múltiples servidores
+✅ Empresas con infraestructura mixta (cloud + on-premises)
+Resumen:
+CodeDeploy es servicio hybrid para desplegar aplicaciones automáticamente (V1→V2) en EC2 instances Y on-premises servers. Requiere provisionar servidores e instalar CodeDeploy Agent. Facilita transición on-premises a AWS usando mismo método de deployment. 
+Independiente de Beanstalk/CloudFormation. En examen: hybrid deployment o on-premises + AWS = CodeDeploy.

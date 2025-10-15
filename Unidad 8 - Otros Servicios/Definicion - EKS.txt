@@ -1,0 +1,66 @@
+Amazon EKS (Elastic Kubernetes Service) para Cloud Practitioner
+¿Qué es EKS?
+Servicio para lanzar y gestionar clústeres Kubernetes en AWS
+¿Qué es Kubernetes?
+Sistema open-source para:
+
+Gestión de aplicaciones en contenedores
+Despliegue
+Escalamiento
+
+Contenedores: Generalmente Docker (pero puede ser otros)
+Logo: Azul con timón de barco
+Dónde corren los contenedores en EKS:
+EC2 instances - Gestionas infraestructura
+Fargate - Serverless, sin gestionar infraestructura
+Funcionamiento:
+EKS Cluster (Kubernetes managed)
+      ↓
+EKS Nodes (EC2 instances)
+├─ Pod 1 (contenedores Docker)
+├─ Pod 2
+└─ Pod 3
+
+Pods = unidades de despliegue en Kubernetes
+¿Por qué usar EKS?
+Problema: Lanzar Kubernetes es difícil
+Solución: EKS = Kubernetes managed service
+AWS gestiona la complejidad del clúster Kubernetes
+¿Por qué Kubernetes en general?
+Cloud agnostic - Corre en cualquier lugar:
+
+AWS (EKS)
+Azure (AKS)
+Google Cloud (GKE)
+On-premises
+
+Multi-cloud: Si usas múltiples nubes, Kubernetes funciona en todas
+Portabilidad: Aprendes una vez, despliegas en cualquier lugar
+Para el examen:
+Palabra clave:
+"Kubernetes" → Amazon EKS
+"Multi-cloud containers" → Kubernetes/EKS
+"Cloud agnostic" → Kubernetes
+"Managed Kubernetes" → EKS
+Comparación con otros servicios:
+ECS:
+
+AWS proprietary
+Solo AWS
+Más simple
+
+Fargate:
+
+Serverless containers
+Solo AWS
+Con ECS o EKS
+
+EKS:
+
+Kubernetes managed
+Cloud agnostic
+Multi-cloud
+
+Resumen:
+EKS (Elastic Kubernetes Service) gestiona clústeres Kubernetes en AWS. Kubernetes es sistema open-source para gestionar contenedores que corre en cualquier nube (cloud agnostic). EKS facilita usar Kubernetes en AWS. 
+Contenedores corren en EC2 o Fargate. En examen: Kubernetes = EKS.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

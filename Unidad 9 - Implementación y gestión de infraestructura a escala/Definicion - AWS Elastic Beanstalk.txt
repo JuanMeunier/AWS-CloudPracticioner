@@ -1,0 +1,106 @@
+AWS Elastic Beanstalk para Cloud Practitioner
+Arquitectura típica de web app en AWS (3-tier):
+Users
+  ↓
+Load Balancer (multi-AZ)
+  ↓
+EC2 Instances (Auto Scaling Group)
+  ↓
+RDS (database) + ElastiCache (cache)
+Problema: Como developer, no quieres gestionar toda esta infraestructura
+¿Qué es Elastic Beanstalk?
+Platform as a Service (PaaS) - Vista centrada en el developer para desplegar aplicaciones
+Solo te preocupas por: Tu código de aplicación
+Beanstalk gestiona: Toda la infraestructura
+Componentes que usa Beanstalk (detrás de escena):
+
+EC2 instances
+Auto Scaling Group
+Elastic Load Balancer
+RDS database
+ElastiCache
+Etc.
+
+Pero: Todo gestionado por Beanstalk, una vista unificada
+Categoría de servicio:
+IaaS (Infrastructure as a Service) - EC2, EBS, etc.
+PaaS (Platform as a Service) - Beanstalk
+SaaS (Software as a Service) - Otros servicios AWS
+Pricing:
+Beanstalk es GRATIS
+Pagas: Por recursos subyacentes (EC2 instances, etc.)
+¿Qué gestiona Beanstalk? (Managed Service)
+✅ EC2 instance configuration
+✅ Operating system
+✅ Deployment strategy - Configurable pero ejecutado por Beanstalk
+✅ Capacity provisioning - Auto Scaling Group
+✅ Load balancing
+✅ Application health monitoring
+✅ Responsiveness monitoring
+Todo incluido en Beanstalk dashboard
+Tu responsabilidad como developer:
+Solo: Application code
+Eso es todo - Developer friendly
+3 Modelos de arquitectura en Beanstalk:
+1. Single Instance Deployment
+Para: Development environment
+Componentes: 1 EC2 instance
+NO escalable
+2. Load Balancer + ASG
+Para: Production o pre-production web applications
+Componentes:
+
+Load Balancer
+Auto Scaling Group
+Múltiples EC2 instances
+
+Escalable
+3. ASG only (Workers)
+Para: Non-web apps en production
+Ejemplo: Worker processes, batch jobs
+Componentes: Solo Auto Scaling Group (sin Load Balancer)
+Para el examen:
+Palabras clave Beanstalk:
+"Developer centric" → Beanstalk
+"PaaS" → Beanstalk
+"Deploy code, don't manage infrastructure" → Beanstalk
+"Managed application deployment" → Beanstalk
+"Focus on application code" → Beanstalk
+Free service → Beanstalk (pagas recursos)
+Beanstalk vs CloudFormation vs CDK:
+CloudFormation:
+
+Infrastructure as Code
+Declarativo (YAML/JSON)
+Control total
+Para infrastructure teams
+
+CDK:
+
+Infrastructure as Code
+Programático (TypeScript, Python, etc.)
+Genera CloudFormation
+Para developers que prefieren código
+
+Beanstalk:
+
+Platform as a Service
+Solo despliegas código
+Beanstalk gestiona infraestructura
+Para developers que solo quieren deploy apps
+
+Características importantes:
+Control: Aún tienes control sobre configuración, pero dentro de Beanstalk
+Monitoring: Incluido en dashboard
+Scaling: Automático con ASG
+Health checks: Automáticos
+Multiple environments: Dev, staging, prod
+Casos de uso:
+✅ Web applications
+✅ APIs
+✅ Worker applications
+✅ Desarrollo rápido
+✅ Developers sin experiencia AWS profunda
+Resumen:
+Elastic Beanstalk es PaaS que permite developers desplegar código sin gestionar infraestructura. Gratis (pagas recursos). Gestiona EC2, ASG, ELB, deployment, monitoring automáticamente. Developer solo se preocupa por application code. 3 modelos: Single instance (dev), LB+ASG (production web apps), ASG only (workers). 
+En examen: developer-centric deployment sin gestionar infraestructura = Beanstalk.
