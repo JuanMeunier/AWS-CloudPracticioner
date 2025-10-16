@@ -1,0 +1,110 @@
+AWS Systems Manager (SSM) para Cloud Practitioner
+¿Qué es SSM?
+Servicio para gestionar fleets de EC2 instances y sistemas on-premises a escala
+Tipo de servicio:
+Hybrid AWS service - Funciona con:
+
+EC2 instances en AWS
+On-premises systems
+
+Funcionalidades principales:
+1. Operational Insights
+Obtener estado de tu infraestructura
+2. Suite de 10+ productos
+No necesitas conocer todos para el examen
+3 Features más importantes para el examen:
+1. Automated Patching
+Parchar (patch) automáticamente todos tus servers/instances
+Enhanced compliance - Mantener sistemas actualizados
+2. Run Commands
+Ejecutar comandos across toda tu fleet de servers
+Consistentemente en todos los servers a la vez
+3. SSM Parameter Store
+Almacenar parameter configuration
+Centralized configuration management
+Plataformas soportadas:
+
+Linux
+Windows
+Mac OS
+Raspberry Pi
+
+¿Cómo funciona SSM?
+Requisito: SSM Agent
+SSM Agent = Programa pequeño que corre en background
+Debe instalarse en:
+
+EC2 instances
+On-premises servers/VMs
+
+Pre-instalado por defecto en:
+
+Amazon Linux AMI
+Algunos Ubuntu AMIs
+
+Arquitectura:
+EC2 Instances + On-Premises VMs
+   (con SSM Agent instalado)
+            ↓ report back
+      SSM Service (AWS)
+            ↓ send commands
+EC2 Instances + On-Premises VMs
+   (ejecutan commands, patches, etc.)
+SSM Agent reporta a SSM Service
+SSM Service envía commands/patches/config
+Capabilities:
+Patch servers - Todos a la vez
+Run commands - Across entire fleet
+Configure consistently - Misma configuración en todos
+Para el examen:
+Palabras clave SSM:
+"Patch fleet of EC2/on-premises" → SSM
+"Run commands across servers" → SSM
+"Hybrid management" → SSM
+"Manage EC2 and on-premises at scale" → SSM
+"Automated patching" → SSM
+"Parameter Store" → SSM
+"Operational insights" → SSM
+Troubleshooting:
+Si instance no puede ser controlada por SSM:
+Problema probablemente es SSM Agent:
+
+No instalado
+No funcionando correctamente
+Sin permisos IAM
+
+SSM vs otros servicios:
+CodeDeploy:
+
+Deploy applications (V1→V2)
+Hybrid service
+Application focus
+
+SSM:
+
+Manage systems/infrastructure
+Patch, configure, run commands
+Hybrid service
+Operations focus
+
+Casos de uso:
+✅ Patch management a gran escala
+✅ Ejecutar scripts en múltiples servers
+✅ Configuration management
+✅ Inventory management
+✅ Compliance tracking
+✅ Hybrid cloud management
+SSM Parameter Store:
+Qué es: Almacenamiento seguro para configuration data
+Store:
+
+Passwords
+Database strings
+License codes
+Configuration values
+
+Centralized y secure
+Resumen:
+SSM (Systems Manager) es hybrid service para gestionar fleets de EC2 instances y on-premises systems a escala. Funcionalidades clave: automated patching, run commands across fleet, Parameter Store. 
+Requiere SSM Agent instalado en servers. 
+En examen: patch fleet, run commands at scale, o hybrid management = SSM.

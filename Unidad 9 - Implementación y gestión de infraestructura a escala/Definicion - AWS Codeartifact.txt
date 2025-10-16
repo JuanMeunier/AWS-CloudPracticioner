@@ -1,0 +1,88 @@
+AWS CodeArtifact para Cloud Practitioner
+¿Qué son code dependencies?
+Software packages que dependen unos de otros para funcionar
+Arquitectura de software packages = Code dependencies
+¿Qué es artifact management?
+Sistema para almacenar y recuperar estas dependencies
+Problema tradicional:
+Antes: Necesitabas configurar tu propio sistema:
+
+S3 bucket custom
+Software custom en EC2
+Complicado de mantener
+
+¿Qué es CodeArtifact?
+Servicio AWS para artifact management - Secure, scalable, cost-effective
+Almacena y recupera code dependencies automáticamente
+Herramientas soportadas:
+Dependency management tools:
+
+Maven (Java)
+Gradle (Java)
+npm (Node.js)
+yarn (Node.js)
+twine (Python)
+pip (Python)
+NuGet (.NET)
+
+Todas estas herramientas pueden conectarse directamente a CodeArtifact
+¿Cómo funciona?
+Developers
+    ↓ store/retrieve dependencies
+CodeArtifact (secure storage)
+    ↑
+CodeBuild (retrieve dependencies during build)
+```
+
+**Developers:** Store dependencies en CodeArtifact
+
+**CodeBuild:** Retrieve dependencies de CodeArtifact al compilar
+
+## Integración con CI/CD:
+```
+1. Developer push code → CodeCommit
+2. CodeBuild triggered
+3. CodeBuild retrieve dependencies → CodeArtifact
+4. CodeBuild compile code con dependencies
+5. Deploy artifacts
+Ventajas:
+Secure - Seguro por defecto
+Scalable - Escala automáticamente
+Cost-effective - Costo-efectivo
+Managed - No necesitas configurar infraestructura
+Centralized - Un lugar para todas las dependencies
+Para el examen:
+Palabras clave CodeArtifact:
+"Artifact management" → CodeArtifact
+"Store code dependencies" → CodeArtifact
+"Maven/npm/pip dependencies" → CodeArtifact
+"Dependency management system" → CodeArtifact
+"Secure artifact storage" → CodeArtifact
+CodeArtifact vs S3:
+S3:
+
+General storage
+Manual setup
+Custom scripts needed
+
+CodeArtifact:
+
+Específico para artifacts/dependencies
+Integrado con tools (Maven, npm, etc.)
+Managed service
+
+Casos de uso:
+✅ Team necesita artifact management
+✅ Almacenar code dependencies centralizadamente
+✅ Integrar con build process (CodeBuild)
+✅ Compartir packages entre teams
+✅ Version control de dependencies
+Los 5 servicios Code*:
+CodeCommit: Source control (código)
+CodeBuild: Build & test
+CodeDeploy: Deploy a servidores
+CodePipeline: Orchestration CI/CD
+CodeArtifact: Artifact/dependency management
+Resumen:
+CodeArtifact es servicio managed para artifact management - almacena y recupera code dependencies de forma secure, scalable y cost-effective. 
+Soporta Maven, Gradle, npm, yarn, pip, NuGet, etc. Se integra con CodeBuild para retrieve dependencies durante build.

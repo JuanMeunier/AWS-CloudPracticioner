@@ -1,0 +1,102 @@
+AWS CodeBuild para Cloud Practitioner
+¿Qué es CodeBuild?
+Servicio para compilar (build) código en la nube
+¿Qué hace CodeBuild?
+1. Compila source code
+2. Ejecuta tests
+3. Produce packages listos para deploy
+Output: Artifacts listos para desplegar (ej: con CodeDeploy)
+Proceso:
+Source code (ej: CodeCommit/GitHub)
+        ↓
+   CodeBuild
+   - Retrieve code
+   - Run build script
+   - Compile code
+   - Run tests
+        ↓
+Ready-to-deploy artifacts
+        ↓
+Deploy (ej: CodeDeploy)
+```
+
+## Características:
+
+**Fully managed** - AWS gestiona todo
+
+**Serverless** - Sin servidores que gestionar
+
+**Continuously scalable** - Escala automáticamente
+
+**Highly available** - Alta disponibilidad
+
+**Secure** - Seguro
+
+## Pricing:
+
+**Pay-as-you-go** - Solo pagas por tiempo de build
+
+**Pay per build time** - No pagas cuando no usas
+
+**No servers to manage** - Sin costos de infraestructura idle
+
+## Ventaja principal:
+
+**Solo te preocupas por:**
+- Escribir código
+- Definir build script
+
+**CodeBuild se encarga de:**
+- Compilar
+- Testing
+- Generar artifacts
+
+**Automático** cada vez que push code updates
+
+## Para el examen:
+
+**Palabras clave CodeBuild:**
+
+**"Build code in cloud"** → CodeBuild
+
+**"Compile and test"** → CodeBuild
+
+**"Serverless build service"** → CodeBuild
+
+**"CI/CD build step"** → CodeBuild
+
+**"Pay per build time"** → CodeBuild
+
+## CodeBuild en CI/CD pipeline:
+```
+1. CodeCommit (source control)
+        ↓
+2. CodeBuild (build & test)
+        ↓
+3. CodeDeploy (deploy)
+CodeBuild = Build step en el pipeline
+Comparación con otros Code* services:
+CodeCommit:
+
+Source control (like GitHub)
+Store code
+
+CodeBuild:
+
+Build & test
+Compile code
+Produce artifacts
+
+CodeDeploy:
+
+Deploy artifacts
+To EC2/on-premises
+
+CodePipeline:
+
+Orchestrate todo
+CI/CD automation
+
+Resumen:
+CodeBuild es servicio serverless fully managed para compilar código, ejecutar tests y producir artifacts ready-to-deploy. Pay-as-you-go (solo por build time). Sin servidores que gestionar. 
+Escala automáticamente. Se integra con CodeCommit (source) y CodeDeploy (deployment). En examen: build/compile code serverless = CodeBuild.

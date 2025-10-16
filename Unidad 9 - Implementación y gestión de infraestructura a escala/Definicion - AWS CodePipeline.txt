@@ -1,0 +1,117 @@
+AWS CodePipeline para Cloud Practitioner
+¿Qué es CodePipeline?
+Servicio de orquestación para automatizar pasos de deployment
+Conecta diferentes servicios en un pipeline automatizado
+¿Qué hace CodePipeline?
+Orquesta los pasos para llevar código automáticamente a producción
+Ejemplo de pipeline:
+
+Code → Source control
+Build → Compile & test
+Test → Automated tests
+Provision → Infrastructure
+Deploy → Production servers
+
+CI/CD (Continuous Integration/Continuous Delivery):
+Concepto: Cada vez que developer push code:
+
+Automáticamente se build
+Automáticamente se test
+Automáticamente se deploy
+
+CodePipeline = CI/CD en AWS
+Ejemplo de pipeline con CodePipeline:
+CodeCommit (source)
+      ↓
+CodeBuild (build & test)
+      ↓
+CodeDeploy (deploy)
+      ↓
+Elastic Beanstalk (environment)
+```
+
+**CodePipeline orquesta** todas estas etapas
+
+## Características:
+
+**Fully managed** - AWS gestiona la orquestación
+
+**Compatible con muchos servicios:**
+- CodeCommit
+- CodeBuild
+- CodeDeploy
+- Elastic Beanstalk
+- CloudFormation
+- GitHub
+- Third-party services
+- Custom plugins
+
+**Fast delivery** - Entregas rápidas
+
+**Rapid updates** - Actualizaciones rápidas
+
+## Ventajas:
+
+**Automation** - Todo automatizado
+
+**Orchestration** - Conecta múltiples servicios
+
+**Flexibility** - Múltiples formas de configurar
+
+**Integration** - Se integra con AWS y third-party
+
+## Para el examen:
+
+**Palabras clave CodePipeline:**
+
+**"Orchestration"** → CodePipeline
+
+**"CI/CD pipeline"** → CodePipeline
+
+**"Automate deployment steps"** → CodePipeline
+
+**"Connect CodeCommit, CodeBuild, CodeDeploy"** → CodePipeline
+
+**"Continuous Integration/Delivery"** → CodePipeline
+
+## Los 4 servicios Code* juntos:
+
+**CodeCommit:**
+- Source control
+- Store code (like GitHub)
+
+**CodeBuild:**
+- Build & test
+- Compile code
+
+**CodeDeploy:**
+- Deploy to servers
+- EC2/on-premises
+
+**CodePipeline:**
+- **Orchestrate todo**
+- Connect all services
+- Automate CI/CD
+
+## Pipeline típico:
+```
+1. Developer push code
+        ↓
+2. CodeCommit (trigger)
+        ↓
+3. CodeBuild (build & test)
+        ↓
+4. CodeDeploy (deploy)
+        ↓
+5. Application running
+CodePipeline gestiona todo este flujo automáticamente
+Casos de uso:
+✅ Automatizar deployment completo
+✅ CI/CD workflows
+✅ Conectar múltiples AWS services
+✅ Integrar con GitHub y third-party tools
+✅ Fast feedback loop para developers
+Resumen:
+CodePipeline es servicio de orquestación fully managed para CI/CD. Conecta y automatiza pasos de deployment (source → build → test → deploy). 
+Compatible con CodeCommit, CodeBuild, CodeDeploy, Beanstalk, CloudFormation, GitHub y más. Core de CI/CD en AWS. 
+En examen: orquestación de pipeline o CI/CD = CodePipeline.
