@@ -1,0 +1,138 @@
+AWS Local Zones para Cloud Practitioner
+¿Qué son Local Zones?
+Extensión de AWS Region que coloca compute, storage, databases y otros servicios más cerca de usuarios finales
+Propósito: Ejecutar aplicaciones latency-sensitive
+Concepto:
+Región normal:
+
+Tiene Availability Zones (AZs)
+
+Con Local Zones:
+
+Extiende región a más ubicaciones
+Son como "mini-AZs" más cerca de usuarios
+
+Servicios compatibles:
+
+EC2
+RDS
+ECS
+EBS
+ElastiCache
+Direct Connect
+
+Ejemplo: US-East-1 (Northern Virginia)
+AZs por defecto: 6 AZs
+Local Zones disponibles:
+
+Boston
+Chicago
+Dallas
+Houston
+Miami
+Y más...
+
+Arquitectura:
+AWS Region (US-East-1)
+├─ AZ 1
+├─ AZ 2
+├─ AZ 3
+├─ AZ 4
+├─ AZ 5
+├─ AZ 6
+└─ Local Zones (extensión)
+   ├─ Boston Local Zone
+   ├─ Chicago Local Zone
+   ├─ Dallas Local Zone
+   └─ Miami Local Zone
+Tu VPC se extiende a través de AZs y Local Zones
+¿Cómo funciona?
+
+Tienes región con AZs normales
+Habilitas Local Zone (ej: Boston)
+Extiendes tu VPC a Local Zone
+Despliegas EC2 (u otros services) en Local Zone
+Usuarios en Boston tienen low latency
+
+Ejemplo de uso:
+Problema:
+
+Aplicación en US-East-1 (Virginia)
+Usuarios en Boston
+Latencia desde Virginia a Boston
+
+Solución:
+
+Habilitar Boston Local Zone
+Desplegar EC2 instances en Boston Local Zone
+Usuarios Boston → Acceso local → Low latency
+
+Diferencia con otros servicios:
+Local Zones:
+
+Extensión de AWS Region
+Ciudades específicas
+Para latency-sensitive apps
+Parte de tu VPC
+
+Edge Locations (CloudFront):
+
+Para CDN/caching
+Muchas ubicaciones (~400+)
+No ejecutas EC2 aquí
+
+WaveLength Zones:
+
+En telecom provider datacenters
+5G networks
+Ultra-low latency mobile
+
+Outposts:
+
+En TU datacenter
+On-premises
+
+Para el examen:
+Palabras clave Local Zones:
+"Extend AWS Region" → Local Zones
+"Low latency specific cities" → Local Zones
+"Latency-sensitive applications" → Local Zones
+"Closer to end users" → Local Zones
+"Boston/Chicago/Dallas etc." → Local Zones
+Características:
+Disabled by default - Debes habilitarlas manualmente
+Extend VPC - Tu VPC se extiende a Local Zones
+Subnet creation - Creas subnet en Local Zone
+Deploy resources - EC2, EBS, etc. en Local Zone
+Proceso de configuración:
+
+Enable Local Zone en settings
+Create subnet en esa Local Zone
+Launch resources (EC2, etc.) en subnet
+Users acceden con low latency
+
+Casos de uso:
+✅ Gaming - Baja latencia para jugadores en ciudad específica
+✅ Media & Entertainment - Rendering local
+✅ Machine Learning - Inference con baja latencia
+✅ Real-time applications - Apps sensibles a latencia
+✅ Financial services - Trading con baja latencia
+Local Zones vs AZs:
+Availability Zones:
+
+Dentro de región
+Múltiples por región (2-6)
+Alta disponibilidad
+Todos los servicios AWS
+
+Local Zones:
+
+Extensión de región
+Ciudades específicas
+Baja latencia a usuarios
+Servicios selectos
+
+Resumen:
+AWS Local Zones extienden AWS Region a ubicaciones específicas (Boston, Chicago, Dallas, etc.) para ejecutar aplicaciones latency-sensitive más cerca de usuarios. 
+Compatible con EC2, RDS, ECS, EBS, ElastiCache. Debes habilitarlas manualmente, extender VPC y crear subnets. Casos de uso: gaming, media, ML, real-time apps, financial services. 
+En examen: extend region + low latency specific cities = Local Zones.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

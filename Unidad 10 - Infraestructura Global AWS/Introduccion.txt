@@ -1,0 +1,112 @@
+AWS Global Infrastructure para Cloud Practitioner
+¿Por qué hacer una aplicación global?
+Global application = Aplicación desplegada en múltiples geografías (regiones/edge locations)
+3 Razones principales:
+1. Decreased Latency (Menor Latencia)
+Latency = Tiempo que toma un packet de red llegar al servidor
+Problema: Usuarios lejos del servidor = mayor latencia
+Ejemplo:
+
+Usuario en India, servidor en US = Alta latencia
+Usuario en India, servidor en Asia = Baja latencia
+
+Solución: Deploy aplicación cerca de usuarios (US + Asia)
+Resultado: Mejor experiencia para todos
+2. Disaster Recovery (DR)
+Problema: Confiar en 1 región es riesgoso
+Riesgos:
+
+Terremoto
+Tormenta
+Apagón eléctrico
+Política
+Falla regional
+
+Solución: Disaster Recovery plan con failover a otra región
+Resultado: Mayor availability
+3. Attack Protection (Protección contra ataques)
+Problema: Hackers atacan aplicaciones
+Solución: Aplicación distribuida globalmente
+Resultado: Difícil atacar todas las ubicaciones simultáneamente
+Componentes de AWS Global Infrastructure:
+1. Regions (Regiones)
+Dónde: Despliegas aplicaciones e infraestructura
+Compuestas de: Múltiples Availability Zones
+Ejemplos: us-east-1, eu-west-3, ap-southeast-1
+2. Availability Zones (AZs)
+Qué son: Múltiples data centers dentro de una región
+Características:
+
+Distantes unos de otros (protección)
+Conectados por red muy rápida
+2-6 AZs por región típicamente
+
+Ejemplo: Paris tiene 3 AZs
+3. Edge Locations / Points of Presence (PoP)
+Qué son: Ubicaciones para content delivery (CDN)
+Uso: CloudFront (más cerca de usuarios)
+NO puedes: Deploy aplicaciones aquí
+Propósito: Cache y content delivery
+Cantidad: Muchas más que regiones (pink dots en mapa)
+4. AWS Network
+Qué es: Red privada de AWS
+Características:
+
+Cables bajo el agua
+Conecta regiones, AZs y PoPs
+Muy rápida y confiable
+Privada (no internet público)
+
+Mapa Global AWS:
+Regiones: Orange boxes
+AZs: Blue dots alrededor de regiones
+Edge Locations: Pink dots (muchísimos)
+Network: Líneas conectando todo
+4 Servicios Global en AWS:
+1. Route 53 (Global DNS)
+Función: Rutear usuarios al deployment más cercano
+Beneficios:
+
+Menor latencia
+Disaster recovery strategies
+
+2. CloudFront (CDN - Content Delivery Network)
+Función: Replicar partes de aplicación en Edge Locations
+Beneficios:
+
+Menor latency
+Cache de requests comunes
+Mejor user experience
+
+3. S3 Transfer Acceleration
+Función: Acelerar uploads/downloads globales a S3
+Beneficios: Transferencias más rápidas
+4. AWS Global Accelerator
+Función: Mejorar availability y performance usando AWS global network
+Beneficios: Mejor performance global
+Para el examen:
+Global application benefits:
+
+Decreased latency
+Disaster recovery
+Attack protection
+
+Components:
+
+Regions (deploy apps)
+AZs (dentro de regions)
+Edge Locations (content delivery)
+AWS Network (conecta todo)
+
+Global services:
+
+Route 53 (DNS)
+CloudFront (CDN)
+S3 Transfer Acceleration
+Global Accelerator
+
+Resumen:
+Aplicaciones globales se despliegan en múltiples geografías para: 1) Menor latency (cerca de usuarios), 
+2) Disaster recovery (múltiples regiones), 
+3) Protección contra ataques. AWS tiene Regions (deploy apps), AZs (dentro de regions), Edge Locations (content delivery), y private network conectando todo. 
+Servicios globales: Route 53 (DNS), CloudFront (CDN), S3 Transfer Acceleration, Global Accelerator. Todo conectado por red privada AWS muy rápida.

@@ -1,0 +1,107 @@
+AWS WaveLength para Cloud Practitioner
+¿Qué es WaveLength?
+Infrastructure deployments embedded dentro de datacenters de telecom providers en el edge de 5G networks
+Palabra clave para el examen:
+"5G" en pregunta → Probablemente WaveLength
+¿Qué hace WaveLength?
+Despliega AWS services directamente en el edge de 5G networks
+Ultra-low latency para aplicaciones 5G
+Servicios que puedes desplegar en WaveLength Zones:
+
+EC2 instances
+EBS volumes
+VPC
+
+Arquitectura:
+5G Mobile Device (usuario)
+        ↓ ultra-low latency
+WaveLength Zone (en 5G network edge)
+- EC2 instances
+- EBS volumes
+        ↓ si necesario
+Carrier Gateway
+        ↓ secure connection
+Parent AWS Region
+- RDS
+- DynamoDB
+Características clave:
+1. Ultra-Low Latency
+Aplicación desplegada en el edge de 5G network
+Usuario 5G → WaveLength Zone (muy cerca, latencia mínima)
+2. Traffic Flow
+Tráfico NO sale de CSP (Communication Service Provider) network
+NO necesita llegar a AWS (pero puede si necesitas)
+3. Connection to Parent Region
+WaveLength Zone conectada a parent AWS Region
+Use case: EC2 en WaveLength necesita acceder RDS/DynamoDB en región
+4. No Additional Charges
+Sin cargos extra por usar WaveLength
+No service agreements adicionales
+Casos de uso:
+1. Smart Cities
+Aplicaciones IoT urbanas con latencia mínima
+2. ML-Assisted Diagnostics
+Diagnósticos médicos en tiempo real
+3. Connected Vehicles
+Autos conectados requieren respuesta inmediata
+4. Interactive Live Video Streams
+Streaming con latencia ultra-baja
+5. AR/VR (Augmented/Virtual Reality)
+Experiencias inmersivas requieren latencia mínima
+6. Real-time Gaming
+Gaming móvil con respuesta instantánea
+Tema común: Ultra-low latency + 5G + Edge computing
+Para el examen:
+Palabras clave WaveLength:
+"5G" → WaveLength
+"Ultra-low latency" → WaveLength
+"Telecom provider edge" → WaveLength
+"Mobile devices" → WaveLength
+"Real-time applications" → WaveLength
+"AR/VR" → WaveLength
+"Connected vehicles" → WaveLength
+WaveLength vs Otros Edge Services:
+WaveLength:
+
+5G networks
+Telecom provider datacenters
+Ultra-low latency
+Mobile devices
+
+Edge Locations (CloudFront):
+
+CDN
+Cache content
+Global delivery
+
+Local Zones:
+
+Extension of Region
+Closer to users
+Not 5G specific
+
+Outposts:
+
+On-premises
+Customer datacenter
+Hybrid cloud
+
+Ubicación:
+WaveLength Zones están en:
+
+Telecom carrier datacenters
+Edge de 5G networks
+NO en AWS datacenters
+NO en customer datacenters
+
+Conectadas a: Parent AWS Region
+Beneficios:
+✅ Ultra-low latency - Milisegundos
+✅ 5G speed - Máxima velocidad
+✅ Edge deployment - Cerca de usuarios móviles
+✅ AWS services - EC2, EBS, VPC
+✅ Secure connection - A parent region si necesario
+✅ No extra cost - Sin charges adicionales
+Resumen:
+AWS WaveLength despliega AWS infrastructure (EC2, EBS, VPC) en edge de 5G networks dentro de telecom provider datacenters. Ultra-low latency para mobile users en 5G. Tráfico permanece en CSP network. 
+Conectado a parent AWS Region. Sin costos extra. Casos de uso: Smart Cities, AR/VR, real-time gaming, connected vehicles, live streaming. En examen: 5G + ultra-low latency = WaveLength.

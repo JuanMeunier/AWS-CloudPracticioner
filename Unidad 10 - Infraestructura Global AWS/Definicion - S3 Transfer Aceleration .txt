@@ -1,0 +1,123 @@
+S3 Transfer Acceleration para Cloud Practitioner
+Problema que resuelve:
+S3 Buckets están en 1 región específica
+Problema: Transferir files desde todo el mundo a 1 S3 bucket puede ser lento
+Solución: S3 Transfer Acceleration
+¿Cómo funciona S3 Transfer Acceleration?
+Sin Transfer Acceleration:
+Usuario en US → Internet público → S3 Bucket en Australia
+(Lento, menos confiable)
+```
+
+### Con Transfer Acceleration:
+```
+Usuario en US → Edge Location en US (cercana)
+                    ↓
+        AWS Private Network (rápido, confiable)
+                    ↓
+            S3 Bucket en Australia
+```
+
+**Proceso:**
+1. Upload file a **edge location cercana** al usuario
+2. Edge location usa **AWS private network**
+3. Transfer file a S3 bucket destino
+4. **Más rápido y confiable**
+
+## Cuándo usar:
+
+**Upload files** a S3 bucket desde ubicaciones distantes
+
+**Download files** de S3 bucket a ubicaciones distantes
+
+**Global application** con usuarios worldwide
+
+**Large files** o **frequent transfers**
+
+## Ventajas:
+
+✅ **Faster transfers** - Usa edge locations + AWS network
+
+✅ **More reliable** - AWS private network vs internet público
+
+✅ **Better performance** - Especialmente para distancias largas
+
+✅ **Same S3 bucket** - No necesitas buckets en múltiples regiones
+
+## Testing tool:
+
+AWS proporciona **herramienta de testing** online
+
+**Compara:**
+- Direct upload (sin acceleration)
+- Accelerated upload (con acceleration)
+
+**Muestra:** Porcentaje de mejora por región
+
+**Ejemplo de resultados:**
+- Virginia: 13% más rápido
+- San Francisco: X% más rápido
+- Europa: Y% más rápido
+
+**Factores que afectan:**
+- Tu ubicación geográfica
+- Calidad de tu internet
+- Distancia al bucket
+
+## Para el examen:
+
+**Palabras clave S3 Transfer Acceleration:**
+
+**"Speed up uploads/downloads to S3"** → Transfer Acceleration
+
+**"Global uploads to S3"** → Transfer Acceleration
+
+**"Faster S3 transfers"** → Transfer Acceleration
+
+**"Upload from worldwide to one bucket"** → Transfer Acceleration
+
+**"Edge locations for S3"** → Transfer Acceleration
+
+## S3 Transfer Acceleration vs CloudFront:
+
+**CloudFront:**
+- **Content delivery** (download)
+- Cache content en edge
+- Para servir content a usuarios
+
+**Transfer Acceleration:**
+- **Upload/Download** a S3
+- No caching
+- Para transferir files a/desde S3
+
+**Ambos usan:** Edge locations + AWS private network
+
+## Arquitectura:
+```
+Global Users
+    ↓ upload
+Edge Locations (worldwide)
+    ↓ AWS Private Network
+S3 Bucket (single region)
+Benefit: Usuarios worldwide → Fast upload → 1 S3 bucket
+Casos de uso:
+✅ Global application con users uploading a S3
+✅ Backup desde oficinas worldwide a central S3
+✅ Media uploads desde cualquier parte del mundo
+✅ Data ingestion global a data lake en S3
+✅ Large file transfers a larga distancia
+Cómo habilitar:
+Simple: Enable Transfer Acceleration en S3 bucket
+Endpoint cambia:
+
+Normal: bucket.s3.amazonaws.com
+Accelerated: bucket.s3-accelerate.amazonaws.com
+
+Pricing:
+Costo adicional por GB transferido
+Beneficio: Solo si es más rápido que transfer directo
+AWS garantiza: Si no es más rápido, no cobran extra
+Resumen:
+S3 Transfer Acceleration acelera uploads/downloads a S3 bucket desde ubicaciones distantes. Usa edge locations cercanas + AWS private network (más rápido y confiable que internet público). 
+Para global applications con transfers a 1 S3 bucket.
+AWS proporciona tool para testear mejora de performance. En examen: speed up global uploads/downloads a S3 = Transfer Acceleration.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

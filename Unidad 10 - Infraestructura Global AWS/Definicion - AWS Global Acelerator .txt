@@ -1,0 +1,188 @@
+AWS Global Accelerator para Cloud Practitioner
+¿Qué es Global Accelerator?
+Mejora availability y performance de aplicaciones globales usando AWS global network
+Optimiza route a tu aplicación en ~60%
+Problema que resuelve:
+Sin Global Accelerator:
+Usuario → Public Internet (muchos hops, lento) → Aplicación
+```
+
+**Con Global Accelerator:**
+```
+Usuario → Edge Location cercana → AWS Private Network (rápido) → Aplicación
+```
+
+## ¿Cómo funciona?
+
+### Ejemplo: Aplicación desplegada en India
+
+**Usuario en US:**
+```
+1. Usuario se conecta a Edge Location en US
+2. Tráfico en public internet: Solo US ↔ Edge Location
+3. Edge → India via AWS private network (rápido)
+```
+
+**Usuario en Europa:**
+```
+1. Usuario se conecta a Edge Location en Europa
+2. Tráfico en public internet: Solo Europa ↔ Edge Location
+3. Edge → India via AWS private network
+```
+
+**Usuario en Australia:**
+```
+Same process - Edge Location local → AWS private network → India
+```
+
+## Anycast IPs:
+
+**2 static Anycast IPs** para acceder a tu aplicación
+
+**Benefit:** IPs no cambian, automáticamente redirigen a edge location correcta
+
+**Proceso:**
+```
+User → Static Anycast IP → Closest Edge Location → AWS Network → Application
+```
+
+## Ventajas:
+
+✅ **Fast** - AWS private network mucho más rápido que internet público
+
+✅ **Fewer hops** - Menos saltos de red
+
+✅ **Static IPs** - 2 IPs fijas (Anycast)
+
+✅ **DDoS protection** - Integrado con AWS Shield
+
+✅ **Health checks** - Automatic failover
+
+✅ **Consistent performance** - Deterministic routing
+
+## Global Accelerator vs CloudFront:
+
+### Similitudes:
+- Ambos usan AWS global network
+- Ambos usan edge locations
+- Ambos integran con Shield (DDoS protection)
+
+### CloudFront (CDN):
+
+**Qué hace:** Content Delivery Network
+
+**Caching:** SÍ - Content cacheado en edge
+
+**Content:** Servido desde edge (images, videos, websites)
+
+**Use case:** Servir static content
+
+**Performance:** Mejor para cacheable content
+
+### Global Accelerator:
+
+**Qué hace:** Network performance optimizer
+
+**Caching:** NO - Requests pasan through edge a application
+
+**Traffic:** Proxied a través de AWS network
+
+**Use case:** Improve performance para TCP/UDP
+
+**Protocols:** TCP, UDP, HTTP, HTTPS
+
+**Best for:**
+- HTTP use cases (APIs, applications)
+- Static IP addresses needed
+- Fast regional failover
+- Non-cacheable dynamic content
+
+## Comparación visual:
+
+**CloudFront:**
+```
+User → Edge (cached content) → Return immediately
+```
+
+**Global Accelerator:**
+```
+User → Edge → AWS Network → Application → Response
+        ↑                            ↓
+    Proxy only              Process request
+```
+
+## Performance improvement:
+
+**Testing tool** muestra mejora por región:
+
+**Ejemplo desde Europa:**
+- **Virginia (lejos):** 23% más rápido
+- **Oregon (muy lejos):** 31% más rápido
+- **Ireland (cerca):** Same performance (ya está cerca)
+- **Frankfurt (cerca):** Same performance
+- **Singapore (lejos):** 34% más rápido
+- **Sydney (muy lejos):** 53% más rápido
+
+**Conclusión:** Mayor beneficio para regiones distantes
+
+## Para el examen:
+
+**Palabras clave Global Accelerator:**
+
+**"Improve global application performance"** → Global Accelerator
+
+**"Static IP addresses"** → Global Accelerator
+
+**"TCP/UDP optimization"** → Global Accelerator
+
+**"Fast regional failover"** → Global Accelerator
+
+**"AWS global network"** → Global Accelerator
+
+**"Non-cacheable content"** → Global Accelerator (NO CloudFront)
+
+## Diferencias clave (examen):
+
+**CloudFront:**
+- Cache content
+- Static content
+- Read-heavy
+
+**Global Accelerator:**
+- No caching
+- Dynamic content
+- Improve TCP/UDP performance
+- Static IPs
+- Gaming, IoT, VoIP
+
+## Casos de uso Global Accelerator:
+
+✅ **Gaming applications** - Low latency critical
+
+✅ **IoT** - UDP traffic
+
+✅ **VoIP** - Real-time communication
+
+✅ **APIs** - Dynamic content
+
+✅ **Applications requiring static IPs**
+
+✅ **Financial trading** - Speed critical
+
+✅ **Media delivery over UDP**
+
+## Arquitectura:
+```
+Global Users
+    ↓
+Static Anycast IPs (2 IPs)
+    ↓
+Edge Locations (automatic routing)
+    ↓
+AWS Private Network (fast)
+    ↓
+Application (single or multi-region)
+Resumen:
+Global Accelerator mejora performance de aplicaciones globales (~60%) usando AWS private network. Users se conectan a edge location cercana, luego tráfico va por AWS network (no public internet). 
+2 static Anycast IPs. NO caching (vs CloudFront). 
+Mejor para TCP/UDP, dynamic content, gaming, IoT. Mayor mejora para regiones distantes. En examen: improve global performance sin caching = Global Accelerator; con caching = CloudFront.

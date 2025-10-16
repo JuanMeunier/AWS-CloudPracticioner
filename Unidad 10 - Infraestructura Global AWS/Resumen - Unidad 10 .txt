@@ -1,0 +1,60 @@
+Resumen: Global Applications en AWS
+1. Route 53 (Global DNS)
+Función: Rutear usuarios al deployment más cercano
+Beneficios:
+
+Menor latency
+Disaster recovery strategies
+
+Uso: Crear records (hostname → IP)
+2. CloudFront (CDN - Content Delivery Network)
+Función: Replicar contenido en Edge Locations
+Integración: Con S3
+Beneficios:
+
+Decreased latency
+Cache common requests
+Mejor user experience
+
+Uso: Distribuir content globalmente
+3. S3 Transfer Acceleration
+Función: Acelerar uploads/downloads globales a S3
+Usa: Edge Locations de AWS
+Beneficio: Faster transfers desde/hacia S3
+4. Global Accelerator
+Función: Mejorar availability y performance global
+Usa: Edge Locations + AWS global network
+Beneficio: Improved global application performance
+5. AWS Outposts
+Qué es: Server racks de AWS en TU datacenter
+Función: Extend AWS services on-premises
+Beneficio: AWS Cloud dentro de tu datacenter
+6. WaveLength
+Qué es: Services en edge de 5G networks
+Función: Ultra-low latency para mobile
+Usa: Telecom provider datacenters + 5G
+Beneficio: Ultra-low latency applications
+7. Local Zones
+Qué es: Extensión de AWS Region a ciudades específicas
+Función: Compute, database, storage más cerca de usuarios
+Ciudades: Boston, Dallas, Miami, Chicago, etc. (US)
+Beneficio: Latency-sensitive applications con acceso local rápido
+Comparación rápida:
+Route 53: DNS routing
+CloudFront: Cache content en edge
+S3 Transfer Acceleration: Fast S3 transfers
+Global Accelerator: Fast application access via AWS network
+Outposts: AWS en tu datacenter
+WaveLength: Ultra-low latency 5G
+Local Zones: AWS más cerca en ciudades específicas
+Para el examen - Cuándo usar cada uno:
+Route 53: DNS, routing, DR strategies
+CloudFront: Distribute static content, CDN
+S3 Transfer Acceleration: Upload/download to S3 faster
+Global Accelerator: Improve app performance globally
+Outposts: Hybrid cloud, AWS on-premises
+WaveLength: 5G, mobile, ultra-low latency
+Local Zones: Latency-sensitive apps, specific cities
+Resumen ultra-corto:
+Route 53 (DNS routing) → CloudFront (CDN caching) → S3 Transfer Acceleration (faster S3) → Global Accelerator (faster apps) → Outposts (AWS on-premises) → WaveLength (5G ultra-low latency) → Local Zones (extend region to cities). 
+Todos mejoran global performance de diferentes formas.ReintentarClaude puede cometer errores. Verifique las respuestas.

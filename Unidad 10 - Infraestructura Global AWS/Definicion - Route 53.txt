@@ -1,0 +1,155 @@
+Amazon Route 53 para Cloud Practitioner
+¿Qué es Route 53?
+Managed DNS (Domain Name System) de AWS
+DNS = Phone book del internet
+
+Colección de reglas y records
+Ayuda a clientes encontrar servers correctos via URLs
+
+Tipos de DNS Records (registros):
+A Record
+Hostname → IPv4
+
+www.google.com → 12.34.56.78
+
+AAAA Record (cuádruple A)
+Hostname → IPv6
+
+www.google.com → 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+CNAME
+Hostname → Hostname
+
+search.google.com → www.google.com
+
+Alias Record
+Hostname → AWS Resource
+
+myapp.com → ELB
+myapp.com → CloudFront
+myapp.com → S3
+myapp.com → RDS
+
+Especial para AWS resources
+¿Cómo funciona Route 53?
+1. Web Browser quiere acceder: myapp.mydomain.com
+        ↓
+2. DNS Request a Route 53
+        ↓
+3. Route 53 responde con IP: 54.23.67.89
+        ↓
+4. Web Browser se conecta a: 54.23.67.89
+        ↓
+5. Application Server responde HTTP
+```
+
+## 4 Routing Policies para el examen:
+
+### 1. Simple Routing Policy
+
+**Características:**
+- **NO health checks**
+- Básico
+- Query DNS → Retorna 1 IP
+
+**Uso:** DNS simple, sin complejidad
+```
+Browser → Route 53 → IP address
+```
+
+### 2. Weighted Routing Policy
+
+**Características:**
+- **CON health checks**
+- Distribuye tráfico con pesos (weights)
+
+**Ejemplo:**
+- Server 1: 70% del tráfico
+- Server 2: 20% del tráfico
+- Server 3: 10% del tráfico
+
+**Uso:** Load balancing entre múltiples servers
+```
+Browser → Route 53
+            ↓ 70%  ↓ 20%  ↓ 10%
+         Server1  Server2  Server3
+```
+
+### 3. Latency Routing Policy
+
+**Características:**
+- **CON health checks**
+- Basado en latencia más baja
+- Redirige a server más cercano
+
+**Ejemplo:**
+- Usuario en US → Server en California
+- Usuario en Asia → Server en Australia
+
+**Uso:** Minimizar latency conectando usuarios al server más cercano
+```
+User en US → Route 53 → Server California (closest)
+User en Asia → Route 53 → Server Australia (closest)
+```
+
+### 4. Failover Routing Policy
+
+**Características:**
+- **CON health checks**
+- Primary + Failover instance
+- Disaster recovery
+
+**Funcionamiento:**
+1. Route 53 hace health check en primary
+2. Si primary healthy → Tráfico a primary
+3. Si primary unhealthy → Tráfico a failover
+
+**Uso:** High availability, disaster recovery
+```
+Client → Route 53
+         ↓ health check
+    Primary (healthy) → Traffic aquí
+    Failover (standby) → Traffic si primary falla
+Resumen Routing Policies:
+Simple:
+
+NO health checks
+DNS básico
+
+Weighted:
+
+CON health checks
+Distribute traffic con pesos
+Load balancing
+
+Latency:
+
+CON health checks
+Minimize latency
+Connect a server más cercano
+
+Failover:
+
+CON health checks
+Disaster recovery
+Primary + Failover
+
+Para el examen:
+Route 53 = Managed DNS
+A Record → IPv4
+AAAA Record → IPv6
+CNAME → Hostname to hostname
+Alias → AWS resource
+Simple → No health checks
+Weighted → Distribute con pesos
+Latency → Menor latency (server más cercano)
+Failover → DR (primary/failover)
+Health checks: Weighted, Latency, Failover tienen; Simple NO
+Casos de uso:
+Simple: Website básico, 1 server
+Weighted: A/B testing, gradual deployments
+Latency: Aplicación global, mejor UX
+Failover: High availability, disaster recovery
+Resumen:
+Route 53 es managed DNS que traduce hostnames a IPs. 4 tipos de records: A (IPv4), AAAA (IPv6), CNAME (hostname→hostname), Alias (→AWS resource). 
+4 Routing Policies: Simple (no health checks, básico), Weighted (distribuye tráfico con pesos), Latency (server más cercano), Failover (primary/failover para DR). Weighted, Latency y Failover tienen health checks.

@@ -1,0 +1,157 @@
+AWS Outposts para Cloud Practitioner
+¿Qué es Hybrid Cloud?
+Empresas que mantienen:
+
+On-premises infrastructure
+Cloud infrastructure (AWS)
+
+Problema: 2 formas diferentes de gestionar IT
+
+AWS (Console, CLI, APIs)
+On-premises (Diferentes tools, APIs, skillsets)
+
+¿Qué es AWS Outposts?
+Server racks de AWS instalados en TU data center
+Ofrecen:
+
+Misma infraestructura AWS
+Mismos servicios AWS
+Mismas APIs AWS
+Mismas tools AWS
+
+Pero: En tus propias instalaciones (on-premises)
+¿Cómo funciona?
+Tu Corporate Data Center
+    ↓
+AWS instala Outpost Racks (servers)
+    ↓
+Racks pre-loaded con AWS services
+    ↓
+Usas servicios AWS localmente
+```
+
+**AWS maneja:** Setup y gestión de racks
+
+**Tú usas:** AWS services como si estuvieras en la nube
+
+## Diferencia clave:
+
+**EC2 en Cloud:**
+- AWS gestiona seguridad física
+- AWS data center
+
+**EC2 en Outposts:**
+- **TÚ eres responsable** de seguridad física
+- En TU data center
+- AWS gestiona software/services
+
+## Beneficios de Outposts:
+
+### 1. Low Latency
+**Acceso local** a on-premises systems
+- No latencia de internet
+
+### 2. Local Data Processing
+**Data nunca sale** de tu data center
+- Procesa localmente
+
+### 3. Data Residency
+**Data permanece** en tu data center
+- Compliance requirements
+- Regulatory needs
+
+### 4. Easy Migration Path
+**Migración gradual:**
+```
+On-premises → Outposts → AWS Cloud
+```
+
+### 5. Fully Managed Service
+AWS gestiona Outpost racks
+
+## Servicios disponibles en Outposts:
+
+- **EC2** - Compute instances
+- **EBS** - Block storage
+- **S3** - Object storage
+- **EKS** - Kubernetes
+- **ECS** - Container service
+- **RDS** - Databases
+- **EMR** - Big data
+
+**Mismos servicios** que en AWS cloud
+
+## Para el examen:
+
+**Palabras clave Outposts:**
+
+**"AWS services on-premises"** → Outposts
+
+**"Hybrid cloud with AWS infrastructure"** → Outposts
+
+**"Low latency on-premises"** → Outposts
+
+**"Data residency requirements"** → Outposts
+
+**"Extend AWS to on-premises"** → Outposts
+
+**"Same AWS experience on-premises"** → Outposts
+
+## Outposts vs otros servicios:
+
+**Outposts:**
+- AWS infrastructure físico en tu data center
+- Mismos servicios AWS
+- TÚ gestionas seguridad física
+
+**Hybrid services (Storage Gateway, etc.):**
+- Software/virtual appliances
+- Conectan on-premises a AWS
+- NO hardware físico de AWS
+
+**AWS Cloud:**
+- Todo en AWS data centers
+- AWS gestiona todo el hardware
+
+## Responsabilidades:
+
+**AWS es responsable de:**
+- Instalar racks
+- Mantener hardware
+- Gestionar services/software
+- Updates
+
+**TÚ eres responsable de:**
+- **Seguridad física** del rack
+- Power supply
+- Network connectivity
+- Physical access control
+
+## Casos de uso:
+
+✅ **Compliance/regulatory** - Data no puede salir del país
+
+✅ **Low latency** - Apps necesitan acceso rápido a on-premises systems
+
+✅ **Data residency** - Data debe permanecer local
+
+✅ **Migration strategy** - Gradual move a cloud
+
+✅ **Hybrid applications** - Parte on-premises, parte cloud
+
+✅ **Local data processing** - Procesar antes de enviar a cloud
+
+## Arquitectura:
+```
+AWS Cloud (Regiones)
+        ↕ connectivity
+    Outpost Racks
+  (En tu data center)
+        ↕ low latency
+  On-premises Systems
+   (Legacy apps, etc.)
+Benefit: Consistent hybrid experience
+Resumen:
+AWS Outposts son server racks de AWS instalados en TU data center que ofrecen misma infraestructura, servicios y APIs AWS on-premises. AWS instala y gestiona racks, tú gestionas seguridad física. 
+Beneficios: low latency, local data processing, data residency, easy migration path. 
+Servicios: EC2, EBS, S3, EKS, ECS, RDS, EMR. En examen: AWS services on-premises con misma experiencia AWS = Outposts.

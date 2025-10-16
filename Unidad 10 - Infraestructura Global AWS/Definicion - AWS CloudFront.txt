@@ -1,0 +1,139 @@
+Amazon CloudFront para Cloud Practitioner
+¿Qué es CloudFront?
+Content Delivery Network (CDN) de AWS
+Palabra clave examen: CDN = CloudFront
+¿Cómo funciona?
+Cache contenido en edge locations alrededor del mundo
+Mejora read performance mediante caching
+Reduce latency - Usuarios acceden a contenido desde edge location cercana
+Componentes:
+Hundreds of Points of Presence (PoP) globalmente
+
+Edge locations
+Edge caches
+
+Beneficios:
+1. Lower Latency
+Contenido más cerca de usuarios = menor latency
+2. Better User Experience
+Respuestas más rápidas
+3. DDoS Protection
+Distribución global = protección contra ataques DDoS
+
+Usa AWS Shield
+Usa Web Application Firewall (WAF)
+
+Ejemplo de funcionamiento:
+S3 Bucket en Australia (origin)
+        ↑
+    CloudFront
+        ↓
+Edge Locations worldwide
+
+User 1 en US → Edge US → Fetch de Australia → Cache en Edge US
+User 2 en US → Edge US → Serve desde cache (NO va a Australia)
+User en China → Edge China → Fetch de Australia → Cache en Edge China
+```
+
+**Primera request:** Va al origin, luego se cachea
+
+**Requests subsiguientes:** Servidas desde cache (más rápido)
+
+## CloudFront Origins (backends):
+
+### 1. S3 Bucket
+
+**Uso:**
+- Distribuir files
+- Cache en edge
+- Upload files via CloudFront
+
+**Seguridad:** OAC (Origin Access Control)
+
+**Conexión:** Privada y segura
+
+### 2. VPC Origin (Private)
+
+**Ejemplos:**
+- Application Load Balancer
+- Network Load Balancer
+- EC2 Instance
+
+**Aplicación:** En private subnet de VPC
+
+**Conexión:** Privada
+
+### 3. Custom HTTP Origin
+
+**Cualquier cosa con HTTP:**
+- S3 website (static website enabled)
+- Public HTTP backend (dentro o fuera de AWS)
+- On-premises servers
+
+## Proceso de caching:
+```
+1. Client → HTTP request → Edge Location
+2. Edge Location check cache
+   - Si está en cache → Return cached content
+   - Si NO está → Go to origin
+3. Origin → Return content → Edge Location
+4. Edge Location → Cache content → Return to client
+5. Next client → Same content → Served from cache
+CloudFront vs S3 Cross-Region Replication:
+CloudFront (CDN):
+Network: ~216 Points of Presence global
+Caching: Files cached por ~1 día
+Content: Static content
+Availability: Everywhere worldwide
+Use case: Content que debe estar available globalmente
+Update: Cached, no real-time
+S3 Cross-Region Replication:
+Setup: Manual por cada región
+Caching: NO caching, near real-time updates
+Content: Dynamic content
+Availability: Few specific regions
+Use case: Dynamic content con low latency en pocas regiones
+Update: Near real-time, read-only
+Comparación:
+CloudFront:
+
+Cache content worldwide
+Static content
+Global CDN
+
+S3 Replication:
+
+Replicate entire bucket
+Dynamic content
+Specific regions
+Real-time
+
+Para el examen:
+Palabras clave CloudFront:
+"CDN" → CloudFront
+"Cache content at edge" → CloudFront
+"Lower latency globally" → CloudFront
+"DDoS protection" → CloudFront
+"Distribute static content worldwide" → CloudFront
+"Points of Presence" → CloudFront
+Seguridad:
+OAC (Origin Access Control):
+
+Secure connection a S3 bucket
+Modifica S3 bucket policy
+Private connection entre edge y origin
+
+DDoS Protection:
+
+AWS Shield
+WAF (Web Application Firewall)
+
+Casos de uso:
+✅ Website static content (images, CSS, JS)
+✅ Video streaming
+✅ Software distribution
+✅ API acceleration
+✅ Global application con usuarios worldwide
+Resumen:
+CloudFront es CDN (Content Delivery Network) que cachea contenido en ~216 edge locations globalmente para lower latency y better user experience. Origins pueden ser S3, VPC resources, o custom HTTP. Conexión segura con OAC. DDoS protection con Shield/WAF. 
+CloudFront para static content global (cached), S3 Replication para dynamic content en pocas regiones (real-time). En examen: CDN = CloudFront.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

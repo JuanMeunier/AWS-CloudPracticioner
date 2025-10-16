@@ -1,0 +1,185 @@
+Global Applications Architecture para Cloud Practitioner
+4 Tipos de Arquitecturas:
+1. Single Region, Single AZ
+Setup:
+1 Region
+  └─ 1 AZ
+      └─ EC2 Instance
+```
+
+**High Availability:** ❌ NO
+
+**Global Latency:** ❌ Mala (usuarios lejos tienen alta latencia)
+
+**Difficulty:** ⭐ Muy fácil
+
+**Problema:** Un solo punto de fallo, sin redundancia
+
+### 2. Single Region, Multi-AZ
+
+**Setup:**
+```
+1 Region
+  ├─ AZ 1 (EC2)
+  └─ AZ 2 (EC2)
+```
+
+**High Availability:** ✅ SÍ (dentro de región)
+
+**Global Latency:** ❌ Sin mejora (AZs están cerca entre sí)
+
+**Difficulty:** ⭐⭐ Fácil-medio
+
+**Mejora:** Protege contra fallo de AZ, pero usuarios lejos siguen con alta latency
+
+### 3. Multi-Region, Active-Passive
+
+**Setup:**
+```
+Region 1 (ACTIVE)          Region 2 (PASSIVE)
+  └─ EC2 (reads + writes)    └─ EC2 (solo reads)
+         ↓                         ↑
+    Replication ──────────────────┘
+```
+
+**Characteristics:**
+
+**Active Region:**
+- Users pueden READ y WRITE
+- Región principal
+
+**Passive Region(s):**
+- Users solo pueden READ
+- NO pueden WRITE
+- Data replicada desde active
+
+**High Availability:** ✅ SÍ (multi-región)
+
+**Global Read Latency:** ✅ Mejorada (reads desde región cercana)
+
+**Global Write Latency:** ❌ Aún alta (todos writes van a active region)
+
+**Difficulty:** ⭐⭐⭐ Media
+
+**Ventajas:**
+- Disaster recovery
+- Reads globales rápidos
+
+**Desventajas:**
+- Writes aún centralizados
+
+### 4. Multi-Region, Active-Active
+
+**Setup:**
+```
+Region 1 (ACTIVE)          Region 2 (ACTIVE)
+  └─ EC2 (reads + writes) ↔ EC2 (reads + writes)
+         ↕                         ↕
+      Bidirectional Replication
+Characteristics:
+Todas las regiones ACTIVE:
+
+Users pueden READ y WRITE en cualquier región
+Replicación bidireccional entre regiones
+
+High Availability: ✅✅ Excelente (multi-región, todas active)
+Global Read Latency: ✅✅ Excelente (read desde región cercana)
+Global Write Latency: ✅✅ Excelente (write a región cercana)
+Difficulty: ⭐⭐⭐⭐ Alta
+Ventajas:
+
+Mejor performance global
+Reads Y writes rápidos globalmente
+
+Desventajas:
+
+Más complejo de configurar
+Más costoso
+Requiere sincronización entre regiones
+
+Ejemplo AWS: DynamoDB Global Tables
+Comparación rápida:
+Single Region, Single AZ:
+
+HA: ❌
+Global latency: ❌
+Difficulty: ⭐
+
+Single Region, Multi-AZ:
+
+HA: ✅ (región)
+Global latency: ❌
+Difficulty: ⭐⭐
+
+Multi-Region, Active-Passive:
+
+HA: ✅
+Read latency: ✅
+Write latency: ❌
+Difficulty: ⭐⭐⭐
+
+Multi-Region, Active-Active:
+
+HA: ✅✅
+Read latency: ✅✅
+Write latency: ✅✅
+Difficulty: ⭐⭐⭐⭐
+
+Para el examen:
+Términos clave:
+Active-Passive:
+
+1 región para writes
+Múltiples regiones para reads
+Replicación unidireccional
+
+Active-Active:
+
+Todas regiones para reads Y writes
+Replicación bidireccional
+Ejemplo: DynamoDB Global Tables
+
+Single Region, Multi-AZ:
+
+HA dentro de región
+No mejora global latency
+
+Multi-Region:
+
+Mejora global latency (reads)
+Active-Passive: Writes centralizados
+Active-Active: Writes distribuidos
+
+Casos de uso:
+Single Region, Single AZ:
+
+Dev/test
+Apps no críticas
+Bajo presupuesto
+
+Single Region, Multi-AZ:
+
+Production apps
+HA requerida
+Usuarios en 1 región
+
+Active-Passive:
+
+Disaster recovery
+Read-heavy workloads
+Global reads, centralized writes
+
+Active-Active:
+
+Mission-critical apps
+Low latency global
+Read Y write heavy
+Highest availability
+
+Resumen:
+4 arquitecturas de complejidad creciente: 
+1) Single Region/Single AZ (no HA, mala global latency, fácil), 
+2) Single Region/Multi-AZ (HA regional, sin mejora global, medio), 
+3) Multi-Region Active-Passive (HA, good read latency, poor write latency, medio-difícil), 
+4) Multi-Region Active-Active (excellent HA, excellent global latency para reads/writes, difícil).
+ Active-Passive: 1 región writes + N regiones reads. Active-Active: todas regiones reads+writes (ej: DynamoDB Global Tables).
