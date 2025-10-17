@@ -1,0 +1,99 @@
+Cloud Integration - Introducción para Cloud Practitioner
+Problema:
+Múltiples aplicaciones necesitan comunicarse entre sí
+2 Patrones de Comunicación:
+1. Synchronous Communication (Síncrona)
+Qué es: Aplicación habla DIRECTAMENTE a otra aplicación
+Ejemplo:
+Buying Service → Shipping Service
+(directo, inmediato)
+```
+
+**Características:**
+- Comunicación directa
+- Una app espera respuesta de otra
+- Tight coupling (acoplamiento fuerte)
+
+**Problema:**
+- Si una app falla, la otra se afecta
+- Difícil de escalar
+- Spike de tráfico puede abrumar
+
+### 2. Asynchronous / Event-Based (Asíncrona)
+
+**Qué es:** Aplicaciones se comunican a través de **middleware** (queue, topic)
+
+**Ejemplo:**
+```
+Buying Service → Queue → Shipping Service
+(desacoplado, mediante queue)
+```
+
+**Características:**
+- Comunicación indirecta
+- Apps no se conocen directamente
+- Decoupled (desacoplado)
+- Queue/topic en medio
+
+**Ventajas:**
+- Apps pueden escalar independientemente
+- Si una falla, otra no se afecta inmediatamente
+- Maneja spikes de tráfico mejor
+
+## Problema con Synchronous:
+
+**Escenario:**
+- Normalmente: 10 videos para encodear
+- De repente: 1000 videos para encodear (traffic spike)
+
+**Problema:**
+- Servicio de encoding se **abruma**
+- Puede **fallar**
+- Buying service también se afecta
+
+**Solución:** Decouple con queue
+
+## Decoupling con Queue:
+```
+Buying Service → Queue → Encoding Service
+               (1000 videos)    (procesa a su ritmo)
+Ventajas:
+
+Queue absorbe el spike
+Encoding service procesa a su ritmo
+No se abruma
+Services escalan independientemente
+
+3 Servicios AWS para Decoupling:
+1. SQS (Simple Queue Service)
+Tipo: Queue model
+Uso: Message queue entre services
+2. SNS (Simple Notification Service)
+Tipo: Pub/Sub model
+Uso: Publicar mensajes a múltiples subscribers
+3. Kinesis
+Tipo: Real-time data streaming
+Uso: Streaming de datos en tiempo real
+Para el examen:
+Synchronous:
+
+Comunicación directa
+Tight coupling
+Problema con spikes
+
+Asynchronous:
+
+Queue/topic en medio
+Decoupled
+Escala independiente
+
+SQS: Queue model
+SNS: Pub/sub model
+Kinesis: Real-time streaming
+Ventaja del Decoupling:
+Independent scaling - Cada service escala por separado
+Resilience - Si uno falla, otros continúan
+Flexibility - Fácil agregar/quitar services
+Resumen:
+Apps pueden comunicarse synchronously (directo, acoplado) o asynchronously (mediante queue/topic, desacoplado). Synchronous tiene problemas con traffic spikes. 
+Asynchronous usa middleware (SQS queue, SNS pub/sub, Kinesis streaming) para decouple, permitiendo independent scaling y mejor resilience. Próximos temas: SQS y SNS en detalle.

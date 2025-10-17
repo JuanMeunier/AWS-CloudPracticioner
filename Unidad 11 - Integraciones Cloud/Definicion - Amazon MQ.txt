@@ -1,0 +1,93 @@
+Amazon MQ para Cloud Practitioner
+¿Qué es Amazon MQ?
+Managed message broker service para RabbitMQ y ActiveMQ
+¿Por qué existe Amazon MQ?
+SQS y SNS:
+Cloud-native - Protocolos propietarios de AWS
+Usan: APIs propias de AWS
+Problema:
+Traditional on-premises applications usan open protocols:
+
+MQTT
+AMQP
+STOMP
+Openwire
+WSS
+
+Solución:
+Amazon MQ - Para usar protocolos tradicionales sin re-engineer app
+Tecnologías soportadas:
+RabbitMQ - Message broker open-source
+ActiveMQ - Message broker open-source
+Ambos soportan open protocols (MQTT, AMQP, STOMP, etc.)
+Características:
+1. Managed service
+AWS gestiona brokers
+2. Runs on servers
+NO serverless (vs SQS/SNS)
+Puede tener server issues
+3. Limited scaling
+NO escala tanto como SQS/SNS
+NO infinite scaling
+4. Multi-AZ with failover
+High availability posible con multi-AZ setup
+5. Queue + Topic features
+Queue feature (como SQS)
+Topic feature (como SNS)
+Ambos en single broker
+Cuándo usar Amazon MQ:
+SOLO si:
+✅ Migrating from on-premises to cloud
+✅ App usa open protocols (MQTT, AMQP, STOMP, etc.)
+✅ No quieres re-engineer app para SQS/SNS
+Otherwise:
+❌ Usa SQS/SNS (mejor escalabilidad, más integración AWS)
+Amazon MQ vs SQS/SNS:
+Amazon MQ:
+
+Open protocols
+RabbitMQ/ActiveMQ
+Managed pero runs on servers
+Limited scaling
+Migration use case
+
+SQS/SNS:
+
+AWS proprietary protocols
+Cloud-native
+Serverless
+Infinite scaling
+Better AWS integration
+New applications
+
+Para el examen:
+Palabras clave Amazon MQ:
+"Open protocols" → Amazon MQ
+"MQTT/AMQP/STOMP" → Amazon MQ
+"RabbitMQ/ActiveMQ" → Amazon MQ
+"Migrate from on-premises" → Amazon MQ
+"Traditional protocols" → Amazon MQ
+"Don't want to re-engineer" → Amazon MQ
+Decisión:
+Migrating on-premises app con open protocols → Amazon MQ
+New cloud-native app → SQS/SNS
+Need infinite scaling → SQS/SNS
+Need better AWS integration → SQS/SNS
+Arquitectura:
+On-premises (before)
+    RabbitMQ/ActiveMQ
+    (MQTT, AMQP protocols)
+        ↓ migrate
+AWS Cloud (after)
+    Amazon MQ
+    (same protocols, managed)
+No need to change app code
+Limitaciones:
+Scaling - Limitado vs SQS/SNS
+Server-based - Puede tener server issues
+Cost - Más caro que SQS/SNS (pagas por servers)
+Integration - Menos integrado con AWS que SQS/SNS
+Resumen:
+Amazon MQ es managed message broker para RabbitMQ y ActiveMQ. Para migration desde on-premises usando open protocols (MQTT, AMQP, STOMP). Managed pero runs on servers (NO serverless). 
+Limited scaling vs SQS/SNS. Tiene queue + topic features. SOLO usar si migrating y necesitas open protocols, otherwise usar SQS/SNS (mejor scaling, más AWS integration). 
+En examen: open protocols o migration = Amazon MQ; cloud-native = SQS/SNS.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

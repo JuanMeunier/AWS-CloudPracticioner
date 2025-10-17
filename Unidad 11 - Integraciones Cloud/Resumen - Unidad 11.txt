@@ -1,0 +1,91 @@
+Resumen: Cloud Integration Services
+1. SQS (Simple Queue Service)
+Tipo: Queue service
+Funcionamiento:
+
+Multiple producers → SQS Queue
+Messages retained hasta 14 días
+Multiple consumers read and share messages
+Consumer procesa → Delete message
+
+Características:
+
+Decouple applications
+Consumers share work
+Messages deleted después de procesar
+
+Para examen: "Queue" o "Decouple" → SQS
+2. SNS (Simple Notification Service)
+Tipo: Pub/Sub notification service
+Funcionamiento:
+
+Producers → SNS Topic
+SNS → ALL subscribers (Email, Lambda, SQS, HTTP, Mobile)
+Todos reciben todos los messages
+
+Características:
+
+NO retiene messages (not durable)
+Push model
+Broadcast a todos
+
+Para examen: "Pub/Sub", "Notification", "Subscribers", "Topics" → SNS
+3. Kinesis
+Tipo: Real-time data streaming service
+Características:
+
+Real-time streaming
+Data persistence (retiene data)
+Analytics en real-time
+
+Para examen: "Real-time streaming", "Big data streaming" → Kinesis
+4. Amazon MQ
+Tipo: Managed message broker
+Tecnologías: ActiveMQ y RabbitMQ
+Características:
+
+Open protocols (MQTT, AMQP, STOMP)
+Migration desde on-premises
+Managed pero limited scaling
+
+Para examen: "Open protocols", "MQTT/AMQP", "Migrate on-premises" → Amazon MQ
+Comparación rápida:
+SQS:
+
+Queue
+Decouple
+Consumers share
+Retention 14 días max
+
+SNS:
+
+Pub/Sub
+Notification
+All get all messages
+NO retention
+
+Kinesis:
+
+Streaming
+Real-time
+Analytics
+Data persistence
+
+Amazon MQ:
+
+Message broker
+Open protocols
+Migration
+Limited scaling
+
+Para el examen - Decision Tree:
+¿Decouple applications? → SQS
+¿Send to multiple receivers? → SNS
+¿Real-time streaming/analytics? → Kinesis
+¿Migrate con open protocols? → Amazon MQ
+¿Cloud-native new app? → SQS/SNS (NO Amazon MQ)
+Resumen ultra-corto:
+SQS = Queue, decouple, share messages, retention 14d
+SNS = Pub/sub, broadcast, no retention
+Kinesis = Real-time streaming, analytics, persistence
+Amazon MQ = Managed broker, open protocols, migration

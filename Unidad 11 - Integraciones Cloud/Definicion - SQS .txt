@@ -1,0 +1,139 @@
+Amazon SQS (Simple Queue Service) para Cloud Practitioner
+¿Qué es SQS?
+Queue service para decouple aplicaciones
+Palabra clave examen: "Decouple" = SQS
+¿Cómo funciona una Queue?
+Producers (1 o múltiples)
+        ↓ send messages
+    SQS Queue
+        ↓ poll messages
+Consumers (1 o múltiples)
+        ↓ process & delete
+    Message deleted
+```
+
+**Proceso:**
+1. **Producers** envían messages a queue
+2. Messages se **almacenan** en queue
+3. **Consumers** poll (solicitan) messages de queue
+4. Consumers **procesan** messages
+5. Consumers **eliminan** messages de queue
+
+## Características principales:
+
+**Oldest AWS service** - Más de 10 años
+
+**Fully managed** - Serverless, no provisionar servers
+
+**Seamless scaling** - De 1 a decenas de miles messages/segundo
+
+**Message retention:**
+- Default: 4 días
+- Máximo: 14 días
+
+**No limit** en número de messages en queue
+
+**Low latency** - < 10 milliseconds
+
+**Consumers share work** - Múltiples consumers procesan en paralelo
+
+## Decoupling entre Application Tiers:
+
+**Sin SQS (Synchronous):**
+```
+Web Servers → Video Processing
+(acoplado, difícil escalar)
+```
+
+**Con SQS (Asynchronous):**
+```
+Web Servers (ASG)
+        ↓ insert messages
+    SQS Queue
+        ↓ read messages
+Video Processing (ASG independiente)
+```
+
+**Ventajas:**
+- **Independent scaling** - Cada ASG escala por separado
+- **Decoupled** - Un tier no afecta al otro
+- **Scale based on queue** - ASG escala según messages en queue
+- **Best user experience** - Web servers siempre rápidos
+- **Cost efficient** - Solo escala lo necesario
+
+## SQS FIFO Queues:
+
+**FIFO = First In, First Out**
+
+**Orden de messages:** Garantizado
+
+**Normal SQS Queue:**
+```
+Producer envía: 1, 2, 3, 4
+Consumer puede recibir: 3, 1, 4, 2 (sin orden)
+```
+
+**SQS FIFO Queue:**
+```
+Producer envía: 1, 2, 3, 4
+Consumer recibe: 1, 2, 3, 4 (en orden)
+```
+
+**Cuándo usar FIFO:** Cuando el orden importa
+
+## Ejemplo de arquitectura:
+```
+Users
+  ↓
+Application Load Balancer
+  ↓
+Web Servers (ASG)
+  ↓ insert video processing requests
+SQS Queue (buffer)
+  ↓ poll messages
+Video Processing EC2s (ASG)
+  ↓ scale based on queue depth
+Process videos
+Benefits:
+
+Web servers responden rápido (no esperan processing)
+Video processing escala según demanda
+Queue absorbe traffic spikes
+
+Para el examen:
+Palabras clave SQS:
+"Decouple applications" → SQS
+"Queue" → SQS
+"Asynchronous processing" → SQS
+"Buffer between tiers" → SQS
+"Scale independently" → SQS con decoupling
+"First In First Out" → SQS FIFO
+"Message retention" → SQS (4-14 días)
+SQS vs otros patrones:
+Synchronous:
+
+Direct communication
+Tight coupling
+
+SQS (Asynchronous):
+
+Queue en medio
+Decoupled
+Independent scaling
+
+Casos de uso:
+✅ Decouple microservices - Services no hablan directo
+✅ Buffer requests - Absorber traffic spikes
+✅ Asynchronous processing - Jobs que toman tiempo
+✅ Work distribution - Múltiples workers comparten carga
+✅ Order processing - E-commerce orders
+Características técnicas:
+Retention: 4 días default, 14 días max
+Size: No límite de messages en queue
+Latency: < 10 ms
+Consumers: Share work, scale horizontally
+Deletion: Consumer debe delete después de procesar
+Visibility timeout: Message invisible mientras se procesa
+Resumen:
+SQS (Simple Queue Service) es queue managed service para decouple aplicaciones. Producers envían messages, consumers poll y procesan. Fully managed, escala de 1 a miles messages/seg. Retention 4-14 días. 
+Consumers share work. FIFO queues garantizan orden. Permite independent scaling entre application tiers. En examen: decouple = SQS.

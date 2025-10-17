@@ -1,0 +1,146 @@
+Amazon SNS (Simple Notification Service) para Cloud Practitioner
+Problema que resuelve:
+Enviar 1 mensaje a MÚLTIPLES receivers
+Sin SNS (Direct Integration):
+Buying Service
+    ├─→ Email notification
+    ├─→ Fraud service
+    ├─→ Shipping service
+    └─→ SQS Queue
+
+Problema: 4 integraciones directas, complicado
+```
+
+## Con SNS (Pub/Sub):
+```
+Buying Service (Publisher)
+        ↓ publish 1 message
+    SNS Topic
+        ↓ automatically sends to ALL
+    ├─→ Email
+    ├─→ Fraud service
+    ├─→ Shipping service
+    └─→ SQS Queue
+
+Ventaja: 1 integración, múltiples destinos
+```
+
+## ¿Qué es SNS?
+
+**Simple Notification Service** - Pub/Sub messaging service
+
+## Componentes:
+
+### Publishers (Event publishers)
+**Envían messages** a SNS topic
+
+**1 mensaje** al topic
+
+### SNS Topic
+**Hub central** que distribuye messages
+
+### Subscribers (Event subscribers)
+**Reciben ALL messages** del topic
+
+**Tantos como quieras**
+
+## Característica clave:
+
+**TODOS los subscribers reciben TODOS los messages**
+
+**vs SQS:** En SQS consumers comparten messages (cada uno recibe diferentes)
+
+**SNS:** Cada subscriber recibe COPIA de todos los messages
+
+## Límites:
+
+**12+ million subscriptions** por topic
+
+**100,000 topics** por account (soft limit)
+
+## Tipos de Subscribers/Destinations:
+
+### AWS Services:
+- **SQS** - Queue
+- **Lambda** - Function
+- **Kinesis Data Firehose** - Streaming
+
+### Direct:
+- **Email** - Correo electrónico
+- **SMS** - Mensajes de texto
+- **Mobile Push** - Notificaciones móviles
+- **HTTP/HTTPS Endpoint** - Webhooks
+
+## Para el examen:
+
+**Palabras clave SNS:**
+
+**"Notification"** → SNS
+
+**"Pub/Sub"** → SNS
+
+**"Publisher/Subscriber"** → SNS
+
+**"Send to multiple receivers"** → SNS
+
+**"Fan-out"** → SNS
+
+**"All subscribers get all messages"** → SNS
+
+## SNS vs SQS:
+
+**SQS (Queue):**
+- 1-to-1 o many-to-many
+- Consumers **share** messages
+- Pull model (consumers poll)
+- Decouple
+
+**SNS (Pub/Sub):**
+- 1-to-many
+- All subscribers get **ALL** messages
+- Push model (SNS pushes)
+- Broadcast/notification
+
+## Caso de uso común: SNS + SQS (Fan-out)
+```
+Publisher
+    ↓
+SNS Topic
+    ├─→ SQS Queue 1 → Consumer 1
+    ├─→ SQS Queue 2 → Consumer 2
+    └─→ SQS Queue 3 → Consumer 3
+```
+
+**Beneficio:** Cada queue puede procesar independientemente
+
+## Casos de uso SNS:
+
+✅ **Notifications** - Alertas a múltiples sistemas
+
+✅ **Broadcasting** - Mismo message a todos
+
+✅ **Mobile push** - Notificaciones a apps móviles
+
+✅ **Email alerts** - Enviar emails
+
+✅ **SMS alerts** - Mensajes de texto
+
+✅ **Application integration** - Conectar múltiples services
+
+✅ **Fan-out pattern** - SNS → Múltiples SQS queues
+
+## Arquitectura ejemplo:
+```
+E-commerce Order Placed
+        ↓
+    SNS Topic
+    ├─→ Email (customer confirmation)
+    ├─→ Lambda (update inventory)
+    ├─→ SQS Queue (shipping)
+    └─→ SQS Queue (analytics)
+
+Todos reciben notification del mismo order
+Resumen:
+Amazon SNS (Simple Notification Service) es pub/sub messaging service. Publisher envía 1 mensaje a SNS topic, TODOS los subscribers reciben ese mensaje. 
+Múltiples destinations: SQS, Lambda, Firehose, Email, SMS, Mobile, HTTP. 12M+ subs/topic, 100K topics/account. 
+En examen: notification, pub/sub, multiple receivers = SNS. vs SQS: SNS broadcast (todos reciben todos), SQS share (reparten messages).ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

@@ -1,0 +1,79 @@
+Amazon Kinesis para Cloud Practitioner
+Palabra clave para el examen:
+"Kinesis" = Real-time big data streaming
+¿Qué es Kinesis?
+Servicio para collect, process y analyze streaming data en real-time a cualquier escala
+2 Componentes principales:
+1. Kinesis Data Streams
+Función: Collect y process streaming data en real-time
+Qué hace: Captura data streams continuos
+2. Kinesis Data Firehose
+Función: Load streams a destinos
+Destinos:
+
+Amazon S3
+Amazon Redshift
+OpenSearch
+Otros
+
+Arquitectura:
+Data Sources (Fast/Real-time)
+├─ Website clicks
+├─ IoT devices
+├─ Application logs
+└─ Metrics
+        ↓ stream data
+Kinesis Data Streams
+        ↓ analyze
+    Processing
+        ↓ (opcional)
+Kinesis Data Firehose
+        ↓ load to
+Destinations
+├─ S3
+├─ Redshift
+└─ OpenSearch
+Data Sources (Fuentes de datos):
+Fast data sources = Data creada en real-time
+Ejemplos:
+
+Website clicks - Clicks de usuarios
+IoT devices - Dispositivos conectados
+Application logs - Logs de apps
+Metrics - Métricas de servidores
+
+Para el examen:
+Palabras clave Kinesis:
+"Real-time streaming" → Kinesis
+"Big data streaming" → Kinesis
+"Real-time data ingestion" → Kinesis
+"Streaming analytics" → Kinesis
+"IoT data streams" → Kinesis
+"Click stream data" → Kinesis
+Kinesis vs SQS:
+SQS:
+
+Queue model
+Decouple applications
+Messages procesados y eliminados
+
+Kinesis:
+
+Streaming model
+Real-time analytics
+Data streams continuos
+
+Casos de uso:
+✅ Real-time analytics - Analizar data en tiempo real
+✅ IoT telemetry - Data de dispositivos IoT
+✅ Application monitoring - Logs y metrics real-time
+✅ Click stream analysis - Analizar clicks en website
+✅ Gaming analytics - Data de juegos en tiempo real
+Resumen ultra-simple para examen:
+Kinesis = Real-time big data streaming
+Data Streams: Captura streaming data
+Data Firehose: Load streams a S3/Redshift/OpenSearch
+Eso es TODO lo que necesitas para Cloud Practitioner
+Resumen:
+Amazon Kinesis es servicio para real-time big data streaming. Collect, process y analyze streaming data a cualquier escala. 
+Kinesis Data Streams captura data, Kinesis Data Firehose load a destinos (S3, Redshift, OpenSearch). Fuentes: clicks, IoT, logs, metrics. En examen: real-time streaming o big data streaming = Kinesis.
