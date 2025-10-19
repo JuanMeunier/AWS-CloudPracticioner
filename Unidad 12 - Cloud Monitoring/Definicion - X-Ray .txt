@@ -1,0 +1,209 @@
+Now, let's talk about another service
+that's called AWS X-Ray.
+So, when by default some people do debugging in productions,
+so, when your application is actually deployed,
+the good old way, you would test locally,
+then you would add log statements anywhere.
+Maybe look into how it logs,
+then you would re-deploy in production,
+and the see if you can find the problem this way.
+And the problem is that we have logs
+from different services and different applications.
+Doing log analysis it is very hard
+because we have to combine everything.
+So, if you have one application
+that's called a big monolith, so, one giant application,
+it's sort of easy to do debugging.
+But if you have distributed services
+they're connected through SQS queues,
+SNS topics, they're decoupled and so on,
+it becomes really, really hard to trace
+and see what is happening within your system.
+So, you have no common view of your entire architecture.
+But to solve that problem,
+you can use AWS X-Ray.
+So, with X-Ray, you're going to be able
+to do a tracing and get visual analysis of your application.
+So, X-Ray, once you enable it on your services,
+then you'll get a full picture
+of what is happening for each service.
+And see where they're failing, their performance,
+and in case one request goes wrong,
+you will be able to visualize it
+directly into the X-Ray console.
+So, the X-Ray advantages,
+is to do troubleshooting of the performance
+through the bottlenecks,
+or to understand the dependencies
+in a microservice architecture,
+because they're all connected
+as you saw in the previous graph.
+We can pinpoint a service issue with tracing.
+We can review a specific request behavior,
+and find the errors and exceptions for that request.
+We can know if we're meeting or not
+our service-level agreement, or SLA,
+meaning are we replying on time for all the requests.
+And if we're being throttled,
+if we're being slowed down,
+where is it happening, in which service?
+And finally, what or which users
+are going to be impacted by these outages.
+So, X-Ray really is great when you see,
+distributed tracing, troubleshooting,
+and you want to have a service graph.
+That's it, it's a more complicated service to use,
+so, I will not do any hands-on.
+But you get a high level of review
+that will be enough for the exam.
+So, hope you liked this lecture,
+and I will see you in the next lecture.
+
+*
+
+AWS X-Ray para Cloud Practitioner
+Problema del debugging tradicional:
+Old way:
+
+Test locally
+Add log statements
+Re-deploy to production
+Look at logs
+Try to find problem
+Problemas:
+
+Logs de diferentes services y applications
+Log analysis muy difícil - Combinar todo
+Distributed services (SQS, SNS, decoupled) = Very hard to trace
+No common view de toda la arquitectura
+¿Qué es X-Ray?
+Service para tracing y visual analysis de aplicaciones
+
+Distributed tracing - Ver qué pasa en cada service
+
+¿Cómo funciona X-Ray?
+Enable X-Ray en tus services
+
+X-Ray muestra:
+
+Full picture de cada service
+Dónde están failing
+Performance de cada service
+Visualización de requests que fallan
+Service graph - Mapa visual de tu arquitectura
+
+Ventajas de X-Ray:
+1. Troubleshooting Performance
+Find bottlenecks - Dónde se enlentece
+
+2. Understand Dependencies
+Microservice architecture - Ver cómo services se conectan
+
+3. Pinpoint Service Issues
+Tracing - Identificar exactamente dónde falla
+
+4. Review Request Behavior
+Specific requests - Ver qué pasó con request específico
+
+Find errors and exceptions - Para ese request
+
+5. SLA Compliance
+Meeting SLA? - ¿Respondemos a tiempo?
+
+Service Level Agreement - Cumplir tiempos de respuesta
+
+6. Identify Throttling
+Where is throttling? - En qué service se ralentiza
+
+Which users impacted? - Qué usuarios afectados por outages
+
+Para el examen:
+Palabras clave X-Ray:
+
+"Distributed tracing" → X-Ray
+
+"Troubleshooting microservices" → X-Ray
+
+"Service graph" → X-Ray
+
+"Visual analysis" → X-Ray
+
+"Find bottlenecks" → X-Ray
+
+"Trace requests" → X-Ray
+
+"Microservice dependencies" → X-Ray
+
+X-Ray vs CloudWatch vs CloudTrail:
+CloudWatch:
+
+Metrics y Logs
+Performance monitoring
+Alarms
+CloudTrail:
+
+API calls history
+Who did what when
+Audit
+X-Ray:
+
+Distributed tracing
+Service graph
+Request analysis
+Microservices debugging
+Casos de uso X-Ray:
+✅ Microservices - Multiple services comunicándose
+
+✅ Distributed applications - Services decoupled (SQS, SNS)
+
+✅ Performance issues - Find bottlenecks
+
+✅ Debugging production - Trace problematic requests
+
+✅ Understanding architecture - Visualizar dependencies
+
+Ejemplo:
+Sin X-Ray:
+
+Request fails somewhere
+↓
+Check logs from 10+ services
+↓
+Try to piece together what happened
+↓ (very difficult)
+```
+
+**Con X-Ray:**
+```
+Request fails
+↓
+X-Ray shows service graph
+↓
+See exactly where it failed
+↓
+See performance of each service
+↓
+Quickly identify problem
+```
+
+## Service Graph Example:
+```
+User Request
+    ↓
+API Gateway (2ms)
+    ↓
+Lambda (50ms)
+    ↓
+DynamoDB (5ms) ✓
+    ↓
+SQS (3ms) ✓
+    ↓
+Lambda (500ms) ❌ BOTTLENECK
+    ↓
+S3 (10ms) ✓
+X-Ray identifica: Lambda con 500ms es el problema
+
+Resumen:
+AWS X-Ray es service para distributed tracing y visual analysis de aplicaciones. Soluciona problema de debugging en architectures distribuidas (microservices con SQS, SNS, etc.). 
+Muestra service graph, identifica bottlenecks, trace requests, find errors. Advantages: troubleshoot performance, understand dependencies, pinpoint issues, review requests, SLA compliance, identify throttling. 
+Para examen: distributed tracing, service graph, microservices troubleshooting = X-Ray.

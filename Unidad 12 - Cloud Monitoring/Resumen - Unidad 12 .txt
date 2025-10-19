@@ -1,0 +1,66 @@
+Resumen: Cloud Monitoring Services
+1. CloudWatch (4 componentes):
+CloudWatch Metrics
+Monitor performance de AWS services y billing
+Ejemplos: CPU, Network, Billing
+CloudWatch Alarms
+Automate notifications cuando metric sale de rango
+Actions:
+
+EC2 actions (reboot, stop, terminate)
+SNS notifications
+Auto Scaling actions
+
+CloudWatch Logs
+Collect log files de:
+
+EC2 instances
+Servers
+Lambda functions
+
+Centralized en un servicio
+CloudWatch Events / EventBridge
+React to events en AWS
+Schedule rules - Cron jobs serverless
+2. CloudTrail
+Audit API calls en tu account
+CloudTrail Insights: Automated analysis de CloudTrail events
+Para: Governance, compliance, audit
+3. X-Ray
+Trace requests en distributed applications
+Para:
+
+Performance analysis
+Root cause analysis
+Error debugging
+Microservices
+
+4. AWS Health Dashboard (2 tipos):
+Service History
+Status de TODOS los AWS services en todas regions
+Account Health Dashboard
+AWS events que impactan TU infrastructure específicamente
+5. CodeGuru (2 componentes):
+CodeGuru Reviewer
+Automated code reviews con machine learning
+Detecta: Bugs, security issues, best practices
+CodeGuru Profiler
+Application performance recommendations
+Monitoring production con machine learning
+Quick Reference:
+Performance monitoring → CloudWatch Metrics
+Automated actions → CloudWatch Alarms
+Centralized logs → CloudWatch Logs
+Event-driven/Scheduled → EventBridge
+API audit → CloudTrail
+Distributed tracing → X-Ray
+AWS service status → Health Dashboard (Service)
+My account impacts → Health Dashboard (Account)
+Code quality → CodeGuru Reviewer
+Runtime performance → CodeGuru Profiler
+Resumen ultra-corto:
+CloudWatch (metrics, alarms, logs, events) → Monitoring y automation
+CloudTrail → API audit
+X-Ray → Distributed tracing
+Health Dashboard → Service status (general) y Account impacts (personal)
+CodeGuru → Code reviews y performance (ML-powered)

@@ -1,0 +1,99 @@
+CloudWatch Metrics y Alarms para Cloud Practitioner
+CloudWatch Metrics
+¿Qué son Metrics?
+Variable to monitor de servicios AWS
+Tienen timestamps - Se monitorean a lo largo del tiempo
+Ejemplos:
+
+CPUUtilization
+NetworkIn
+NetworkOut
+
+CloudWatch Dashboard
+Visualiza múltiples metrics en un solo lugar
+Metrics Comunes:
+1. Billing Metric
+Región: Solo us-east-1
+Qué muestra: Total gastado en AWS account
+Comportamiento: Aumenta durante el mes, reset a $0 al final de mes
+2. EC2 Metrics
+CPU Utilization - Qué tan ocupada está la CPU
+Status Check - Si instance funciona correctamente
+Network - NetworkIn y NetworkOut
+⚠️ RAM NO está disponible por defecto
+Frequency:
+
+Default: Cada 5 minutos (gratis)
+Detailed Monitoring: Cada 1 minuto (costo extra)
+
+3. EBS Volumes
+Disk Read/Write - Cantidad de lectura/escritura
+4. S3 Buckets
+Bucket Size - Tamaño en bytes
+Number of Objects - Cantidad de objetos
+Number of Requests - Requests al bucket
+5. Service Limits
+API Usage - Cuánto has usado service APIs
+6. Custom Metrics
+Push your own - Crea metrics personalizadas si no encuentras la que necesitas
+CloudWatch Alarms
+¿Qué son Alarms?
+Trigger notifications cuando metric supera threshold (umbral)
+Alarm Actions (3 tipos):
+1. Auto Scaling Actions
+Increase/Decrease EC2 instances en ASG
+Ejemplo: Si CPU > 80% → Add 2 instances
+2. EC2 Actions
+Stop - Detener instance
+Terminate - Terminar instance
+Reboot - Reiniciar instance
+Recover - Recuperar instance
+3. SNS Notifications
+Send notification a SNS topic
+Ejemplo: Si CPU > 90% → Enviar email
+Configuración de Alarms:
+Sampling options:
+
+Percentage
+Max
+Min
+Average
+
+Period:
+
+5 minutes
+10 minutes
+1 hour
+Custom
+
+Billing Alarm
+Special alarm en Billing metric
+Ejemplo: Notificar si gasto > $10 o $20
+Útil para: Control de costos
+Alarm States (Estados):
+OK - Todo bien ✅
+INSUFFICIENT_DATA - No hay suficientes data points ⚠️
+ALARM - Threshold superado, hay problema ❌
+Para el examen:
+CloudWatch Metrics:
+
+Monitor variables de servicios AWS
+EC2: CPU, Status, Network (NO RAM)
+Default: 5 min, Detailed: 1 min (costo)
+Billing: Solo us-east-1
+
+CloudWatch Alarms:
+
+Trigger cuando metric > threshold
+3 actions: Auto Scaling, EC2 Actions, SNS
+3 states: OK, INSUFFICIENT_DATA, ALARM
+Billing alarm para control de costos
+
+Casos de uso:
+Monitor CPU → CloudWatch Metric + Alarm → Auto Scaling
+Cost control → Billing Metric + Alarm → SNS notification
+Instance health → Status Check Metric + Alarm → EC2 recover
+High network → Network Metric + Alarm → Investigation
+Resumen:
+CloudWatch Metrics monitorea variables de servicios AWS con timestamps (CPU, Network, Billing, etc.). EC2 metrics cada 5 min default, 1 min con Detailed Monitoring (costo). RAM NO disponible. 
+CloudWatch Alarms trigger actions cuando metric supera threshold: Auto Scaling, EC2 Actions, SNS notifications. 3 estados: OK, INSUFFICIENT_DATA, ALARM. Billing alarm para control de costos (solo us-east-1).

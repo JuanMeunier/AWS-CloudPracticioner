@@ -1,0 +1,104 @@
+CloudWatch Logs para Cloud Practitioner
+¿Qué son Log Files?
+Text que escribe una aplicación sobre lo que está haciendo
+Ejemplos:
+
+User actions
+Clean ups
+Errors
+System events
+
+Propósito: Troubleshooting cuando algo falla
+CloudWatch Logs
+Service para collect y monitor log files de múltiples sources
+Sources (Orígenes) de logs:
+Elastic Beanstalk - Application logs
+ECS - Container logs
+Lambda - Function logs
+CloudTrail - AWS API calls
+CloudWatch Logs Agents - EC2/on-premises
+Route 53 - DNS query logs
+Características:
+Real-time monitoring - Monitoreo en tiempo real
+React to logs - Puedes reaccionar a eventos en logs
+Adjustable retention - Configurar cuánto tiempo guardar logs
+Retention Options:
+
+1 semana
+30 días
+1 año
+Infinito (never expire)
+
+CloudWatch Logs Agent
+Para EC2 Instances:
+Por defecto: EC2 instances NO envían logs a CloudWatch
+Necesitas: Instalar CloudWatch Logs Agent
+Arquitectura:
+EC2 Instance
+    ↓ install
+CloudWatch Logs Agent
+    ↓ push logs
+CloudWatch Logs Service
+```
+
+### Requisitos:
+
+**IAM permissions** - EC2 instance role debe tener permisos para enviar logs
+
+**Correct IAM role** - Attached a EC2 instance
+
+### Hybrid Agent:
+
+**Funciona en:**
+- EC2 instances (AWS)
+- On-premises servers
+
+**Beneficio:** Collect logs de ambos en mismo lugar
+```
+EC2 Instance + On-premises Server
+            ↓
+    CloudWatch Logs Agent
+            ↓
+    CloudWatch Logs Service
+Para el examen:
+CloudWatch Logs:
+
+Collect y monitor log files
+Multiple sources (Beanstalk, ECS, Lambda, etc.)
+Real-time monitoring
+Adjustable retention
+
+CloudWatch Logs Agent:
+
+Debe instalarse en EC2
+Requiere IAM permissions
+Hybrid (AWS + on-premises)
+NO funciona por defecto
+
+Sin Agent: EC2 NO envía logs a CloudWatch
+Con Agent: EC2 envía logs a CloudWatch
+Casos de uso:
+✅ Troubleshooting - Revisar logs cuando algo falla
+✅ Monitoring - Monitorear aplicaciones en real-time
+✅ Centralized logging - Todos los logs en un lugar
+✅ Compliance - Retener logs por regulación
+✅ Security - Detectar patrones sospechosos
+CloudWatch Logs vs CloudWatch Metrics:
+Metrics:
+
+Números/variables
+CPU, Network, etc.
+Gráficas
+Alarms
+
+Logs:
+
+Text files
+Application output
+Eventos detallados
+Troubleshooting
+
+Resumen:
+CloudWatch Logs collect y monitor log files de múltiples sources (Beanstalk, ECS, Lambda, CloudTrail, Route53). Real-time monitoring con adjustable retention (1 semana a infinito). 
+Para EC2 necesitas instalar CloudWatch Logs Agent (NO funciona por defecto) con proper IAM permissions. Agent es hybrid (funciona en EC2 y on-premises). 
+Para troubleshooting y centralized logging.

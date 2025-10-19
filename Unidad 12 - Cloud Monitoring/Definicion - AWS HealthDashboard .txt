@@ -1,0 +1,100 @@
+AWS Health Dashboard para Cloud Practitioner
+2 Tipos de Health Dashboards:
+1. Service History (Service Health Dashboard)
+Anteriormente: AWS Service Health Dashboard
+Qué muestra: Health de TODOS los services en TODAS las regions
+Para: General information
+Características:
+
+Ver todas las regions
+Ver todos los services
+Historical data (por día)
+RSS feed subscription
+
+Scope: Global AWS status
+2. Health Dashboard for Your Account
+Anteriormente: AWS Personal Health Dashboard (PHD)
+Qué muestra: Health de services que TÚ usas en TU account
+Para: Personalized information
+Health Dashboard for Your Account - Detalle:
+Qué proporciona:
+Alerts - Alertas cuando eventos te afectan
+Remediation guidance - Guía para resolver problemas
+Performance y availability - De TUS services y resources
+Relevant and timely information - Info relevante para ti
+Proactive notifications - Para scheduled maintenance
+Event log - Ver eventos pasados
+Scheduled changes - Cambios programados
+Scheduled activities - Actividades planificadas
+Características especiales:
+Aggregate data - Para entire AWS Organization
+Global service - No regional
+Direct impact - Solo outages que te afectan
+Cómo acceder:
+Top right corner → Bell icon → Health Dashboard
+Service History vs Account Dashboard:
+Service History:
+
+General AWS status
+Todos los services
+Todas las regions
+Para cualquiera
+
+Account Dashboard:
+
+Personalized status
+Solo TUS services
+Solo TUS resources
+Específico para ti
+
+Ejemplo:
+Service History muestra:
+EC2 - US-East-1: ✓ OK
+EC2 - US-East-2: ❌ Issue
+EC2 - EU-West-1: ✓ OK
+```
+
+**Account Dashboard muestra (si usas US-East-2):**
+```
+⚠️ EC2 issue in US-East-2 impacts YOU
+- Your instances: i-123, i-456 affected
+- Remediation: Actions you can take
+- Estimated resolution: 2 hours
+Para el examen:
+Service History:
+
+General AWS status
+All services, all regions
+Historical view
+
+Account Dashboard:
+
+Personalized alerts
+Only impacts YOU
+Proactive notifications
+Remediation guidance
+
+Palabras clave:
+"General AWS service status" → Service History
+"Personalized health alerts" → Account Dashboard
+"Events impacting MY account" → Account Dashboard
+"Scheduled maintenance" → Account Dashboard
+"AWS-wide status" → Service History
+Casos de uso:
+Service History:
+✅ Check if AWS service tiene problema general
+✅ Ver historical health
+✅ Monitor all regions
+Account Dashboard:
+✅ Saber si TUS resources están afectados
+✅ Proactive maintenance notifications
+✅ Remediation steps para TU account
+✅ Organization-wide view
+Event Types en Account Dashboard:
+Operational issues - Problemas actuales
+Scheduled changes - Cambios programados
+Notifications - Avisos importantes
+Account-specific - Solo para tu account
+Resumen:
+AWS Health Dashboard tiene 2 partes: Service History (ex Service Health Dashboard, general status de todos AWS services/regions) y Health Dashboard for Your Account (ex Personal Health Dashboard, personalized alerts/remediation para events que impactan TUS resources). Account Dashboard da proactive notifications, scheduled maintenance alerts, event log, remediation guidance. 
+Puede agregar data de AWS Organization. Acceso: top right bell icon. Para examen: general status = Service History, personalized impacts = Account Dashboard.

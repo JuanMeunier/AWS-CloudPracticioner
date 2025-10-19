@@ -1,0 +1,168 @@
+Amazon EventBridge para Cloud Practitioner
+Nombre:
+EventBridge = Nuevo nombre
+CloudWatch Events = Nombre viejo
+Son lo mismo - Si ves CloudWatch Events en examen, piensa EventBridge
+¿Qué hace EventBridge?
+React to events que ocurren en AWS account
+Dos usos principales:
+1. Schedule Cron Jobs (Serverless)
+Ejemplo:
+EventBridge Rule (cada 1 hora)
+        ↓ trigger event
+Lambda Function
+        ↓ execute
+    Script runs
+```
+
+**Serverless cron job** - Sin servers
+
+### 2. React to Service Events
+
+**Ejemplo - Root User Login Alert:**
+```
+IAM Root User Sign-in
+        ↓ event
+    EventBridge
+        ↓ trigger
+    SNS Topic
+        ↓
+Email notification
+```
+
+**Use case:** Alertar cuando root user se loguea (no debería usarse frecuentemente)
+
+## Event Sources (Orígenes):
+
+**AWS Services:**
+- EC2 Instances
+- CodeBuild
+- S3 Events
+- Trusted Advisor
+- IAM
+- Muchos más
+
+**Schedules:**
+- Cron expressions
+- Rate expressions
+
+## Event Destinations (Destinos):
+
+**Compute:**
+- Lambda functions
+- Batch
+- ECS tasks
+
+**Integration:**
+- SNS
+- SQS
+- Kinesis
+
+**Orchestration:**
+- Step Functions
+- CodePipeline
+
+**Maintenance:**
+- SSM
+- EC2 Actions
+
+**Y muchos más**
+
+## 3 Tipos de Event Buses:
+
+### 1. Default Event Bus
+
+**Eventos de:** AWS Services y schedules
+
+**Lo que hemos visto** hasta ahora
+
+### 2. Partner Event Bus
+
+**Eventos de:** AWS Partners (Zendesk, Datadog, etc.)
+
+**Beneficio:** React a eventos fuera de AWS
+
+### 3. Custom Event Bus
+
+**Eventos de:** Tus custom applications
+
+**Beneficio:** Integración totalmente personalizada
+```
+Default Event Bus ← AWS Services
+Partner Event Bus ← AWS Partners
+Custom Event Bus ← Your Apps
+```
+
+## Features adicionales:
+
+### Schema Registry
+
+**Model event schema** - Ver estructura de eventos, data types
+
+### Archive Events
+
+**Archive indefinitely** o por período específico
+
+**Replay archived events** - Reproducir eventos archivados
+
+## Para el examen:
+
+**EventBridge = CloudWatch Events**
+
+**Palabras clave:**
+
+**"React to events"** → EventBridge
+
+**"Serverless cron job"** → EventBridge
+
+**"Schedule Lambda"** → EventBridge
+
+**"React to service actions"** → EventBridge
+
+**"Event-driven"** → EventBridge
+
+## Casos de uso:
+
+✅ **Serverless cron** - Schedule scripts sin servers
+
+✅ **Security alerts** - React a security events
+
+✅ **Automation** - Trigger actions automáticamente
+
+✅ **Integration** - Connect services
+
+✅ **Monitoring** - React a changes
+
+## Ejemplo completo:
+```
+Source: S3 Object Created
+        ↓
+    EventBridge
+        ↓
+Destinations:
+├─ Lambda (process image)
+├─ SNS (send notification)
+└─ SQS (queue for processing)
+Un evento → Múltiples destinations
+EventBridge vs otros services:
+EventBridge:
+
+Event-driven
+React to events
+Many sources → Many destinations
+
+CloudWatch Alarms:
+
+Metric-driven
+Threshold-based
+One metric → Actions
+
+Lambda:
+
+Execute code
+Destination, no source
+
+Resumen:
+EventBridge (ex CloudWatch Events) react a eventos en AWS. Dos usos: schedule cron jobs serverless y react a service events. 
+Múltiples sources (AWS services, schedules) → EventBridge → Múltiples destinations (Lambda, SNS, SQS, etc.). 3 tipos event buses: Default (AWS), Partner (terceros), Custom (tus apps). 
+Features: Schema Registry, Archive/Replay events. Para examen: react to events o serverless cron = EventBridge.

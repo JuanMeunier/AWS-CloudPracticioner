@@ -1,0 +1,237 @@
+AWS CloudTrail para Cloud Practitioner
+¿Qué es CloudTrail?
+Service para governance, compliance y audit de AWS accounts
+Enabled by default en todas las cuentas
+¿Qué hace CloudTrail?
+Get history de TODOS los events/API calls en tu account
+¿Qué se registra en CloudTrail?
+TODO:
+Console logins - Alguien se loguea en console
+SDK calls - API calls desde SDK
+CLI commands - Comandos desde CLI
+Service activity - Actividad de AWS services
+Cualquier cosa que pase en tu account
+Destinos de CloudTrail Logs:
+CloudWatch Logs - Para monitoring y analysis
+Amazon S3 - Para long-term retention
+CloudTrail events
+    ├─→ CloudWatch Logs (monitoring)
+    └─→ S3 (long-term storage)
+```
+
+## Trail Configuration:
+
+**All regions** - Monitor toda AWS account
+
+**Single region** - Monitor solo una región
+
+**Choice:** Dónde enviar logs (CloudWatch, S3, o ambos)
+
+## Ejemplo de uso:
+
+**Pregunta:** "Un usuario borró algo, ¿quién fue, qué borró, cuándo?"
+
+**Respuesta:** CloudTrail
+
+**CloudTrail muestra:**
+- **Quién** (IAM user/role)
+- **Qué** (resource borrado)
+- **Cuándo** (timestamp)
+- **Cómo** (API call usado)
+
+## Para el examen:
+
+**Palabras clave CloudTrail:**
+
+**"API calls history"** → CloudTrail
+
+**"Who did what when"** → CloudTrail
+
+**"Audit"** → CloudTrail
+
+**"Compliance"** → CloudTrail
+
+**"Track changes"** → CloudTrail
+
+**"Governance"** → CloudTrail
+
+**"Who deleted X"** → CloudTrail
+
+## CloudTrail Console muestra:
+
+**Usage of:**
+- SDK
+- CLI
+- Console
+
+**Activity by:**
+- IAM users
+- IAM roles
+
+**All API calls** realizados
+
+## Long-term Retention:
+
+**CloudTrail Console** - Display events
+
+**CloudWatch Logs** - Monitoring y retention
+
+**S3 Bucket** - Long-term storage y archival
+
+**Flow:**
+```
+CloudTrail Console (display)
+        ↓ send for retention
+CloudWatch Logs / S3
+        ↓
+Inspection & Audit
+Casos de uso:
+✅ Security analysis - Detectar actividad sospechosa
+✅ Compliance - Cumplir requisitos regulatorios
+✅ Troubleshooting - Qué cambió y causó problema
+✅ Audit - Revisar actividad de usuarios
+✅ Resource change tracking - Quién modificó qué
+CloudTrail vs CloudWatch:
+CloudWatch:
+
+Metrics y Logs
+Performance monitoring
+Alarms
+
+CloudTrail:
+
+API calls y Events
+Who did what when
+Audit trail
+
+Ejemplo práctico:
+Escenario: EC2 instance fue terminada
+CloudTrail muestra:
+
+User: john@company.com
+Action: TerminateInstances
+Resource: i-1234567890abcdef0
+Time: 2024-01-15 10:30:45 UTC
+Source IP: 203.0.113.42
+
+Resumen:
+CloudTrail proporciona governance, compliance y audit tracking TODOS los API calls y events en AWS account. Enabled by default. Registra console logins, SDK, CLI, service activity. Envía logs a CloudWatch Logs o S3 para retention. Responde "who did what when". Para audit, compliance, security analysis, troubleshooting. En examen: API calls history, audit, who did what = CloudTrail.AWS CloudTrail para Cloud Practitioner
+¿Qué es CloudTrail?
+Service para governance, compliance y audit de AWS accounts
+Enabled by default en todas las cuentas
+¿Qué hace CloudTrail?
+Get history de TODOS los events/API calls en tu account
+¿Qué se registra en CloudTrail?
+TODO:
+Console logins - Alguien se loguea en console
+SDK calls - API calls desde SDK
+CLI commands - Comandos desde CLI
+Service activity - Actividad de AWS services
+Cualquier cosa que pase en tu account
+Destinos de CloudTrail Logs:
+CloudWatch Logs - Para monitoring y analysis
+Amazon S3 - Para long-term retention
+CloudTrail events
+    ├─→ CloudWatch Logs (monitoring)
+    └─→ S3 (long-term storage)
+```
+
+## Trail Configuration:
+
+**All regions** - Monitor toda AWS account
+
+**Single region** - Monitor solo una región
+
+**Choice:** Dónde enviar logs (CloudWatch, S3, o ambos)
+
+## Ejemplo de uso:
+
+**Pregunta:** "Un usuario borró algo, ¿quién fue, qué borró, cuándo?"
+
+**Respuesta:** CloudTrail
+
+**CloudTrail muestra:**
+- **Quién** (IAM user/role)
+- **Qué** (resource borrado)
+- **Cuándo** (timestamp)
+- **Cómo** (API call usado)
+
+## Para el examen:
+
+**Palabras clave CloudTrail:**
+
+**"API calls history"** → CloudTrail
+
+**"Who did what when"** → CloudTrail
+
+**"Audit"** → CloudTrail
+
+**"Compliance"** → CloudTrail
+
+**"Track changes"** → CloudTrail
+
+**"Governance"** → CloudTrail
+
+**"Who deleted X"** → CloudTrail
+
+## CloudTrail Console muestra:
+
+**Usage of:**
+- SDK
+- CLI
+- Console
+
+**Activity by:**
+- IAM users
+- IAM roles
+
+**All API calls** realizados
+
+## Long-term Retention:
+
+**CloudTrail Console** - Display events
+
+**CloudWatch Logs** - Monitoring y retention
+
+**S3 Bucket** - Long-term storage y archival
+
+**Flow:**
+```
+CloudTrail Console (display)
+        ↓ send for retention
+CloudWatch Logs / S3
+        ↓
+Inspection & Audit
+Casos de uso:
+✅ Security analysis - Detectar actividad sospechosa
+✅ Compliance - Cumplir requisitos regulatorios
+✅ Troubleshooting - Qué cambió y causó problema
+✅ Audit - Revisar actividad de usuarios
+✅ Resource change tracking - Quién modificó qué
+CloudTrail vs CloudWatch:
+CloudWatch:
+
+Metrics y Logs
+Performance monitoring
+Alarms
+
+CloudTrail:
+
+API calls y Events
+Who did what when
+Audit trail
+
+Ejemplo práctico:
+Escenario: EC2 instance fue terminada
+CloudTrail muestra:
+
+User: john@company.com
+Action: TerminateInstances
+Resource: i-1234567890abcdef0
+Time: 2024-01-15 10:30:45 UTC
+Source IP: 203.0.113.42
+
+Resumen:
+CloudTrail proporciona governance, compliance y audit tracking TODOS los API calls y events en AWS account. Enabled by default. 
+Registra console logins, SDK, CLI, service activity. Envía logs a CloudWatch Logs o S3 para retention. 
+Responde "who did what when". Para audit, compliance, security analysis, troubleshooting. En examen: API calls history, audit, who did what = CloudTrail.

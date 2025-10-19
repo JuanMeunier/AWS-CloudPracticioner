@@ -1,0 +1,150 @@
+Amazon CodeGuru para Cloud Practitioner
+¿Qué es CodeGuru?
+Machine learning-powered service con 2 funciones:
+
+Automated code reviews
+Application performance recommendations
+
+2 Componentes:
+1. CodeGuru Reviewer
+Función: Automated code reviews con static code analysis
+Cuándo: Cuando push code a repository
+Repositories soportados:
+
+CodeCommit
+GitHub
+Bitbucket
+
+Qué hace:
+
+Revisa todas las líneas de código
+Detecta bugs
+Detecta memory leaks
+Da actionable recommendations
+
+Machine Learning:
+
+Analiza miles de open source repositories
+Analiza amazon.com repositories
+Aprende de code reviews anteriores
+
+Lenguajes soportados:
+
+Java
+Python
+
+2. CodeGuru Profiler
+Función: Application performance recommendations durante runtime/production
+Cuándo: Pre-production y Production
+Qué hace:
+Pre-production:
+
+Detecta expensive lines of code
+Optimiza antes de deploy
+
+Production:
+
+Measure application en real-time
+Identifica performance improvements
+Identifica cost improvements
+Da recommendations directamente en código
+
+CodeGuru Reviewer - Detalle:
+Qué detecta:
+Critical issues - Problemas críticos
+Security vulnerabilities - Huecos de seguridad
+Hard-to-find bugs - Bugs difíciles de encontrar
+Resource leaks - Memory leaks, file handle leaks
+Input validation - Problemas de validación
+Coding best practices - Mejores prácticas
+Cómo funciona:
+Machine learning + Automated reasoning
+Trained on:
+
+Miles de open source repos
+amazon.com repositories
+
+Analiza: Code commits cuando push
+Output: Líneas específicas con problemas + recommendations
+CodeGuru Profiler - Detalle:
+Qué analiza:
+Runtime behavior - Comportamiento durante ejecución
+CPU usage - Qué consume CPU excesivo
+Memory usage - Qué objetos ocupan mucha memoria
+Code inefficiencies - Código ineficiente
+Beneficios:
+✅ Improve performance - Mejor performance
+✅ Reduce CPU utilization - Menos CPU usado
+✅ Decrease compute costs - Menores costos
+✅ Heap summaries - Ver qué objetos ocupan memoria
+✅ Anomaly detection - Detectar comportamiento anormal
+Dónde funciona:
+AWS Cloud - Applications en AWS
+On-premises - Applications on-premises
+Minimal overhead - Impacto mínimo en app
+Para el examen:
+Palabras clave CodeGuru:
+"Automated code review" → CodeGuru Reviewer
+"ML-powered code analysis" → CodeGuru
+"Find bugs before production" → CodeGuru Reviewer
+"Application performance" → CodeGuru Profiler
+"Runtime optimization" → CodeGuru Profiler
+"Reduce CPU/costs" → CodeGuru Profiler
+"Security vulnerabilities" → CodeGuru Reviewer
+CodeGuru vs otros services:
+CodeGuru Reviewer:
+
+Code quality
+Pre-deployment
+Static analysis
+
+CodeGuru Profiler:
+
+Runtime performance
+Production
+Dynamic analysis
+
+X-Ray:
+
+Distributed tracing
+Request flow
+Service dependencies
+
+CloudWatch:
+
+Metrics y logs
+Infrastructure monitoring
+
+Casos de uso:
+CodeGuru Reviewer:
+✅ Detectar bugs antes de merge
+✅ Security scan automático
+✅ Code quality checks
+✅ Best practices enforcement
+CodeGuru Profiler:
+✅ Optimize production performance
+✅ Reduce compute costs
+✅ Find memory leaks
+✅ Identify CPU bottlenecks
+Ejemplo CodeGuru Reviewer:
+python# Your code
+def process_data(data):
+    file = open("data.txt")  # ❌ Resource leak
+    # ... process
+    return result
+
+# CodeGuru: "Resource leak: file not closed"
+# Recommendation: Use 'with' statement
+```
+
+## Ejemplo CodeGuru Profiler:
+```
+CPU Usage Analysis:
+- logging_function: 45% CPU ❌ (too high)
+- data_processing: 30% CPU ✓
+- api_calls: 15% CPU ✓
+
+Recommendation: Optimize logging_function
+Resumen:
+Amazon CodeGuru es ML-powered service con 2 componentes: Reviewer (automated code reviews, detecta bugs/security issues antes de production, static analysis, Java/Python) y Profiler (application performance recommendations durante runtime, reduce CPU/costs, heap summaries, anomaly detection, AWS + on-premises). Reviewer analiza code commits, Profiler analiza runtime behavior. 
+Para examen: automated code review = Reviewer, runtime performance = Profiler.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.
