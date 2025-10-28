@@ -1,0 +1,149 @@
+Network Security en VPC: NACL y Security Groups
+2 Capas de Seguridad:
+1. Network ACL (NACL)
+Nivel: Subnet level (primera línea de defensa)
+Qué es: Firewall que controla traffic from and to subnet
+Rules: ALLOW y DENY
+Puede incluir: Solo IP addresses
+Traffic: Filtra antes de llegar a EC2 instances
+2. Security Groups
+Nivel: EC2 Instance level (segunda línea de defensa)
+Qué es: Firewall que controla traffic to and from EC2 instance
+Rules: Solo ALLOW (NO deny)
+Puede incluir: IP addresses y otros Security Groups
+Traffic: Filtra en la instancia misma
+Arquitectura:
+Internet
+    ↓
+NACL (subnet level)
+    ↓ primera línea defensa
+Subnet
+    ↓
+Security Group (instance level)
+    ↓ segunda línea defensa
+EC2 Instance
+```
+
+## Diferencias principales (para examen):
+
+### 1. Nivel de operación:
+**Security Group:** Instance level
+
+**NACL:** Subnet level
+
+### 2. Tipos de rules:
+**Security Group:** Solo ALLOW
+
+**NACL:** ALLOW y DENY
+
+### 3. Statefulness:
+**Security Group:** **Stateful**
+- Return traffic **automáticamente permitido**
+- Si permites inbound, outbound response automático
+
+**NACL:** **Stateless**
+- Return traffic debe ser **explícitamente permitido** con rules
+- Debes configurar inbound Y outbound
+
+## Tabla comparativa completa:
+
+**Security Group:**
+- Instance level
+- ALLOW rules only
+- Stateful (return auto)
+- Puede referenciar IPs y otros SGs
+- All rules evaluated
+- Default: deny all inbound, allow all outbound
+
+**NACL:**
+- Subnet level
+- ALLOW y DENY rules
+- Stateless (return explícito)
+- Solo IP addresses
+- Rules processed in order (numbered)
+- Default: allow all inbound, allow all outbound
+
+## Default NACL:
+
+**Inbound Rules:**
+```
+Rule 100: ALLOW all traffic, all ports, from anywhere
+Rule *: DENY all (catch-all)
+```
+
+**Outbound Rules:**
+```
+Rule 100: ALLOW all traffic, all ports, to anywhere
+Rule *: DENY all (catch-all)
+```
+
+**Procesamiento:**
+1. Evalúa rule 100 primero
+2. Si match → Permite
+3. Si no match → Continúa a siguiente rule
+4. Rule * (última) → Deny todo lo demás
+
+## Ejemplo Custom NACL:
+
+**Permitir solo HTTPS:**
+```
+Rule 200: ALLOW HTTPS (443) from anywhere
+Rule *: DENY all
+```
+
+**Resultado:** Solo traffic HTTPS permitido, todo lo demás denegado
+
+## En AWS Console:
+
+**Security Groups:**
+- VPC Console → Security → Security Groups
+- O EC2 Console → Security Groups
+- Ver inbound/outbound rules
+
+**Network ACLs:**
+- VPC Console → Network ACLs
+- Ver subnets asociados
+- Edit inbound/outbound rules
+- Rules numeradas (orden importa)
+
+## Para el examen:
+
+**NACL:**
+- Subnet level
+- ALLOW y DENY
+- Stateless
+- Solo IPs
+
+**Security Group:**
+- Instance level
+- Solo ALLOW
+- Stateful
+- IPs y otros SGs
+
+**Key difference:** Level (subnet vs instance) y Rules (ALLOW/DENY vs solo ALLOW)
+
+## Casos de uso:
+
+**NACL:**
+✅ Bloquear IPs específicas (DENY)
+✅ Subnet-wide rules
+✅ Additional layer of security
+
+**Security Group:**
+✅ Control granular por instance
+✅ Referenciar otros security groups
+✅ Simpler management
+
+## Stateful vs Stateless:
+
+**Stateful (Security Group):**
+```
+Allow inbound 443 → Outbound response automático ✅
+```
+
+**Stateless (NACL):**
+```
+Allow inbound 443 → Debes TAMBIÉN allow outbound response
+Resumen:
+Network security en VPC tiene 2 capas: NACL (subnet level, ALLOW/DENY, stateless, solo IPs) y Security Groups (instance level, solo ALLOW, stateful, IPs + SGs). NACL es primera defensa filtrando en subnet, Security Group es segunda defensa en instance. 
+Stateful significa return traffic auto-permitido, stateless requiere rules explícitas. Default NACL permite todo. Para examen: level (subnet vs instance), rules (ALLOW/DENY vs ALLOW), statefulness.

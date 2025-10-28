@@ -1,0 +1,48 @@
+VPC - Introducción para Cloud Practitioner
+¿Qué es VPC?
+Virtual Private Cloud - Red virtual privada en AWS
+Nivel de conocimiento requerido:
+Cloud Practitioner: High-level concepts
+Solutions Architect / SysOps: In-depth knowledge
+En CCP exam: 1-2 preguntas solamente
+Conceptos a conocer (high-level):
+Networking:
+
+VPC - Virtual Private Cloud
+Subnets - Subdivisiones de VPC
+Internet Gateways - Conexión a internet
+NAT Gateways - Internet para private subnets
+
+Security:
+
+Security Groups - Firewall a nivel de instancia
+Network ACL (NACL) - Firewall a nivel de subnet
+
+Monitoring:
+
+VPC Flow Logs - Logs de tráfico de red
+
+Connectivity:
+
+VPC Peering - Conectar VPCs
+VPC Endpoints - Conexión privada a servicios AWS
+Site-to-Site VPN - Conexión encriptada on-premises
+Direct Connect - Conexión dedicada on-premises
+Transit Gateway - Hub para conectar VPCs y on-premises
+
+Qué haremos en esta sección:
+NO crearemos VPC desde cero
+SÍ veremos: Default VPC creada por AWS
+Habrá: Summary lecture al final explicando todo
+Importante para el examen:
+High-level understanding es suficiente
+No necesitas: Conocimiento profundo
+Summary lecture al final cubrirá todo lo necesario
+1-2 preguntas en el exam
+Complejidad:
+VPC es complicado en detalle
+Para CCP: Solo conceptos básicos
+Presta atención y estarás bien preparado
+Resumen:
+VPC (Virtual Private Cloud) es complejo pero para CCP solo necesitas high-level. Conceptos: VPC, Subnets, Internet/NAT Gateways, Security Groups, NACL, Flow Logs, Peering, Endpoints, Site-to-Site VPN, Direct Connect, Transit Gateway. 
+Solo 1-2 preguntas en exam. Veremos default VPC, no crearemos desde cero. Summary lecture al final explicará todo. High-level knowledge es suficiente para aprobar.

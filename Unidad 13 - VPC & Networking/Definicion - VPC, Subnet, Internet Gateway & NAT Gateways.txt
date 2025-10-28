@@ -1,0 +1,144 @@
+VPC (Virtual Private Cloud) para Cloud Practitioner
+¿Qué es VPC?
+Virtual Private Cloud - Red privada para deploy resources (EC2, etc.)
+Linked to: Región específica
+Multiple regions = Multiple VPCs
+Componentes básicos:
+1. VPC
+Private network en AWS
+CIDR Range: Rango de IP addresses permitidas
+Regional: 1 VPC por región
+2. Subnets
+Partition de tu VPC network
+Associated with: Availability Zone específica
+2 tipos:
+Public Subnet
+Accessible from internet ✅
+Direct connectivity to internet
+Uso: EC2 instances públicas, Load Balancers
+Private Subnet
+NOT accessible from internet ❌
+No direct internet access
+Uso: Databases, internal services (más seguro)
+3. Route Tables
+Define access entre subnets y a internet
+Controla: Cómo resources se comunican
+Arquitectura ejemplo:
+AWS Cloud
+  └─ Region
+      └─ VPC (CIDR: 10.0.0.0/16)
+          ├─ AZ 1
+          │   ├─ Public Subnet (10.0.1.0/24)
+          │   └─ Private Subnet (10.0.2.0/24)
+          └─ AZ 2
+              ├─ Public Subnet (10.0.3.0/24)
+              └─ Private Subnet (10.0.4.0/24)
+```
+
+**1 VPC, 2 AZs, 4 Subnets** (2 public, 2 private)
+
+## Internet Gateway (IGW):
+
+### ¿Qué es?
+**Permite VPC instances conectarse a internet**
+
+### Cómo funciona:
+```
+Public Subnet
+    ↓ route
+Internet Gateway (IGW)
+    ↓
+Internet
+```
+
+**Public Subnet** = Subnet con route a Internet Gateway
+
+**Managed by AWS**
+
+## NAT Gateway / NAT Instance:
+
+### Problema:
+Private subnet NO tiene internet access
+
+Pero **necesita internet** para:
+- OS updates
+- Download files
+- Outbound connections
+
+### Solución: NAT Gateway
+
+**NAT = Network Address Translation**
+
+**Ubicación:** En public subnet
+
+### Cómo funciona:
+```
+Private Subnet
+    ↓ route
+NAT Gateway (en public subnet)
+    ↓ route
+Internet Gateway
+    ↓
+Internet
+Private subnet → NAT → IGW → Internet
+Instances permanecen private (no inbound desde internet)
+Solo outbound permitido
+NAT Gateway vs NAT Instance:
+NAT Gateway:
+
+Managed by AWS ✅
+Más común
+Más fácil
+
+NAT Instance:
+
+Self-managed (tú lo gestionas)
+Menos común
+
+Para el examen:
+VPC:
+
+Private network
+Regional
+CIDR range
+
+Public Subnet:
+
+Internet accessible
+Route a IGW
+EC2, Load Balancers
+
+Private Subnet:
+
+NO internet accessible
+Databases, internal services
+Más seguro
+
+Internet Gateway:
+
+VPC → Internet
+Para public subnets
+
+NAT Gateway:
+
+Private subnet → Internet (outbound only)
+En public subnet
+Managed by AWS
+
+Route Tables:
+
+Define connectivity
+Entre subnets y internet
+
+Casos de uso:
+Public Subnet:
+✅ Web servers
+✅ Load Balancers
+✅ Bastion hosts
+Private Subnet:
+✅ Databases
+✅ Application servers
+✅ Internal services
+Resumen:
+VPC es private network regional en AWS. Contiene subnets (public o private) asociadas a AZs. Public subnet tiene route a Internet Gateway (IGW) para internet access. Private subnet NO tiene internet directo pero puede usar NAT Gateway (en public subnet) para outbound internet mientras permanece private. Route Tables definen connectivity. 
+Public subnets para resources públicos (EC2, LB), private subnets para databases/internal (más seguro).

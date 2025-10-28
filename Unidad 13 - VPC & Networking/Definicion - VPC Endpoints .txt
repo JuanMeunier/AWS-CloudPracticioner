@@ -1,0 +1,128 @@
+VPC Endpoints para Cloud Practitioner
+Problema:
+Servicios AWS son públicos por defecto
+Conexión normal: Pasa por public internet
+Solución: VPC Endpoints
+Conectar a AWS services usando private AWS network
+Beneficios:
+✅ Better security - No pasa por public internet
+✅ Lower latency - No pasa por network hubs públicos
+✅ Private connection - Todo dentro de AWS network
+2 Tipos de VPC Endpoints:
+1. Gateway Endpoint
+Para: SOLO S3 y DynamoDB
+Arquitectura:
+VPC
+  └─ Private Subnet
+      └─ EC2 Instance
+          ↓ private connection
+      Gateway Endpoint
+          ↓ private AWS network
+      S3 / DynamoDB
+```
+
+**Key para examen:** Gateway = **S3 y DynamoDB ÚNICAMENTE**
+
+### 2. Interface Endpoint
+
+**Para:** **Todos los demás servicios AWS**
+
+**Ejemplos:**
+- CloudWatch
+- EC2
+- SNS
+- SQS
+- KMS
+- Etc.
+
+**Arquitectura:**
+```
+VPC
+  └─ Private Subnet
+      └─ EC2 Instance
+          ↓ private connection
+      Interface Endpoint (ENI)
+          ↓ private AWS network
+      CloudWatch / otros services
+```
+
+**Configuration:** Especificar VPC y subnets
+
+## Para el examen:
+
+**Gateway Endpoint:**
+- Solo S3
+- Solo DynamoDB
+
+**Interface Endpoint:**
+- Todos los demás services
+- Incluye también S3 y DynamoDB (tienen ambos tipos)
+
+## Tabla resumen:
+
+**S3:**
+- Gateway Endpoint ✅
+- Interface Endpoint ✅
+
+**DynamoDB:**
+- Gateway Endpoint ✅
+- Interface Endpoint ✅
+
+**Todos los demás services:**
+- Gateway Endpoint ❌
+- Interface Endpoint ✅
+
+## Configuración en AWS Console:
+
+**Ubicación:** VPC Console → PrivateLink and Lattice → Endpoints
+
+**Create Endpoint:**
+1. Select service (AWS services)
+2. Buscar service (EC2, S3, CloudWatch, etc.)
+3. Ver tipo disponible:
+   - Interface (ENI)
+   - Gateway (solo S3/DynamoDB)
+4. Select VPC
+5. Select subnets (para interface)
+
+## Casos de uso:
+
+**Gateway Endpoint:**
+✅ EC2 instance en private subnet necesita acceder S3
+✅ Private application necesita DynamoDB
+✅ No quieres usar internet gateway
+
+**Interface Endpoint:**
+✅ Push custom metrics a CloudWatch desde private subnet
+✅ Acceder a cualquier AWS service privately
+✅ Better security para API calls
+
+## VPC Endpoint vs otros:
+
+**Sin VPC Endpoint:**
+```
+Private EC2 → NAT Gateway → Internet Gateway → AWS Service (public)
+```
+
+**Con VPC Endpoint:**
+```
+Private EC2 → VPC Endpoint → AWS Service (private network)
+Ventaja: No necesitas NAT Gateway para estos services
+Gateway vs Interface differences:
+Gateway Endpoint:
+
+Free
+Route table entry
+Solo S3 y DynamoDB
+Regional
+
+Interface Endpoint:
+
+Costo por hora
+ENI (Elastic Network Interface)
+Cualquier service
+Security groups
+
+Resumen:
+VPC Endpoints conectan a AWS services usando private AWS network en lugar de public internet. 2 tipos: Gateway (SOLO S3 y DynamoDB, free) e Interface (todos los services incluyendo S3/DynamoDB, costo). 
+Benefits: better security, lower latency. Para examen: Gateway = S3/DynamoDB únicamente, Interface = todo lo demás. S3 y DynamoDB tienen ambos tipos disponibles.

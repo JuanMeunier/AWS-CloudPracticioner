@@ -1,0 +1,133 @@
+AWS PrivateLink para Cloud Practitioner
+Problema:
+Vendor/Service provider quiere exponer service a miles de customers VPCs
+Opciones tradicionales:
+
+VPC Peering → No escala, no seguro para miles de VPCs
+Internet Gateway → Público, no privado
+Complejo gestionar
+
+Solución: AWS PrivateLink (VPC Endpoint Services)
+Conectar service de un VPC a miles de otros VPCs de forma privada y escalable
+Características:
+✅ Private connection - No pasa por public internet
+✅ Scalable - Fácil agregar customers
+✅ No requiere:
+
+VPC Peering
+Internet Gateway
+NAT Gateway
+Route Tables
+
+Arquitectura:
+Service Provider (Vendor):
+Service Provider VPC
+    └─ Application Service
+        └─ Network Load Balancer (NLB)
+            └─ VPC Endpoint Service
+```
+
+**Necesita:** Network Load Balancer para exponer service
+
+### Service Consumer (Customer):
+```
+Customer VPC
+    └─ Consumer Application
+        └─ Elastic Network Interface (ENI)
+            └─ VPC Endpoint
+```
+
+**Necesita:** ENI (VPC Endpoint) para conectar
+
+### Connection:
+```
+Customer VPC (ENI)
+        ↓ AWS PrivateLink
+    (private network)
+        ↓
+Provider VPC (NLB)
+        ↓
+    Service
+Todo private - No traffic por public internet
+Ejemplo práctico:
+Vendor en AWS Marketplace:
+
+Vendor tiene application service en su VPC
+Customer quiere usar ese service desde su VPC
+Vendor crea Network Load Balancer + VPC Endpoint Service
+Customer crea VPC Endpoint (ENI)
+PrivateLink conecta los dos
+Customer accede service privately
+
+Para cada nuevo customer:
+
+Vendor solo crea nuevo PrivateLink
+Muy fácil de escalar
+
+Para el examen:
+AWS PrivateLink:
+
+Conectar service de 1 VPC a miles de VPCs
+Private y scalable
+No VPC peering needed
+Service provider usa NLB
+Service consumer usa ENI (VPC Endpoint)
+
+Palabras clave:
+
+"Expose service to thousands of VPCs"
+"Private access to service"
+"Scalable service connectivity"
+"AWS Marketplace service"
+
+PrivateLink vs VPC Peering:
+VPC Peering:
+
+1-to-1 connection
+No escala para miles de VPCs
+Gestión compleja
+
+PrivateLink:
+
+1-to-many connection
+Escala fácilmente
+Gestión simple
+
+PrivateLink vs VPC Endpoints:
+VPC Endpoints:
+
+Conectar a AWS services (S3, DynamoDB, etc.)
+AWS manages el service
+
+PrivateLink (VPC Endpoint Services):
+
+Conectar a your own services o third-party services
+You/vendor manages el service
+
+Components:
+Service Provider side:
+
+Network Load Balancer (required)
+VPC Endpoint Service
+Application/Service
+
+Service Consumer side:
+
+VPC Endpoint (ENI)
+Consumer Application
+
+Casos de uso:
+✅ SaaS vendors - Exponer service a customers
+✅ AWS Marketplace - Services vendidos en marketplace
+✅ Internal services - Compartir entre accounts de organización
+✅ Partner integration - Conectar con partners privately
+✅ Multi-tenant services - Service para múltiples customers
+Beneficios:
+Security - Todo privado, no public internet
+Scalability - Fácil agregar customers
+Simplicity - No complex networking setup
+Performance - Lower latency (private network)
+No overlapping IPs - No importa si IPs overlap entre VPCs
+Resumen:
+AWS PrivateLink (VPC Endpoint Services) permite exponer service de un VPC a miles de customer VPCs de forma private y scalable. Service provider usa Network Load Balancer + VPC Endpoint Service, service consumer usa VPC Endpoint (ENI). Todo traffic por private AWS network (no public internet). No requiere VPC peering, IGW, NAT. Fácil agregar nuevos customers. 
+Para examen: expose service to thousands of VPCs privately = PrivateLink.ReintentarClaude aún no tiene la capacidad de ejecutar el código que genera.

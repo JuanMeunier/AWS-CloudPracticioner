@@ -1,0 +1,159 @@
+VPC Flow Logs y VPC Peering para Cloud Practitioner
+VPC Flow Logs
+¿Qué son?
+Logs de TODO el IP traffic que pasa por tus interfaces
+3 Niveles:
+VPC Flow Log - Traffic de toda la VPC
+Subnet Flow Log - Traffic de subnet específica
+ENI Flow Log - Traffic de Elastic Network Interface específica (EC2)
+¿Para qué sirven?
+Monitor y troubleshoot connectivity issues:
+
+Subnet no puede conectarse a internet
+Subnet no puede conectarse a otra subnet
+Internet no puede acceder a subnet
+Ver traffic de EC2 instances
+
+Qué captura:
+Información de:
+
+EC2 Instances
+Elastic Load Balancers
+ElastiCache
+RDS
+Aurora
+Otros servicios con network interfaces
+
+Destinos:
+Amazon S3 - Para storage y analysis
+CloudWatch Logs - Para monitoring
+Kinesis Data Firehose - Para streaming
+Log Format incluye:
+
+Version
+Account ID
+Interface ID
+Source address (IP origen)
+Destination address (IP destino)
+Source port
+Destination port
+Protocol
+Packets
+Bytes
+Start/End time
+Action (ACCEPT o REJECT)
+Log status
+
+Configuración:
+Filters:
+
+All traffic
+Accepted traffic only
+Rejected traffic only
+
+Aggregation interval:
+
+1 minuto
+10 minutos
+
+VPC Peering
+¿Qué es?
+Conectar 2 VPCs privately usando AWS network
+Comportamiento: Como si fueran misma network
+Arquitectura ejemplo:
+VPC A ←→ VPC B
+(peering connection)
+```
+
+**Resultado:** VPC A y B pueden comunicarse como si fueran una
+
+### Requisito importante:
+
+**IP ranges NO deben overlap** (superponerse)
+
+**Si overlap:** NO puedes crear peering connection
+
+### Característica clave: NOT Transitive
+
+**NO es transitivo:**
+```
+VPC A ←→ VPC B
+   ↓
+VPC C
+
+B y C NO pueden comunicarse
+```
+
+**Si quieres B ↔ C:** Necesitas **nueva peering connection**
+```
+VPC A ←→ VPC B
+   ↓        ↓
+VPC C ←─────┘
+(necesitas esta conexión extra)
+Configuración:
+Select:
+
+Local VPC (requester)
+Peer VPC
+
+Same account o different account
+Same region o different region
+
+
+
+Process:
+
+Create peering connection
+Accept connection
+Networks se comportan como una
+
+Cross-Account y Cross-Region:
+Puede ser:
+
+Same account, same region
+Same account, different region
+Different account, same region
+Different account, different region ✅
+
+Para el examen:
+VPC Flow Logs:
+
+Log IP traffic
+Monitor/troubleshoot connectivity
+3 levels: VPC, Subnet, ENI
+Destinations: S3, CloudWatch, Firehose
+
+VPC Peering:
+
+Connect 2 VPCs privately
+Must: No overlapping IPs
+NOT transitive
+Cross-account y cross-region OK
+
+Casos de uso:
+VPC Flow Logs:
+✅ Troubleshoot connectivity issues
+✅ Security analysis
+✅ Monitor traffic patterns
+✅ Compliance requirements
+VPC Peering:
+✅ Connect VPCs en same region
+✅ Connect VPCs en different regions
+✅ Share resources entre VPCs
+✅ Multi-account architectures
+VPC Flow Logs vs CloudTrail:
+Flow Logs:
+
+Network traffic
+IP addresses, ports
+ACCEPT/REJECT
+
+CloudTrail:
+
+API calls
+Who did what when
+AWS service actions
+
+Resumen:
+VPC Flow Logs capturan TODO el IP traffic (VPC/subnet/ENI level) para monitor y troubleshoot connectivity. Destinos: S3, CloudWatch Logs, Firehose. Incluyen source/dest IPs, ports, action (ACCEPT/REJECT). 
+VPC Peering conecta 2 VPCs privately como si fueran misma network. Requisito: No overlapping IPs. NOT transitive (necesitas peering para cada par). Soporta cross-account y cross-region.

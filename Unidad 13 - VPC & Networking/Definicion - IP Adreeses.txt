@@ -1,0 +1,125 @@
+IP Addresses en AWS para Cloud Practitioner
+2 Versiones de IP:
+IPv4
+Addresses disponibles: ~4.3 billion
+IPv6
+Addresses disponibles: 3.4 × 10³⁸ (muchísimos más)
+IPv4 en AWS:
+1. Public IPv4
+Qué es: IP accesible desde internet
+Características:
+
+Publicly reachable desde cualquier lugar
+EC2 instances reciben public IPv4 por defecto
+
+Comportamiento importante:
+
+Stop instance → Public IPv4 se libera
+Start instance → Recibe nueva public IPv4
+
+⚠️ IP cambia cada vez que stop/start
+Pricing: $0.005 por hora (aplica a TODA public IPv4)
+2. Private IPv4
+Formato ejemplo: 192.168.1.1
+Características:
+
+Solo usable en private network (VPC interno)
+NO publicly accessible
+Solo accesible dentro de tu propia network
+
+Comportamiento:
+
+Misma IP durante toda la vida del EC2 instance
+NO cambia al stop/start
+
+3. Elastic IP
+Qué es: Fixed public IPv4 address
+Características:
+
+Public IPv4 que NO cambia
+Mismo IP después de stop/start
+Puedes attach/detach de instances
+
+Pricing: $0.005 por hora (como public IPv4)
+⚠️ Cobro adicional: Si Elastic IP está allocated pero NO usado (instance stopped)
+AWS recomienda: Usar IPv6 en lugar de Elastic IP
+IPv6 en AWS:
+Addresses: 3.4 × 10³⁸ (prácticamente infinitas)
+Todas son PUBLIC - No hay private IPv6 range
+Formato: Largo, ej: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+Pricing: GRATIS ✅
+AWS incentiva: Usar IPv6 en lugar de IPv4
+Comparación:
+Public IPv4:
+
+Limitadas (4.3 billion)
+$0.005/hora
+Cambia al stop/start
+Publicly accessible
+
+Private IPv4:
+
+Solo internal network
+Gratis
+NO cambia nunca
+NO publicly accessible
+
+Elastic IP:
+
+Fixed public IPv4
+$0.005/hora
+NO cambia
+Costo extra si no usado
+
+IPv6:
+
+Infinitas
+GRATIS
+Todas públicas
+Formato diferente
+
+Para el examen:
+Public IPv4:
+
+Cambia al stop/start
+$0.005/hora
+Internet accessible
+
+Private IPv4:
+
+Mismo durante lifetime
+Solo internal VPC
+Gratis
+
+Elastic IP:
+
+Fixed public IPv4
+NO cambia
+Cobro extra si unused
+
+IPv6:
+
+Free
+All public
+AWS prefiere que uses esto
+
+Pricing Summary:
+$0.005/hora:
+
+Public IPv4 (todas)
+Elastic IP (todas)
+
+Gratis:
+
+Private IPv4
+IPv6
+
+AWS strategy: Incentivar uso de IPv6 (gratis) en lugar de IPv4 (costo)
+Casos de uso:
+Public IPv4: Services públicos, costo por hora
+Private IPv4: Internal communication, gratis
+Elastic IP: Necesitas fixed public IP (evitar cambios)
+IPv6: Services públicos sin costo de IP
+Resumen:
+IPv4 tiene 4.3B addresses. Public IPv4 es internet accessible, cambia al stop/start, $0.005/hora. Private IPv4 solo internal network, nunca cambia, gratis. Elastic IP es fixed public IPv4, no cambia, $0.005/hora + extra si unused. IPv6 tiene 3.4×10³⁸ addresses, todas public, GRATIS. 
+AWS incentiva IPv6 sobre IPv4 por pricing. Para examen: public cambia, private no cambia, Elastic fijo, IPv6 gratis.
