@@ -1,0 +1,13 @@
+Definición: AWS Firewall Manager
+
+Servicio centralizado para gestionar reglas de seguridad en todos los accounts de tu AWS Organization.
+Útil cuando necesitas administrar Security Groups de VPC en múltiples cuentas.
+También puede gestionar reglas de:
+AWS WAF
+AWS Shield Advanced
+AWS Network Firewall
+Para el examen, lo más importante es que se usa para administrar Security Groups en toda la organización.
+Las reglas aplicadas en Firewall Manager se extienden a:
+cuentas actuales y futuras
+recursos cuando se crean
+Garantiza que las reglas se mantengan gestionadas en todos los accounts en todo momento.

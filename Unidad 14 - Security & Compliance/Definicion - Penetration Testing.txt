@@ -1,0 +1,17 @@
+Definición: Penetration testing en la nube
+
+Es atacar tu propia infraestructura para probar su seguridad.
+Un cliente de AWS puede hacer estas pruebas sin permiso previo en 8 servicios:
+EC2, NAT Gateway, Elastic Load Balancer, RDS, CloudFront, Aurora, API Gateway, Lambda, Lambda@Edge, Lightsail y Elastic Beanstalk.
+No necesitas autorización para esos servicios autorizados.
+No está permitido hacer actividades que parezcan ataques a AWS, como:
+DNS zone walking en Route 53
+ataques DoS/DDoS o simulados
+port flooding
+protocol flooding
+request flooding
+Para cualquier otra prueba no autorizada, debes contactar al equipo de seguridad de AWS y obtener aprobación.
+Para el examen:
+Sí se permite pentesting en la nube.
+Recuerda que solo algunos servicios están autorizados sin permiso.
+Cualquier prueba que se parezca a un ataque DDoS o a explorar zonas DNS está prohibida.

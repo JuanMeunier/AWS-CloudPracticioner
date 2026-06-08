@@ -1,0 +1,38 @@
+Resumen: Machine Learning Services en AWS
+
+Servicios de ML disponibles:
+
+Rekognition: detección de rostros, etiquetado de imágenes, reconocimiento de celebridades.
+
+Transcribe: convierte audio en texto (subtítulos).
+
+Polly: convierte texto en audio/voz.
+
+Translate: traducciones de textos.
+
+Lex: construcción de chatbots y asistentes conversacionales.
+
+Connect: cuando se combina con Lex, crea un contact center en la nube.
+
+Comprehend: procesamiento de lenguaje natural (NLP).
+
+SageMaker: servicio de machine learning completo para desarrolladores y científicos de datos.
+
+Kendra: motor de búsqueda de documentos potenciado por ML.
+
+Personalize: recomendaciones personalizadas en tiempo real para clientes.
+
+Textract: detección y extracción de texto y datos de documentos.
+
+Puntos clave para el examen:
+No necesitas código para usar estos servicios (son managed services).
+Cada uno resuelve un problema específico.
+SageMaker es el más completo/complejo.
+Los servicios pre-trained (Rekognition, Transcribe, etc.) son más simples.
+Lex + Connect juntos = solución de contact center completa.
+
+
+Para el examen:
+
+Memoriza estos servicios y sus casos de uso principales.
+Esto debería darte varios puntos en el examen.

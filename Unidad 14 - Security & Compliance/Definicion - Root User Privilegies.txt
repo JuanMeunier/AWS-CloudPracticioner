@@ -1,0 +1,26 @@
+Definición: Root User Privileges
+
+El root user es el propietario de la cuenta.
+
+Es el primer usuario creado cuando se forma la cuenta.
+
+Tiene acceso completo a todos los servicios y recursos de AWS.
+
+Puede realizar acciones que ni los usuarios más privilegiados pueden hacer.
+
+No debe usarse para tareas diarias, ni administrativas regulares.
+
+Las claves de acceso y secretas del root user deben guardarse con seguridad.
+
+Acciones exclusivas del root user:
+
+cambiar configuración de la cuenta (nombre, email, contraseña, claves de acceso)
+ver ciertos informes de impuestos
+cerrar la cuenta
+restaurar permisos de usuarios IAM
+cambiar o cancelar el plan de AWS Support
+registrarse como vendedor en AWS Reserved Instance Marketplace (importante para vender instancias reservadas)
+configurar un bucket de S3 con MFA
+editar o eliminar una política de bucket S3 con VPC ID o VPC endpoint ID inválido
+registrarse para AWS GovCloud
+Mejor práctica: crear un usuario administrativo específico en la cuenta en lugar de usar el root user.

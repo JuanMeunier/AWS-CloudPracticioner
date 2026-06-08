@@ -1,0 +1,32 @@
+Definición: Amazon GuardDuty
+
+Servicio de detección de amenazas inteligente para proteger tus cuentas AWS.
+
+Usa machine learning, detección de anomalías y datos de terceros.
+
+Se activa con un clic y tiene 30 días de prueba.
+
+No requiere instalar software.
+
+Analiza datos de entrada como:
+
+CloudTrail (eventos de API inusuales, despliegues no autorizados)
+VPC Flow Logs (tráfico de red inusual, direcciones IP sospechosas)
+DNS logs (tráfico DNS anómalo, posible exfiltración)
+Opciones adicionales pueden incluir:
+
+registros de EKS
+eventos de login de RDS/Aurora
+actividad de Lambda
+eventos de S3
+actividad de EBS
+Genera findings de seguridad.
+
+Estos findings pueden enviarse a EventBridge.
+
+Con EventBridge puedes automatizar respuestas con Lambda o notificaciones con SNS.
+
+Para el examen:
+
+GuardDuty es útil para detectar ataques de criptominería.
+Es un servicio de análisis continuo de seguridad basado en múltiples fuentes de logs.

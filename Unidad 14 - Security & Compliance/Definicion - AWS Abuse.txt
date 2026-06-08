@@ -1,0 +1,13 @@
+Definición: AWS Abuse
+
+Es importante reportar si sospechas recursos AWS usados para actividades abusivas o ilegales.
+Actividades prohibidas incluyen:
+spam (correos no deseados desde IPs de AWS)
+sitios web y foros spammed por recursos de AWS
+port scanning (intentos de escaneo desde recursos AWS)
+ataques DDoS
+intentos de intrusión (login no autorizados)
+hosting de contenido ilegal o con derechos de autor
+distribución de malware
+Si sospechas cualquiera de estas actividades, puedes reportarlas al equipo de abuso de AWS.
+Es importante mantener la infraestructura de AWS libre de actividades ilícitas.

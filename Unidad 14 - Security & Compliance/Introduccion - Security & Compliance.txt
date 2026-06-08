@@ -1,0 +1,51 @@
+Introducción: Modelo de responsabilidad compartida
+
+Bienvenido a la sección de seguridad y cumplimiento.
+Vamos a empezar con el modelo de responsabilidad compartida.
+AWS es responsable de la seguridad de la nube:
+infraestructura
+hardware
+software
+redes
+servicios gestionados (S3, DynamoDB, RDS)
+Tú como cliente eres responsable de cómo usas esos servicios.
+Ejemplo EC2
+
+AWS mantiene la infraestructura.
+Tú gestionas el sistema operativo:
+parches
+actualizaciones
+Tú configuras firewall, ACL y security groups.
+Tú debes usar el rol de instancia IAM correcto.
+Tú debes cifrar los datos de la aplicación según cumplimiento.
+Controles compartidos
+
+Algunos controles se comparten:
+parcheo
+gestión de configuración
+formación
+AWS parchea RDS.
+Tú parcheas el SO en EC2.
+AWS forma a sus empleados.
+Tú formas a tus empleados para usar la nube.
+Ejemplo RDS
+
+AWS gestiona la instancia subyacente y el mantenimiento.
+Tú configuras:
+puertos
+reglas del security group
+usuarios y permisos en la base de datos
+acceso público o privado
+grupos de parámetros para conexiones cifradas
+Tú habilitas el cifrado de datos en la base de datos.
+Ejemplo S3
+
+AWS garantiza almacenamiento, separación de datos y que sus empleados no accedan a tus datos.
+Tú configuras el bucket y la política de bucket.
+Tú manejas usuarios y roles IAM.
+Tú habilitas el cifrado y eliges el esquema adecuado.
+Resumen final
+
+Cliente = datos, aplicaciones, plataforma, IAM, configuración de SO y red, cifrado.
+AWS = software, servicios, cómputo, almacenamiento, base de datos, redes, hardware, regiones, AZ y edge locations.
+Esta distinción es clave para el examen: saber qué depende de AWS y qué depende de ti.

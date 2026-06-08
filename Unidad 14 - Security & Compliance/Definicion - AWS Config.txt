@@ -1,0 +1,15 @@
+Definición: AWS Config
+
+Servicio para auditar y registrar la configuración de tus recursos AWS.
+Graba cambios de configuración en el tiempo y guarda esa información en S3.
+Permite analizar cambios con Athena o recuperar el estado anterior.
+Responde preguntas como:
+¿Hay SSH abierto sin restricciones en mis security groups?
+¿Hay buckets S3 con acceso público?
+¿Ha cambiado la configuración de mi ALB?
+Usa reglas de Config para validar el cumplimiento de tus recursos.
+Puede enviar notificaciones por SNS cuando cambia la configuración.
+Es por región, pero se puede agregar información de varias cuentas y regiones.
+Muestra la línea de tiempo de recursos y compliance.
+Se integra con CloudTrail para identificar quién hizo los cambios.
+No es gratis: activar AWS Config tiene costo.

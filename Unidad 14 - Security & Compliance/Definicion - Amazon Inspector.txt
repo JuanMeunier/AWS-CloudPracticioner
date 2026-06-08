@@ -1,0 +1,16 @@
+Definición: Amazon Inspector
+
+Servicio de evaluaciones de seguridad automatizadas.
+Evalúa:
+instancias EC2 (a través del agente de Systems Manager)
+imágenes de contenedor en Amazon ECR
+funciones Lambda al desplegarse
+Para EC2 analiza:
+accesibilidad de red no intencionada
+vulnerabilidades del sistema operativo
+Para ECR analiza imágenes Docker contra vulnerabilidades conocidas
+Para Lambda analiza el código y dependencias en busca de vulnerabilidades
+Funciona de forma continua y vuelve a evaluar cuando actualiza la base de datos de CVE
+Genera un score de riesgo para priorizar hallazgos
+Puede enviar findings a AWS Security Hub y eventos a EventBridge
+Útil para ver vulnerabilidades centrales y activar automatizaciones de respuesta.

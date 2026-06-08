@@ -1,0 +1,13 @@
+Definición: Amazon Detective
+
+Servicio para investigar y encontrar la causa raíz de problemas de seguridad.
+Trabaja con hallazgos de GuardDuty, Macie y Security Hub.
+Analiza datos complejos de múltiples fuentes para identificar el origen del problema.
+Usa machine learning y análisis de grafos para acelerar la investigación.
+Recopila y procesa automáticamente:
+VPC Flow Logs
+CloudTrail trails
+hallazgos de GuardDuty
+Crea una vista unificada de los eventos.
+Proporciona visualizaciones con detalles y contexto.
+Permite llegar rápidamente a la causa raíz de los problemas de seguridad.

@@ -1,0 +1,28 @@
+Definición: IAM Access Analyzer
+
+Servicio dentro de la consola IAM para encontrar recursos compartidos externamente.
+
+Detecta recursos compartidos fuera de la zona de confianza:
+
+buckets S3
+roles IAM
+claves KMS
+funciones y capas Lambda
+colas SQS
+secretos de Secrets Manager
+Funciona definiendo una zona de confianza:
+
+representa tus cuentas o tu organización de AWS
+cualquier acceso fuera de esta zona se reporta como finding
+Ejemplo:
+
+Si compartes un S3 bucket con una cuenta externa, un role IAM, usuario, cliente externo o IP, y solo tu cuenta está en la zona de confianza, se reporta como hallazgo
+Se habilita gratuitamente desde la consola IAM.
+
+Crea un service-linked role para interactuar con recursos en tu nombre.
+
+Muestra hallazgos activos que puedes revisar y resolver.
+
+Puedes archivar hallazgos si son acceso intencional.
+
+Permite crear reglas de archivo para automatizar la gestión de hallazgos recurrentes.

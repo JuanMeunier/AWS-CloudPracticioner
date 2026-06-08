@@ -1,0 +1,43 @@
+Resumen: Security & Compliance
+
+Modelo de Responsabilidad Compartida
+
+AWS asegura la infraestructura; tú aseguras cómo usas los servicios.
+DDoS Protection
+
+Shield Standard: protección gratuita automática.
+Shield Advanced: 24/7 con equipo de respuesta ($3000/mes).
+WAF: firewall de aplicación para filtrar solicitudes por reglas.
+Encriptación
+
+KMS: gestión de claves de encriptación (AWS maneja las claves).
+CloudHSM: hardware de encriptación (tú manejas las claves).
+ACM: provisioning y gestión de certificados SSL/TLS para HTTPS.
+Compliance & Auditoría
+
+Artifact: acceso a reportes de cumplimiento (PCI, ISO, SOC).
+CloudTrail: auditoría de llamadas API de usuarios.
+Config: monitoreo y seguimiento de cambios de configuración con reglas de cumplimiento.
+Detección de Amenazas
+
+GuardDuty: detección automática de comportamiento malicioso (VPC logs, DNS logs, CloudTrail).
+Inspector: escaneo de vulnerabilidades en EC2, ECR y Lambda.
+Macie: descubre datos sensibles (PII) en S3.
+Network Firewall: protege toda la VPC contra ataques de red.
+Centralización & Investigación
+
+Security Hub: centraliza hallazgos de múltiples servicios y cuentas.
+Detective: identifica la causa raíz de problemas de seguridad.
+Gestión de Acceso
+
+IAM Access Analyzer: identifica recursos compartidos fuera de tu zona de confianza.
+Firewall Manager: gestiona reglas de seguridad en toda la organización.
+Privilegios del Root User
+
+cambiar configuración de cuenta
+cerrar cuenta AWS
+cambiar/cancelar plan de soporte
+registrarse como vendedor en Marketplace de Reserved Instances
+Reporting
+
+Abuse Team: reportar comportamiento abusivo o ilegal en AWS.

@@ -1,0 +1,13 @@
+Definición: AWS Artifact
+
+No es realmente un servicio, sino un portal de cumplimiento.
+Proporciona acceso on demand a informes de cumplimiento y acuerdos de AWS.
+Permite descargar documentos de auditoría de terceros, como:
+certificaciones ISO
+informes PCI
+informes SOC
+También permite revisar, aceptar y rastrear acuerdos, por ejemplo:
+BAA
+HIPAA
+Estos informes y acuerdos se usan para auditorías internas y evidencias de cumplimiento.
+Artifact es global y permite ver informes y acuerdos desde una sola consola.

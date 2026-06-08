@@ -1,0 +1,22 @@
+Definición: AWS Security Hub
+
+Herramienta central de seguridad para gestionar seguridad en múltiples cuentas AWS.
+Automatiza controles de seguridad y cumplimiento.
+Panel integrado que muestra el estado de seguridad y cumplimiento actual.
+Permite tomar acciones rápidamente.
+Agrega hallazgos de múltiples servicios:
+AWS Config
+GuardDuty
+Inspector
+Macie
+IAM Access Analyzer
+AWS Systems Manager
+AWS Firewall Manager
+AWS Health
+soluciones de partners de AWS
+Requisito previo: AWS Config debe estar habilitado.
+Centraliza todos los findings en un solo dashboard.
+Genera eventos en EventBridge cuando hay problemas de seguridad.
+Se puede usar Amazon Detective para investigar el origen de problemas.
+Está disponible con prueba gratuita de 30 días.
+Tiene precios basados en checks (primeros 1000 gratis aproximadamente) y eventos (primeros 10,000 gratuitos).

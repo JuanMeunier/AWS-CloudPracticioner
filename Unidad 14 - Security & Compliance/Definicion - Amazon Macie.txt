@@ -1,0 +1,10 @@
+Definición: Amazon Macie
+
+Servicio totalmente gestionado de seguridad y privacidad de datos.
+Usa machine learning y detección por patrones para descubrir datos sensibles.
+Principalmente detecta datos PII (información personal identificable) en S3.
+Analiza los objetos de tus buckets S3 y clasifica la información sensible.
+Envía hallazgos a EventBridge.
+Desde EventBridge puedes activar notificaciones con SNS, ejecuciones de Lambda, etc.
+Se habilita con un clic y solo debes elegir los buckets S3 a analizar.
+Su función principal es encontrar datos sensibles en S3.

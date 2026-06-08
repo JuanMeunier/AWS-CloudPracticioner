@@ -1,0 +1,11 @@
+Definición: AWS Network Firewall
+
+Protege toda tu VPC en conjunto.
+Ofrece protección de capa 3 a capa 7.
+Inspecciona tráfico:
+entrante y saliente hacia Internet
+entre VPCs emparejadas
+a través de Direct Connect
+a través de VPN site-to-site
+Cubre cualquier dirección: inbound, outbound y lateral.
+Es un mecanismo de protección más completo que los NACLs, que trabajan a nivel de subred.

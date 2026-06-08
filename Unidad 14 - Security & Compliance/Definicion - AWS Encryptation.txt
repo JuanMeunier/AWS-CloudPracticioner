@@ -1,0 +1,47 @@
+Definición: Encriptación en AWS
+
+Hay dos tipos de encriptación en AWS:
+
+Encriptación at rest (datos en reposo)
+Encriptación in transit (datos en tránsito)
+At rest:
+
+Son los datos almacenados en un dispositivo físico.
+Ejemplos: discos EBS, RDS, S3, S3 Glacier Deep Archive, EFS.
+Está en reposo porque no se está moviendo.
+In transit:
+
+Es la encriptación cuando los datos se mueven de un punto a otro.
+Ejemplos: entre on-premises y AWS, entre EC2 y DynamoDB, entre EFS y S3.
+Está en movimiento sobre la red.
+Lo ideal es proteger los datos en ambos estados.
+
+Para esto usamos claves de encriptación.
+
+Si alguien no tiene la clave, aunque acceda a los datos no puede descifrarlos.
+El servicio central de encriptación en AWS es KMS (Key Management Service).
+KMS gestiona las claves y tú defines quién puede usarlas.
+En muchos servicios puedes activar la encriptación:
+
+EBS
+S3 (server-side encryption)
+RDS
+Redshift
+EFS
+Algunos servicios encriptan automáticamente:
+
+CloudTrail Logs
+S3 Glacier
+Storage Gateway
+El segundo servicio es CloudHSM:
+
+AWS provee el hardware de seguridad (HSM).
+Tú gestionas las claves.
+El HSM es tamper resistant y cumple FIPS 140-2 Level 3.
+La conexión entre tus clientes y CloudHSM está cifrada.
+Tipos de claves KMS:
+
+Customer-managed key: creada y gestionada por el cliente. Puedes habilitar/deshabilitar y rotar la clave.
+AWS-managed key: creada y gestionada por AWS para servicios como aws/s3, aws/ebs.
+AWS-owned key: colección de claves administrada por AWS para usar en múltiples cuentas; tú no puedes verla.
+CloudHSM/custom key store: claves generadas en tu hardware CloudHSM y las operaciones criptográficas se realizan dentro del HSM.

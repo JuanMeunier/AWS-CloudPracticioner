@@ -1,0 +1,44 @@
+Definición: Protección DDoS en AWS
+
+¿Qué es un ataque DDoS?
+
+Distributed Denial-of-Service.
+Muchos bots envían solicitudes a un servidor.
+El servidor se satura y deja de responder.
+Los usuarios normales ven la aplicación inaccesible.
+¿Cómo te protege AWS?
+
+AWS Shield Standard
+Gratis para todos los clientes.
+Protege contra ataques DDoS comunes.
+Cubre ataques como SYN/UDP reflection y otros de capa 3/4.
+AWS Shield Advanced
+Servicio premium opcional.
+Aproximadamente $3000/mes por organización.
+Protección 24/7 para EC2, ELB, CloudFront, Global Accelerator y Route 53.
+Incluye acceso a un equipo de respuesta y posibles coberturas de costos por el ataque.
+AWS WAF
+Web Application Firewall para filtrar solicitudes HTTP.
+Funciona en Application Load Balancer, API Gateway y CloudFront.
+Reglas basadas en IP, headers, cuerpo, strings, tamaño, geo-match.
+Protege contra ataques como SQL injection y XSS.
+Soporta reglas basadas en tasa (rate-based) contra DDoS de capa 7.
+CloudFront y Route 53
+Usan la red global de edge locations.
+Mitigan ataques en el borde antes de que lleguen al origen.
+Auto Scaling
+Permite escalar recursos si se eleva la demanda durante un ataque.
+Arquitectura recomendada
+
+Usuarios → Route 53 (DNS protegido por Shield)
+→ CloudFront (caché + Shield)
+→ WAF (filtrado de solicitudes)
+→ Load Balancer público
+→ EC2 en Auto Scaling Group
+Puntos clave
+
+Shield Standard = gratis y activado por defecto.
+Shield Advanced = pago y opcional.
+WAF = protección para ataques de capa 7.
+CloudFront/Route 53 = mitigación en el borde.
+Auto Scaling = capacidad de respuesta ante picos de tráfico.

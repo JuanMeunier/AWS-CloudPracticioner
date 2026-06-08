@@ -1,0 +1,27 @@
+Definición: AWS Certificate Manager (ACM)
+
+Servicio para aprovisionar, gestionar y desplegar certificados SSL/TLS fácilmente.
+
+Se usa para habilitar HTTPS y cifrado en tránsito en sitios web y aplicaciones.
+
+Ejemplo:
+
+Usuario → HTTPS → Application Load Balancer
+El ALB usa el certificado gestionado por ACM
+Esto asegura el tráfico público entre el cliente y el balanceador
+ACM soporta:
+
+certificados TLS públicos
+certificados TLS privados
+Los certificados públicos son gratuitos.
+
+Tiene renovación automática de certificados.
+
+Se integra con servicios como:
+
+Elastic Load Balancer
+CloudFront
+API Gateway
+Para el examen:
+
+Si necesitas generar y gestionar certificados TLS para cifrar el tráfico en vuelo, piensa en ACM.
