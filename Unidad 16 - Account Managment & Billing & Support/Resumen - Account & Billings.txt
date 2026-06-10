@@ -1,0 +1,35 @@
+Resumen: buenas prácticas de cuentas
+Usa AWS Organizations para gestionar múltiples cuentas.
+Aplica SCP (Service Control Policies) para limitar qué servicios/acciones puede usar cada cuenta.
+Usa AWS Control Tower para crear y gobernar un entorno multi-cuenta seguro con buenas prácticas automáticas.
+Aplica tags y cost allocation tags para organizar recursos y simplificar la facturación.
+Sigue las pautas de IAM:
+habilita MFA
+aplica least privilege
+configura políticas de contraseña
+habilita rotación de contraseñas
+Usa AWS Config para registrar configuraciones y cumplimiento a lo largo del tiempo.
+Usa CloudFormation para desplegar stacks en múltiples cuentas y regiones de forma consistente.
+Usa Trusted Advisor para recomendaciones de optimización y para elegir el plan de soporte adecuado.
+Centraliza logs y auditoría:
+envía logs de servicio y de acceso a S3 o CloudWatch Logs
+considera una cuenta separada de logging
+Usa CloudTrail para registrar llamadas API en todas las cuentas y regiones.
+En caso de compromiso:
+cambia la contraseña root
+elimina claves/secretos comprometidos
+contacta a AWS Support
+Usa AWS Service Catalog para ofrecer a los usuarios un portal con recursos autorizados y bien definidos.
+
+Resumen: herramientas de facturación y costos
+Compute Optimizer: recomendaciones para reducir costos y mejorar performance.
+Pricing Calculator: estimar costos antes de desplegar.
+Billing Dashboard: visión general del gasto actual y forecast.
+Cost Allocation Tags: permite filtrar y agrupar costos por etiquetas propias.
+Cost and Usage Reports: datos más detallados y granulares de uso y gasto.
+Cost Explorer: análisis visual de costos, uso y forecast hasta 12 meses.
+Billing Alarms: alarma simple en us-east-1 para alertarte cuando cruces un umbral de gasto real.
+Budgets: control avanzado de costos, uso, reservas y Savings Plans con alertas.
+Savings Plans: ahorros a largo plazo comprometiéndote a un gasto por hora.
+Cost Anomaly Detection: detecta gastos inusuales con machine learning.
+Service Quotas: monitorea límites de servicio, alerta cuando te acercas y permite solicitar aumentos.

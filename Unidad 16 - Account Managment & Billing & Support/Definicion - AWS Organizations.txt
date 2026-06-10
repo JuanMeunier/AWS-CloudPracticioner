@@ -1,0 +1,21 @@
+Definición: AWS Organizations
+
+Servicio global para gestionar varias cuentas AWS desde una organización.
+Tiene una cuenta principal (Master Account) y cuentas hijas (Child Accounts).
+Ofrece facturación consolidada:
+una sola factura para todas las cuentas
+pago centralizado desde la cuenta principal
+uso agregado para descuentos y precios por volumen
+Las Reserved Instances se comparten entre cuentas para maximizar el ahorro.
+Permite crear cuentas automáticamente mediante API.
+Permite restringir permisos con Service Control Policies (SCP):
+se aplican a OUs o cuentas
+afectan usuarios y roles del account (incluido root)
+no afectan al Master Account
+no afectan service-linked roles
+por defecto no permiten nada; requiere Allow explícito
+Es útil para estrategias multi-cuenta:
+por departamento, entorno (dev/test/prod), proyecto, aislamiento regulatorio
+separación de recursos, límites y logs
+Se recomienda centralizar CloudTrail y CloudWatch Logs en cuentas de logging.
+Puedes organizar cuentas en OUs dentro del root, por negocio, entorno o proyecto.

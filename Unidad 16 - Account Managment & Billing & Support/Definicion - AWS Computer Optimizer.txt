@@ -1,0 +1,13 @@
+Definición: AWS Compute Optimizer
+
+Servicio para reducir costos y mejorar rendimiento recomendando recursos óptimos.
+Analiza tus workloads y su uso real.
+Soporta:
+instancias EC2
+Auto Scaling Groups
+volúmenes EBS
+funciones Lambda
+Detecta recursos sobredimensionados o subdimensionados.
+Usa machine learning y métricas de CloudWatch para evaluar la utilización.
+Te ofrece recomendaciones para optimizar costos y performance.
+Las recomendaciones se pueden exportar a Amazon S3.

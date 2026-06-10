@@ -1,0 +1,14 @@
+Definición: AWS Savings Plans
+
+Es una forma de ahorro flexible en AWS basada en compromiso de gasto por hora.
+En lugar de reservar instancias específicas, te comprometes a gastar un monto fijo por hora durante 1 o 3 años.
+Hay dos tipos principales:
+EC2 Savings Plan: hasta 72% de descuento. Aplica a familias de instancias EC2 dentro de una región, pero permite cambiar tamaño, AZ, SO y tenancy.
+Compute Savings Plan: hasta 66% de descuento. Más flexible; cubre EC2, Fargate y Lambda, sin importar familia, región, tamaño, SO o tenancy.
+También existe el Machine Learning Savings Plan para SageMaker.
+El pago puede ser:
+todo por adelantado
+parcial
+sin pago inicial
+Es más sencillo que las Reserved Instances porque piensas en dólares por hora, no en recursos específicos.
+Para comprarlo se usa Cost Explorer y AWS te sugiere el plan adecuado según tu uso actual.

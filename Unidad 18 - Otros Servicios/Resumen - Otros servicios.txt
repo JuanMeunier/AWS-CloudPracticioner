@@ -1,0 +1,60 @@
+Resumen de otros servicios AWS
+Other Services - Section Intro
+Introducción rápida a servicios adicionales fuera de los bloques principales de AWS.
+
+WorkSpaces
+Escritorios virtuales gestionados en la nube para usuarios finales. Permite ofrecer Windows o Linux desde AWS sin administrar PCs físicos.
+
+AppStream 2.0
+Transmisión de aplicaciones desde AWS al navegador. Ideal para ejecutar apps Windows complejas sin instalarlas en el dispositivo del usuario.
+
+IoT Core
+Plataforma para conectar dispositivos IoT a AWS de forma segura. Recibe datos, envía comandos y escala millones de dispositivos.
+
+AppSync
+Servicio GraphQL gestionado. Facilita construir APIs unificadas que combinan datos de múltiples fuentes en tiempo real.
+
+Amplify
+Plataforma de desarrollo front-end y mobile. Permite crear, desplegar y alojar aplicaciones web y móviles con autenticación, APIs y almacenamiento.
+
+AWS Infrastructure Composer
+Herramienta para diseñar y generar infraestructura en AWS visualmente. Facilita crear arquitecturas y exportarlas como plantillas.
+
+Device Farm
+Pruebas de apps móviles en dispositivos reales en la nube. Ejecuta pruebas automatizadas en múltiples modelos y versiones de OS.
+
+AWS Backup
+Servicio centralizado para hacer backup de datos de AWS. Gestiona copias de seguridad de EBS, RDS, DynamoDB, EFS, FSx y más.
+
+Disaster Recovery Strategies
+Estrategias para recuperarse de fallos graves: backup/restore, pilot light, warm standby, multi-site. Elige según RTO/RPO y presupuesto.
+
+AWS Elastic Disaster Recovery (DRS)
+Servicio para replicar servidores a AWS y recuperar aplicaciones tras un desastre. Reduce tiempo de recuperación y simplifica la conmutación por desastre.
+
+AWS DataSync
+Transferencia de datos automatizada entre almacenamiento local y AWS o entre servicios AWS. Optimiza copias grandes y sincronizaciones.
+
+Cloud Migration Strategies - The 7Rs
+Modelo para migrar aplicaciones: Rehost, Replatform, Refactor, Repurchase, Retain, Retire, Relocate. Ayuda a decidir la estrategia de migración.
+
+Application Discovery Service & Application Migration Service
+Discovery: identifica y evalúa aplicaciones on-premises antes de migrar. Migration Service: automatiza la migración de servidores y apps a AWS.
+
+AWS Migration Evaluator
+Herramienta para estimar costo y TCO de migrar cargas de trabajo a AWS. Analiza uso actual y recomienda opciones de migración.
+
+AWS Migration Hub
+Panel central para rastrear el progreso de migraciones a AWS. Conecta herramientas de migración y muestra estado de cada aplicación.
+
+AWS Fault Injection Simulator (FIS)
+Servicio para hacer pruebas de resiliencia en la nube. Inyecta fallos controlados para validar que la aplicación tolera errores.
+
+Step Functions
+Orquestación de flujos de trabajo serverless. Define pasos de procesos usando máquinas de estado para coordinar Lambdas, ECS, APIs y más.
+
+Ground Station
+Servicio para comunicarse con satélites desde estaciones terrestres gestionadas. Recibe datos por satélite y los integra en AWS.
+
+AWS Pinpoint
+Plataforma de comunicación con usuarios. Envía correos, SMS, notificaciones push y campañas dirigidas usando analytics de engagement.

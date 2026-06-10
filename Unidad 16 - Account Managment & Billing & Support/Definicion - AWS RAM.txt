@@ -1,0 +1,8 @@
+Definición: AWS RAM
+
+Servicio para compartir recursos entre cuentas AWS.
+Permite compartir recursos propios con otras cuentas o cuentas de tu organización.
+Evita duplicar recursos y simplifica la arquitectura.
+Recursos que se pueden compartir: VPC subnets, Transit Gateway, Aurora, y otros.
+Ejemplo: compartes una VPC y sus subnets desde una cuenta central, y otras cuentas pueden usar esa misma red para EC2, ALB, RDS, etc.
+Resultado: varias cuentas pueden conectarse a los mismos recursos a nivel de red sin tener que recrearlos.

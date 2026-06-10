@@ -1,0 +1,10 @@
+Definición: AWS Cost Anomaly Detection
+
+Servicio que monitorea continuamente tu costo y uso en AWS.
+Usa machine learning para detectar gastos inusuales.
+Aprende los patrones históricos únicos de tu cuenta.
+Encuentra picos de costo puntuales y aumentos continuos extraños.
+No necesitas definir umbrales manualmente.
+Monitorea servicios, cuentas miembro, tags de asignación de costos y categorías de costo.
+Envía reportes de anomalías con análisis de causa raíz.
+Puedes recibir alertas individuales o resúmenes diarios/semanales vía SNS.

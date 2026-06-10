@@ -1,0 +1,21 @@
+Definición: AWS Pricing Calculator
+
+Herramienta para estimar el costo de una arquitectura en la nube antes de implementarla.
+Se accede desde el sitio web de AWS Pricing Calculator.
+Permite crear un estimate y añadir servicios que usarás, como:
+EC2
+EBS
+Load Balancer
+RDS, S3, etc.
+Para cada servicio configuras detalles como:
+región
+tipo de instancia
+cantidad
+uso mensual
+opciones de pago (on-demand, Savings Plan, reservadas)
+Muestra el costo total por período (por ejemplo, 12 meses) y permite comparar alternativas.
+Es útil para:
+planificar presupuesto
+prever gastos
+elegir entre diferentes opciones de compra
+Es una herramienta granular y completa que ayuda a estimar costos con precisión.

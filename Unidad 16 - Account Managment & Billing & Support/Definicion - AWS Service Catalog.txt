@@ -1,0 +1,9 @@
+Definición: AWS Service Catalog
+
+Servicio para ofrecer un portal de autoservicio con productos aprobados.
+Los administradores crean productos basados en plantillas de CloudFormation.
+Los productos se agrupan en portfolios.
+Se controla quién puede lanzar cada producto.
+Los usuarios ven solo los recursos autorizados que pueden aprovisionar.
+Garantiza que las implementaciones sigan las normas de la organización (configuración, tags, seguridad).
+Ideal para dar acceso rápido a recursos como VM, bases de datos o almacenamiento sin permitir que los usuarios creen cosas fuera de estándar.

@@ -1,0 +1,10 @@
+Definición: herramientas de facturación y costos en AWS
+
+Billing Dashboard: vista general del costo mensual, forecast y resumen mes a la fecha. Ideal para un overview rápido.
+Cost Allocation Tags: etiquetas para agrupar costos por proyecto, equipo, cost center, aplicación, etc. Son útiles para crear reportes y organizar recursos.
+Cost and Usage Report: reporte más completo y granular de uso y costos. Incluye datos detallados por servicio, cuenta, tags, precios y reservas. Se puede analizar con Athena, Redshift o QuickSight.
+Cost Explorer: herramienta visual para analizar costos y uso en el tiempo. Permite explorar datos por servicio, cuenta, región, recurso, hacer filtros y forecast hasta 12 meses.
+Billing Alarms / Budgets: herramientas para monitorear costos y enviar alertas cuando te acercas o excedes un presupuesto.
+Pricing Calculator: herramienta previa para estimar costos de una arquitectura antes de implementarla.
+
+Importante para el examen: Billing Dashboard y Cost Explorer son para seguimiento, Cost and Usage Report para análisis detallado, y Tags para asociar costos a departamentos o proyectos.

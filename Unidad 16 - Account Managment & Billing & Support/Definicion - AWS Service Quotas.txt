@@ -1,0 +1,10 @@
+Definición: AWS Service Quotas
+
+Servicio para gestionar los límites de AWS en tus cuentas.
+AWS define cuotas para recursos como funciones Lambda concurrentes, API Gateway, EC2, etc.
+Con Service Quotas puedes:
+ver tus límites actuales
+recibir alertas con CloudWatch Alarms cuando te acercas a una cuota
+solicitar aumentos de cuota desde la consola
+Es útil para evitar que tu aplicación falle por llegar a un límite.
+En resumen: monitorea tus límites, te avisa antes de alcanzarlos y facilita pedir más capacidad.

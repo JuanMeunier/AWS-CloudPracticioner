@@ -1,0 +1,16 @@
+Definición: herramientas de facturación y costos en AWS
+
+Estimación de costos:
+
+Pricing Calculator: sirve para estimar cuánto costará tu infraestructura en AWS antes de usarla.
+Seguimiento de costos:
+
+Billing Dashboard: vista general de tus gastos y facturas.
+Cost Allocation Tags: etiquetas para asignar costos a proyectos, equipos o centros de costo.
+Cost and Usage Report: informe detallado del uso y gasto de AWS.
+Cost Explorer: análisis interactivo de costos y uso para detectar tendencias y anomalías.
+Monitoreo y planificación:
+
+Billing Alarms: alertas basadas en métricas de facturación.
+Budgets: presupuestos para controlar gastos y recibir notificaciones si te acercas o superas el límite.
+Para el examen, recuerda que hay tres categorías: estimar costos, seguir costos y monitorear costos.

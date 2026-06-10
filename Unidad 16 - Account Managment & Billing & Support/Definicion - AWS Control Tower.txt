@@ -1,0 +1,9 @@
+Definición: AWS Control Tower
+
+Servicio para configurar y gobernar entornos multi-cuenta AWS seguros y conformes.
+Automatiza la creación de la organización y la estructura de cuentas.
+Aplica buenas prácticas de seguridad y gobernanza desde el inicio.
+Usa guardrails para administrar políticas de manera continua.
+Detecta violaciones de políticas y ayuda a remediarlas.
+Ofrece un panel interactivo para monitorear el cumplimiento.
+Se apoya en AWS Organizations y crea automáticamente SCPs para hacer efectivos los guardrails.

@@ -1,0 +1,36 @@
+Definición: AWS Support Plans
+
+Basic (gratis)
+
+Soporte 24/7 de servicio al cliente
+Documentación, whitepapers y foros
+AWS Personal Health Dashboard
+Trusted Advisor con checks básicos (core checks)
+Business Support
+
+Para cargas de trabajo de producción
+Soporte 24/7 por teléfono, chat y web
+Casos ilimitados e contactos ilimitados
+Respuesta humana en < 30 minutos para fallas críticas
+Trusted Advisor con conjunto completo de checks + API
+Soporte para software de terceros (ej. Linux en EC2)
+Respuestas contextuales y en tiempo real
+Enterprise Support
+
+Para cargas de trabajo de negocio crítico
+Todo lo del plan Business
+Technical Account Manager (TAM) designado
+Respuesta en < 15 minutos para incidentes críticos
+Acceso a AWS Security Incident Response Team
+Revisiones de negocio y soporte para eventos críticos
+Unified Operations
+
+Para workloads misión crítica
+Incluye Business Support+
+Guía de arquitectura de aplicaciones
+Soporte profundo con TAM, DSE, SBAS, IME, SSE
+Soporte para migraciones on-demand
+AWS Countdown Premium y CIRT
+Revisiones de workloads críticos y procedimientos operativos
+
+En resumen: Basic es el plan gratuito; Business es para producción con soporte 24/7 y checks completos; Enterprise añade TAM y respuesta más rápida para criticidad alta; Unified Operations es para operaciones de misión crítica con soporte especializado profundo.

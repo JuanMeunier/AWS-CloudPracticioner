@@ -1,0 +1,29 @@
+Resumen: Advanced Identity en AWS
+IAM
+
+Gestión de identidad y acceso dentro de una cuenta AWS.
+Crea usuarios, roles y políticas para controlar permisos.
+AWS Organizations
+
+Gestiona múltiples cuentas desde una sola organización.
+Relevante para identidad porque permite aplicar políticas y gobernanza en varios accounts.
+STS (Security Token Service)
+
+Emite credenciales temporales y de privilegios limitados.
+Ideal para accesos temporales y federación segura.
+Amazon Cognito
+
+Crea una base de usuarios para apps móviles y web.
+Maneja autenticación, registro, inicio de sesión y federación social.
+Directory Service
+
+Integra Microsoft Active Directory con AWS.
+Permite usar identidades corporativas existentes en servicios AWS.
+IAM Identity Center
+
+Un solo login para múltiples cuentas y aplicaciones.
+Facilita navegar entre cuentas AWS sin múltiples credenciales.
+
+En resumen: IAM es el básico para cuentas; Organizations extiende la identidad a múltiples cuentas;
+STS da credenciales temporales; Cognito gestiona usuarios de apps; Directory Service integra Active Directory;
+IAM Identity Center unifica acceso entre cuentas y aplicaciones.

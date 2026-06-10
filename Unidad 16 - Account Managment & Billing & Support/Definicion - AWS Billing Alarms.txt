@@ -1,0 +1,30 @@
+Definición: Billing Alarms y Budgets en AWS
+
+Billing Metric / Billing Alarm
+
+La métrica de facturación se guarda solo en CloudWatch us-east-1.
+Es un dato agregado de todos tus regiones.
+Mide el costo real acumulado, no el costo proyectado.
+Puedes crear una alarma simple para recibir notificaciones (por ejemplo, email) cuando superes un umbral de gasto.
+Budgets
+
+Herramienta más potente para monitorear costos y usos.
+Admite cuatro tipos de presupuesto:
+Cost (costo)
+Usage (uso)
+Reservation
+Savings Plan
+Puede enviar hasta 5 notificaciones SNS por presupuesto.
+Permite filtrar por:
+servicio
+cuenta vinculada
+etiqueta
+opción de compra
+tipo de instancia
+región
+AZ
+operación de API
+Ofrece alertas sobre el gasto actual y el gasto forecast.
+Se integra con Cost Explorer para analizar el detalle.
+
+En resumen: Billing Alarms es útil para alertas simples de costo real; Budgets es más completo para controlar gasto, uso y pronósticos con filtros avanzados.

@@ -1,0 +1,20 @@
+Definición: AWS Trusted Advisor
+
+Servicio de evaluación de cuentas AWS sin instalación.
+Revisa tu cuenta y da recomendaciones de mejoras.
+Comprueba aspectos como:
+snapshots públicos de EBS y RDS
+uso del root user
+reglas de security groups muy abiertas
+Agrupa las recomendaciones en seis categorías:
+costo
+rendimiento
+seguridad
+tolerancia a fallos
+límites de servicio
+excelencia operativa
+Ofrece dos tipos de conjuntos de checks:
+core checks (incluidos en todos los planes)
+full checks (requieren soporte Business o Enterprise)
+Con Business/Enterprise también ofrece acceso programático via AWS Support API.
+Es útil para obtener un diagnóstico rápido de problemas comunes y recomendaciones de mejora.

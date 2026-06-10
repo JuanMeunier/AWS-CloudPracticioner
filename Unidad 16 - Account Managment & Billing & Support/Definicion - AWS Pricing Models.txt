@@ -1,0 +1,40 @@
+Definición: Modelos de precios en AWS
+
+AWS ofrece cuatro modelos principales de precios:
+
+Pay-as-you-go: pagas por lo que usas, mantienes agilidad y escalas según demanda.
+Reserved/Reservation: reservas capacidad a largo plazo (1 o 3 años) para obtener descuentos y presupuesto predecible.
+Volume discounts: pagas menos cuanto más usas; el uso agregado de varias cuentas puede bajar los precios.
+Economías de escala de AWS: AWS reduce precios con el tiempo y te traslada esos ahorros.
+Free Tier / créditos iniciales:
+
+Nuevas cuentas reciben hasta $200 en créditos.
+El plan gratuito dura 6 meses o hasta consumir los créditos.
+Existe un plan pago que mantiene la cuenta activa tras agotar los créditos.
+También hay servicios con uso Always Free mensual, como Lambda y DynamoDB.
+Precios por servicio clave:
+
+EC2: pago por uso según tipo de instancia, región, SO, tamaño, datos procesados y monitoreo detallado.
+Instancias reservadas: descuento hasta ~75% con compromiso de 1 o 3 años.
+Spot: descuentos de hasta ~90% por capacidad no usada, pero puede retirarse.
+Dedicated Hosts: hardware dedicado para ti, también con opción reservada.
+Lambda: pagas por invocación + duración × memoria.
+ECS: sin cargo de ECS en sí, pagas por EC2 subyacente; con Fargate pagas CPU/memoria por contenedor.
+S3: pagas almacenamiento según clase, solicitudes, transferencia de salida y transiciones de ciclo de vida.
+EFS: pago por uso, con opción de tier de acceso infrecuente.
+EBS: pago por volumen provisionado, tipo de disco, IOPS extra y snapshots.
+RDS: pago por hora según motor, tamaño, almacenamiento, I/O, backups, y si es multi-AZ.
+CloudFront: pago según ubicación de edge, datos transferidos y solicitudes.
+Costos de red:
+
+Tráfico inbound a EC2: gratuito.
+Tráfico entre instancias en la misma AZ con IP privada: generalmente gratuito.
+Tráfico entre AZs con IP privada: suele tener costo menor que con IP pública.
+Tráfico inter-región: se cobra (por ejemplo, ~0.02 USD/GB).
+Mejor práctica: usar IP privada y minimizar transferencias entre AZ/regiones para ahorrar.
+Mensaje clave para el examen:
+
+Conocer el tipo de modelo y cuándo aplica.
+Entender que AWS cobra por consumo, por reserva y por volumen.
+Saber que existen discos y descuentos compartidos.
+No necesitas memorizar todos los números, sino la forma general de cómo se cobra cada servicio.

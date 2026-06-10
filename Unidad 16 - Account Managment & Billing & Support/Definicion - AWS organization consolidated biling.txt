@@ -1,0 +1,12 @@
+Definición: Consolidated Billing en AWS Organizations
+
+Función de AWS Organizations para facturar todas las cuentas de la organización desde una sola cuenta principal.
+Ofrece:
+una sola factura para todos los accounts
+uso combinado para obtener descuentos por volumen
+compartición de Reserved Instances / Savings Plans entre cuentas
+Uso combinado significa que el consumo de varias cuentas se suma para alcanzar umbrales de precio más bajos.
+Ejemplo: si varias cuentas usan datos en S3, juntas pueden alcanzar un nivel de descuento que no tendrían por separado.
+Reserved Instance Sharing permite que instancias reservadas de una cuenta cubran instancias EC2 de otra cuenta dentro de la misma AZ.
+Si una cuenta no usa todas sus RIs, otras cuentas de la organización pueden beneficiarse del precio reservado.
+La compartición de descuentos de Reserved Instances se puede desactivar para cuentas específicas, incluso para la cuenta de administración.
