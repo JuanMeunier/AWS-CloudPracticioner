@@ -1,0 +1,44 @@
+Resumen: AWS Cloud Adoption Framework (CAF)
+CAF no es un servicio, es un whitepaper / marco para guiar la transformación digital en AWS.
+Ayuda a construir y ejecutar un plan integral para usar la nube de forma estratégica.
+Componentes principales
+Capacidades organizacionales
+Seis perspectivas de CAF
+Las seis perspectivas que debes recordar
+Business
+People
+Governance
+Platform
+Security
+Operations
+Categorías
+Las primeras tres son del ámbito de negocio:
+Business: alineación de la nube con objetivos de negocio.
+People: puente entre tecnología y negocio (cultura, liderazgo, talento).
+Governance: controla riesgos, beneficios y gobernanza de la transformación.
+Las últimas tres son técnicas:
+Platform: construir una plataforma escalable y moderna.
+Security: proteger confidencialidad, integridad y disponibilidad.
+Operations: entregar servicios cloud confiables y gestionados.
+Ejemplos de capacidades
+Business: estrategia, portafolio, innovación, producto, análisis de datos.
+People: cultura, liderazgo, transformación de equipo, alineación organizativa.
+Governance: gestión de beneficios, riesgos, finanzas cloud, gobernanza de datos.
+Platform: arquitectura, ingeniería de datos, provisión, CI/CD.
+Security: IAM, detección de amenazas, protección de datos, respuesta a incidentes.
+Operations: observabilidad, gestión de incidentes, cambios, capacidad, disponibilidad.
+Dominios de transformación
+Technology: migrar y modernizar infraestructura y apps.
+Process: digitalizar y automatizar operaciones, usar datos y ML.
+Organization: reorganizar equipos y adoptar métodos ágiles.
+Products: crear nuevos modelos de producto y valor.
+Fases de la adopción
+Envision: identificar oportunidades y justificar la nube.
+Align: mapear brechas en las perspectivas CAF y crear un plan.
+Launch: ejecutar pilotos y demostrar valor incremental.
+Scale: expandir y lograr beneficios a gran escala.
+Para el examen
+Recuerda las seis perspectivas.
+Identifica qué capacidades pertenecen a cada perspectiva.
+También recuerda las cuatro fases de transformación.
+Si dudas, la mayoría de las respuestas se resuelven por sentido común: lo que suena a seguridad es seguridad, lo que suena a negocio es negocio, etc.

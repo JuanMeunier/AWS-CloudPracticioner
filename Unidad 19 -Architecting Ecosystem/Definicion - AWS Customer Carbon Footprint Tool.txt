@@ -1,0 +1,11 @@
+Definición: AWS Customer Carbon Footprint Tool
+
+Servicio para medir y revisar las emisiones de carbono generadas por tu uso de AWS.
+Permite:
+rastrear emisiones por mes,
+ver ahorros de carbono,
+identificar qué servicios y regiones generan más emisiones,
+monitorear la evolución en el tiempo,
+ver el progreso hacia el uso de energía 100% renovable.
+Se accede desde Billing and Cost Management buscando “carbon” en la consola.
+Es útil para cumplir objetivos de sostenibilidad y reportar el impacto ambiental de tu infraestructura AWS.

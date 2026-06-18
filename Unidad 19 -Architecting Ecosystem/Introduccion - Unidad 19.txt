@@ -1,0 +1,36 @@
+Introducción: Arquitectura en AWS y el ecosistema
+En la nube, deja de adivinar la capacidad.
+Usa auto scaling y escala según la demanda real.
+
+Prueba tu sistema a escala de producción.
+En AWS puedes crear muchos recursos rápido y validar antes de publicar.
+
+Automatiza la infraestructura.
+Con CloudFormation e infraestructura como código puedes reproducir tu arquitectura en cuentas y regiones distintas.
+
+Usa PaaS cuando tenga sentido para experimentar rápido y simplificar.
+
+Diseña pensando en el cambio.
+Migra workloads one-to-one si hace falta, pero luego vuelve a pensar la arquitectura para aprovechar mejor la nube (por ejemplo, con serverless).
+
+Toma decisiones basadas en datos.
+No intuyas: analiza uso, patrones, consultas y métricas para elegir servicios.
+
+Haz game days o pruebas de caos.
+Simula picos y fallos para verificar resiliencia. Ejemplo: Netflix y su chaos monkey.
+
+Piensa en la nube:
+
+sé escalable
+usa recursos desechables
+automatiza todo
+diseña con acoplamiento suelto
+piensa en servicios, no servidores
+El Well-Architected Framework tiene 6 pilares:
+
+Excelencia operativa
+Seguridad
+Confiabilidad
+Eficiencia de rendimiento
+Optimización de costos
+Sostenibilidad

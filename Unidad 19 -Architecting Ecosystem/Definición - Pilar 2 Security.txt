@@ -1,0 +1,37 @@
+Definición: Seguridad en el Well-Architected Framework
+
+La seguridad es la segunda pilar del Well-Architected Framework.
+Significa proteger información, sistemas y activos mientras se entrega valor al negocio.
+Incluye evaluación de riesgos y mitigación constante.
+Principios clave de diseño
+Base de identidad fuerte: centralizar la gestión de cuentas, aplicar el principio de menor privilegio.
+Trazabilidad: recopilar logs y métricas, almacenar todo y responder automáticamente a anomalías.
+Seguridad en todas las capas: edge, red, VPC, subred, balanceadores, instancias, sistema operativo, aplicación.
+Automatizar buenas prácticas de seguridad, no depender de procesos manuales.
+Proteger datos en tránsito y en reposo: cifrado, SSL/TLS, tokenización y control de acceso.
+Minimizar el acceso humano directo a los datos y evaluar si realmente se necesita.
+Prepararse para incidentes: simular respuestas, acelerar detección, investigación y recuperación.
+Cómo se traduce en AWS
+Identidad y acceso:
+IAM
+STS para credenciales temporales
+MFA
+AWS Organizations para cuentas múltiples
+Controles de detección:
+AWS Config
+CloudTrail
+CloudWatch
+Protección de infraestructura:
+CloudFront
+Amazon VPC
+AWS Shield
+AWS WAF
+Amazon Inspector
+Protección de datos:
+KMS
+cifrado en S3 (SSE-S3, SSE-KMS, SSE-C)
+cifrado en EBS, RDS, Load Balancer / HTTPS
+Respuesta a incidentes:
+IAM para bloquear cuentas comprometidas
+CloudFormation para restaurar infraestructura
+CloudWatch Events para alertas y automatización

@@ -1,0 +1,8 @@
+Definición: AWS Well-Architected Tool
+
+Servicio para revisar arquitecturas contra los 6 pilares del Well-Architected Framework.
+Seleccionas un workload, respondes preguntas y evalúas tu diseño.
+Genera recomendaciones, documentación y un plan de mejora.
+Te permite aplicar lenses como el Framework estándar, Serverless o SaaS.
+Al finalizar, obtienes un diagnóstico de riesgos (alto, medio, bajo) y acciones concretas para mejorar.
+Es útil para validar arquitecturas de producción y mantenerlas alineadas con buenas prácticas de AWS.

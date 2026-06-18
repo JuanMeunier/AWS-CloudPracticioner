@@ -1,0 +1,28 @@
+Definición: Pilar de Sostenibilidad
+La sostenibilidad es el último pilar del Well-Architected Framework.
+Su foco es minimizar el impacto ambiental de las cargas en la nube.
+Busca entender el impacto, medirlo, mejorar y alcanzar metas sostenibles.
+Principios clave
+Maximiza la utilización de los servicios para ser más eficiente energéticamente.
+Adopta hardware más eficiente con el tiempo.
+Usa servicios gestionados siempre que puedas.
+Reduce el impacto downstream de tus workloads: menos energía, menos recursos y menos necesidad de upgrades frecuentes por parte de los usuarios.
+Prácticas recomendadas
+Elige la capacidad adecuada para cada tarea.
+Usa:
+Auto Scaling
+Lambda / Fargate
+Graviton2 y tipos de instancia eficientes
+Spot Instances para usar capacidad sobrante
+Optimiza el almacenamiento con:
+EFS-IA
+S3 Glacier
+EBS Cold HDD
+S3 Lifecycle y Intelligent Tiering
+Data Lifecycle Manager
+Usa bases de datos y redes globales eficientes:
+RDS Read Replicas
+Aurora Global Database
+DynamoDB Global Tables
+CloudFront
+En resumen: sostenibilidad es usar menos recursos y energía sin sacrificar el valor, aprovechando la nube para ser más eficiente y menos contaminante.

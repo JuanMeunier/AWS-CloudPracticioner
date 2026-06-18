@@ -1,0 +1,29 @@
+Definición: Eficiencia de rendimiento
+
+Es la capacidad de usar recursos de cómputo de forma eficiente para cumplir los requisitos del sistema.
+También implica mantener esa eficiencia a medida que cambia la demanda y evolucionan las tecnologías.
+En otras palabras: adaptar el sistema para dar el mejor rendimiento posible.
+Principios clave
+Usa tecnologías avanzadas cuando sean útiles.
+Ve global en minutos, no en días.
+Prefiere infraestructura serverless cuando tenga sentido.
+Experimenta con frecuencia para validar que la arquitectura escala.
+Ten “simpatía mecánica”: conoce bien qué hace cada servicio y cuándo conviene usarlo.
+Usa el servicio correcto para el patrón correcto.
+Servicios AWS asociados
+Auto Scaling para ajustar capacidad EC2 automáticamente.
+Lambda para serverless y escalado automático.
+EBS / S3 / RDS / Aurora para elegir almacenamiento y bases de datos según necesidades de rendimiento.
+CloudFront para entrega global con caché.
+ElastiCache para mejorar latencia con caché.
+Snowball para mover grandes volúmenes de datos cuando la red no es viable.
+Revisión y monitoreo
+Usa CloudFormation para obtener la infraestructura que necesitas de forma consistente.
+Mantente actualizado con novedades de AWS (AWS News Blog, anuncios de servicios).
+Monitorea con CloudWatch: métricas, alarmas y dashboards.
+Para Lambda, evita throttling y optimiza tiempos de ejecución.
+Tradeoffs importantes
+Cache vs frescura: CloudFront/ElastiCache mejoran rendimiento pero pueden dar datos desactualizados.
+Datos inmediatos vs transferencia masiva: Snowball es rápido para mover grandes datos, pero no es instantáneo.
+Costo vs rendimiento: elegir el servicio correcto depende del balance entre velocidad y presupuesto.
+En resumen: la eficiencia de rendimiento es pensar siempre en el mejor servicio para el problema, medirlo, escalarlo y adaptarlo con el menor desperdicio posible.

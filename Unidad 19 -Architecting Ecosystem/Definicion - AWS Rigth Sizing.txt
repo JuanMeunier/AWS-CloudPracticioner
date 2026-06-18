@@ -1,0 +1,19 @@
+Resumen: Right Sizing en AWS
+Qué es: elegir el tipo y tamaño de instancia que mejor encaja con la carga de trabajo, al menor costo posible.
+Por qué importa: no siempre la instancia más potente es la mejor; la nube es elástica y puedes cambiar de tamaño cuando quieras.
+Principio clave: comienza pequeño y ajusta según el uso real.
+Cuándo hacerlo
+Antes de migrar a la nube: evita “lift-and-shift” con instancias sobredimensionadas.
+Después de migrar: hazlo continuamente, por ejemplo cada mes.
+Qué evaluar
+métricas de uso
+rendimiento
+capacidad
+costo
+Herramientas útiles
+CloudWatch
+Cost Explorer
+Trusted Advisor
+herramientas de terceros
+En resumen: right sizing es un proceso continuo para ajustar tamaño y costo sin sacrificar rendimiento; empieza pequeño, mide y ajusta.
+

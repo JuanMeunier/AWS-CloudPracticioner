@@ -1,0 +1,25 @@
+Resumen: Pilar de Excelencia Operacional
+La excelencia operacional es la capacidad de ejecutar, monitorear y mejorar continuamente los sistemas para entregar valor al negocio.
+Principios clave
+Operar como código: usar infraestructura como código (ej. CloudFormation).
+Cambios frecuentes, pequeños y reversibles.
+Refinar procedimientos operativos continuamente.
+Anticipar fallos y aprender de los errores.
+Usar servicios gestionados para reducir carga operativa.
+Implementar observabilidad accionable: rendimiento, confiabilidad y costo.
+Servicios útiles en AWS
+Preparar
+
+CloudFormation para infraestructura como código.
+AWS Config para evaluar cumplimiento de configuraciones.
+Runbooks y despliegues de prueba.
+Operar
+
+Automatizar y evitar procesos manuales.
+CloudTrail para registrar llamadas API.
+CloudWatch para monitoreo de métricas.
+X-Ray para trazas y detección de errores en requests.
+Evolucionar
+
+Usar CI/CD para iterar rápido: CodeCommit, CodeBuild, CodeDeploy, CodePipeline.
+Desplegar cambios pequeños y frecuentes.

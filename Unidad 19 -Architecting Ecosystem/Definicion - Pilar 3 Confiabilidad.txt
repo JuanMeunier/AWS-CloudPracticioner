@@ -1,0 +1,24 @@
+Definición: Confiabilidad en el Well-Architected Framework
+
+La confiabilidad es la capacidad de un sistema para:
+recuperarse de fallos de infraestructura o servicios,
+adquirir recursos automáticamente según demanda,
+mitigar interrupciones por mala configuración o fallos de red.
+Principios clave
+Probar procedimientos de recuperación con automatización y simulaciones.
+Recuperarse automáticamente de fallos.
+Escalar horizontalmente para mayor disponibilidad y carga.
+No adivinar la capacidad: usar auto scaling.
+Gestionar todo con automatización para permitir rollback y consistencia.
+Servicios de AWS asociados
+IAM: proteger el acceso para evitar cambios peligrosos.
+Amazon VPC: base sólida para la red.
+Service Quotas: monitorear y ajustar límites antes de que causen fallos.
+Trusted Advisor: revisar límites y recomendaciones de confiabilidad.
+Auto Scaling: ajustar capacidad según demanda.
+CloudWatch: monitorear métricas y detectar problemas.
+CloudTrail: auditar cambios y llamadas API.
+AWS Config: revisar configuraciones y detectar drift.
+Backups / CloudFormation: recuperar infraestructura y datos.
+S3 / Glacier: almacenar datos de respaldo y archivos.
+Route 53: DNS global confiable para redirigir tráfico en fallos.

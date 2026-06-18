@@ -1,0 +1,29 @@
+Resumen: Pilar de Optimización de Costos
+La optimización de costos busca ejecutar sistemas con el menor precio posible sin perder valor para el negocio.
+Se trata de usar los recursos de forma eficiente y mantener esa eficiencia a medida que el sistema cambia.
+Principios clave
+Adopta un modo de consumo: paga solo por lo que usas.
+Ejemplo: Lambda no cuesta cuando no se ejecuta; una base de datos provisionada sí.
+Mide la eficiencia general con métricas reales.
+Deja que AWS gestione la infraestructura para reducir costos operativos.
+Analiza y asigna gastos con etiquetas para saber qué aplicación consume qué.
+Prefiere servicios gestionados que escalan y luego reducen el costo por operación.
+Prácticas importantes
+Usa recursos cost-efectivos:
+Spot Instances cuando sea viable
+Reserved Instances o Savings Plans para uso prolongado
+Glacier para archivos y archivado barato
+Ajusta oferta y demanda:
+Auto Scaling
+Lambda / serverless cuando tenga sentido
+Optimiza con el tiempo mediante datos:
+Cost Explorer
+Cost and Usage Report
+Budgets
+Trusted Advisor
+Reporting de Reserved Instances
+Consejo práctico
+Lee novedades de AWS: nuevas funciones a veces reducen costos sin cambiar la arquitectura.
+Ejemplo: ELB puede redirigir HTTP→HTTPS sin servidor extra, o DynamoDB on-demand puede salir más barato cuando el uso es bajo.
+En resumen: coste óptimo no es solo pagar menos, es elegir la opción adecuada para cada carga, medirla y ajustar a lo largo del tiempo.
+
