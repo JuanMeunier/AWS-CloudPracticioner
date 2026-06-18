@@ -43,10 +43,6 @@ El enfoque está pensado para **principiantes en la nube** y para quienes buscan
   - Calculadora de precios  
   - Budgets y Cost Explorer  
 
-- **6. Estrategias de Estudio y Tips para el Examen**  
-  - Recursos gratuitos y oficiales de AWS  
-  - Preguntas de práctica recomendadas  
-  - Consejos para el día del examen  
 
 ---
 
